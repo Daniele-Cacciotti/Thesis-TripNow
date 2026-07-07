@@ -84,8 +84,8 @@ Within the collaboration, I (Daniele) focused mainly on the **JavaScript and fro
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Daniele-Cacciotti/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/Daniele-Cacciotti/Thesis-TripNow.git
+cd Thesis-TripNow
 
 # 2. Install dependencies
 npm install
