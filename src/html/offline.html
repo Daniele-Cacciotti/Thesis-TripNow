@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sei Offline | TripNow.com</title>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <style>
+        :root {
+            --color-bg-base: #0a0a0f;
+            --color-bg-surface: #131320;
+            --color-accent: #FF6F61;
+            --color-text: #dcdde8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--color-bg-base);
+            color: var(--color-text);
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .offline-container {
+            max-width: 480px;
+        }
+        .offline-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-accent), #ff9a8b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(220, 221, 232, 0.75);
+            margin-bottom: 1.5rem;
+        }
+        .offline-tips {
+            background: rgba(255, 111, 97, 0.08);
+            border: 1px solid rgba(255, 111, 97, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .offline-tips h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+        .offline-tips ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+        .offline-tips li { padding: 0.3rem 0; }
+        .offline-tips li::before { content: '✓ '; color: var(--color-accent); }
+        .btn-retry {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+        .btn-retry:hover { opacity: 0.85; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="logo">Trip<span>NOW</span></div>
+        <span class="offline-icon">✈️</span>
+        <h1>Sei offline</h1>
+        <p>
+            La connessione internet non è disponibile in questo momento,
+            ma puoi ancora sfogliare le pagine che hai visitato di recente.
+        </p>
+        <div class="offline-tips">
+            <h3>Pagine disponibili offline</h3>
+            <ul>
+                <li>Homepage</li>
+                <li>Pagine delle destinazioni visitate</li>
+                <li>Trip Planner (algoritmo locale)</li>
+            </ul>
+        </div>
+        <button class="btn-retry" onclick="window.location.reload()">
+            Riprova connessione
+        </button>
+    </div>
+</body>
+</html>

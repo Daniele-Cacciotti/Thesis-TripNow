@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF6F61">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/esplora.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>City Explorer — TripNow</title>
+    <meta name="google-maps-key" content="INSERISCI_LA_TUA_CHIAVE_GOOGLE_MAPS">
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════════════════ -->
+<header id="explorer-header">
+    <a id="explorer-back" href="homepage.html">
+        <i class="fas fa-arrow-left"></i>
+        <span class="back-label">Indietro</span>
+    </a>
+    <h1 id="explorer-title">Esplora</h1>
+</header>
+
+<!-- ══ MAPPA (sticky) ══════════════════════════════════════════════════════════ -->
+<div id="explorer-map-wrapper">
+    <div id="explorer-map"></div>
+    <div id="explorer-map-badge">
+        <i class="fas fa-satellite"></i> Mappa interattiva · Drag / Zoom / Tilt
+    </div>
+</div>
+
+<!-- ══ PANNELLO CONTROLLI ═══════════════════════════════════════════════════════ -->
+<section id="explorer-controls">
+
+    <!-- Tab bar -->
+    <div id="explorer-tabs" role="tablist">
+        <button class="explorer-tab active" data-panel="panel-filters" role="tab" aria-selected="true">
+            <i class="fas fa-filter"></i> Filtri
+        </button>
+        <button class="explorer-tab" data-panel="panel-route" role="tab" aria-selected="false">
+            <i class="fas fa-route"></i> Route
+        </button>
+        <button class="explorer-tab" data-panel="panel-heatmap" role="tab" aria-selected="false">
+            <i class="fas fa-fire"></i> Stagionalità
+        </button>
+    </div>
+
+    <!-- ── TAB: Filtri POI ──────────────────────────────────────────────────── -->
+    <div id="panel-filters" class="tab-panel active" role="tabpanel">
+        <div id="filter-chips" aria-label="Filtra per categoria"></div>
+        <div id="poi-grid" aria-label="Lista punti di interesse"></div>
+    </div>
+
+    <!-- ── TAB: Route Builder ───────────────────────────────────────────────── -->
+    <div id="panel-route" class="tab-panel" role="tabpanel">
+        <div id="route-builder">
+
+            <!-- Lista POI selezionabili -->
+            <div>
+                <h3 style="font-size:14px;color:#aab;margin-bottom:14px;font-weight:600;">
+                    <i class="fas fa-map-marker-alt"></i> Seleziona i POI
+                </h3>
+                <div id="route-poi-list" class="route-poi-list"></div>
+            </div>
+
+            <!-- Statistiche route + azioni -->
+            <div>
+                <div class="route-stats">
+                    <h4><i class="fas fa-chart-line"></i> Statistiche percorso</h4>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Tappe</span>
+                        <span class="stat-value" id="stat-stops">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Distanza</span>
+                        <span class="stat-value" id="stat-km">—</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Tempo a piedi</span>
+                        <span class="stat-value" id="stat-min">—</span>
+                    </div>
+                </div>
+
+                <button id="btn-clear-route">
+                    <i class="fas fa-times"></i> Cancella percorso
+                </button>
+            </div>
+
+        </div><!-- /#route-builder -->
+    </div>
+
+    <!-- ── TAB: Heatmap + Predittivo ────────────────────────────────────────── -->
+    <div id="panel-heatmap" class="tab-panel" role="tabpanel">
+
+        <div id="heatmap-controls">
+            <p style="font-size:13px;color:#aab;margin-bottom:12px;font-weight:600;">
+                <i class="fas fa-layer-group"></i> Metrica heatmap
+            </p>
+            <div class="metric-chips">
+                <button class="metric-chip active" data-metric="crowd">
+                    👥 Folla
+                </button>
+                <button class="metric-chip" data-metric="cost">
+                    💶 Costo
+                </button>
+                <button class="metric-chip" data-metric="season">
+                    🌤 Stagione
+                </button>
+            </div>
+
+            <label for="month-select" style="font-size:13px;color:#aab;font-weight:600;display:block;margin-bottom:8px;">
+                <i class="fas fa-calendar-alt"></i> Mese di riferimento
+            </label>
+            <select id="month-select">
+                <option value="0">Gennaio</option>
+                <option value="1">Febbraio</option>
+                <option value="2">Marzo</option>
+                <option value="3" selected>Aprile</option>
+                <option value="4">Maggio</option>
+                <option value="5">Giugno</option>
+                <option value="6">Luglio</option>
+                <option value="7">Agosto</option>
+                <option value="8">Settembre</option>
+                <option value="9">Ottobre</option>
+                <option value="10">Novembre</option>
+                <option value="11">Dicembre</option>
+            </select>
+        </div>
+
+        <!-- Pannello predittivo (popolato da PredictivePanel.js) -->
+        <div id="explorer-predictive"></div>
+
+    </div><!-- /#panel-heatmap -->
+
+</section><!-- /#explorer-controls -->
+
+<script type="module" src="../js/esplora.js"></script>
+</body>
+</html>

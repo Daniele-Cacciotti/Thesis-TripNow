@@ -1,0 +1,332 @@
+/* Variabili Colore */
+:root {
+    --rome-deep-dkred: #782F2F;          
+    --rome-medium-dkred: #A14D4D;        
+    --rome-light-dkred: #FDF4F4;         
+    --rome-highlight-dkred: #CD8A8A;    
+    --rome-text-dark: #3B1717;           
+    --rome-text-light: #FCF8F8;          
+    --global-white: #ffffff;
+    --rome-stone-dkred: #CD8A8A;         
+    --rome-scroll-hover-dkred: #8F4040;   
+    --rome-line-dkred: #CD8A8A;          
+    --rome-dark-shadow: #4A1C1C;         
+
+    --booking-button-primary-border: var(--rome-medium-dkred, #A14D4D);
+    --booking-button-primary-text: var(--rome-medium-dkred, #A14D4D);
+    --booking-button-primary-hover-bg: var(--rome-medium-dkred, #A14D4D);
+    --booking-button-primary-hover-text: var(--rome-text-light, #FCF8F8); 
+    --booking-button-secondary-border: var(--rome-highlight-dkred, #CD8A8A);
+    --booking-button-secondary-text: var(--rome-highlight-dkred, #CD8A8A);
+    --booking-button-secondary-hover-bg: var(--rome-highlight-dkred, #CD8A8A);
+    --booking-button-secondary-hover-text: var(--rome-text-light, #FCF8F8); 
+
+    --rome-medium-mint-rgba-15: rgba(161, 77, 77, 0.15);   
+    --rome-deep-mint-rgba-30: rgba(120, 47, 47, 0.3);     
+    --rome-deep-mint-rgba-50: rgba(120, 47, 47, 0.5);     
+    --rome-highlight-mint-rgba-32: rgba(205, 138, 138, 0.318);
+}
+
+header .logo .NOWcolor{
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+body.theme {
+    background-color: var(--rome-deep-dkred, #782F2F); 
+    color: var(--rome-text-light); 
+}
+
+.loading-screen{
+    background: var(--rome-deep-dkred, #782F2F) !important; 
+}
+
+header .logo .logodest{
+    color: var(--rome-medium-dkred, #A14D4D) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+header .dropdown a:hover {
+    background-color: var(--rome-medium-dkred, #A14D4D);
+    color: var(--global-white, #fff); 
+}
+
+header nav ul li a:hover {
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+.continent-item:hover {
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+.destination-item a:hover {
+    color: var(--rome-medium-dkred, #A14D4D);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 130%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    transform: translateY(10%);
+    padding: 20px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white);
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--rome-highlight-dkred, #CD8A8A); 
+}
+
+.section-alternate-bg {
+    background-color: var(--rome-medium-mint-rgba-15); 
+}
+
+.theme .section-title {
+    color: var(--rome-text-light);
+}
+
+.theme .section-title::after {
+    background-color: var(--rome-line-dkred, #CD8A8A); 
+}
+
+.info-subtitle {
+    color: var(--rome-highlight-dkred, #CD8A8A); 
+}
+
+.info-subtitle .icon-left {
+    color: var(--rome-highlight-dkred, #CD8A8A);
+}
+
+strong {
+    color: var(--rome-highlight-dkred, #CD8A8A);
+}
+
+#destination-sites{
+    background-color: var(--rome-highlight-mint-rgba-32); 
+}
+
+#destination-info-combined em {
+    color: var(--rome-highlight-dkred, #CD8A8A);
+}
+
+.booking-section-revamped {
+    background: linear-gradient(135deg, var(--rome-highlight-dkred, #CD8A8A) 0%, var(--rome-deep-dkred, #782F2F) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.booking-card {
+    background-color: var(--rome-deep-mint-rgba-30); 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.booking-card:hover {
+    background-color: var(--rome-deep-mint-rgba-50);
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-title {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+
+#destination-summary {
+    background-color: var(--rome-medium-mint-rgba-15); 
+}
+
+#destination-summary .section-title {
+    color: var(--rome-text-light);
+}
+
+.summary-card {
+    background-color: var(--rome-medium-dkred, #A14D4D); 
+}
+
+.summary-card-content h3 {
+    color: var(--rome-text-light);
+}
+
+.summary-card-content p {
+    color: var(--rome-text-light);
+    opacity: 0.85;
+}
+
+#destination-weather .section-title {
+    color: var(--rome-text-light);
+}
+
+.weather-widget-wrapper {
+    background-color: var(--rome-medium-dkred, #A14D4D); 
+}
+
+.weather-loading {
+    color: var(--rome-stone-dkred, #CD8A8A); 
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.day-name {
+    color: var(--rome-text-light); 
+}
+
+.temp-max {
+    color: var(--rome-text-light);
+}
+
+.temp-min {
+    color: var(--rome-text-light);
+    opacity: 0.7;
+}
+
+.weather-attribution {
+    color: var(--rome-text-light);
+    opacity: 0.6;
+}
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--rome-medium-dkred, #A14D4D); 
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--rome-scroll-hover-dkred, #8F4040); 
+}
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--rome-highlight-dkred, #CD8A8A); 
+    color: var(--rome-text-light, #FCF8F8); 
+}
+
+.save-favorite:hover {
+    background-color: var(--rome-highlight-dkred, #CD8A8A); 
+    color: var(--rome-text-light); 
+}
+
+.favorite-box {
+    background-color: var(--rome-medium-dkred, #A14D4D); 
+}
+
+.favorite-box .info-subtitle {
+    color: var(--rome-text-light);
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--rome-text-light);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: rgba(205, 138, 138, 0.5); 
+}
+
+.favorite-box .save-favorite {
+    border-color: var(--rome-highlight-dkred); 
+    color: var(--rome-highlight-dkred);       
+    background-color: rgba(253, 244, 244, 0.1); 
+}
+
+.favorite-box .save-favorite::before {
+    color: var(--rome-highlight-dkred);
+}
+
+.favorite-box .save-favorite:hover {
+    border-color: var(--rome-highlight-dkred);
+    background-color: var(--rome-highlight-dkred); 
+    color: var(--rome-text-light); 
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--rome-text-light);
+}

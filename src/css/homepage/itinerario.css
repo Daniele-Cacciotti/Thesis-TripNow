@@ -1,0 +1,406 @@
+/* ── Itinerario AI Page - ULTRA PREMIUM DESIGN 🚀 ───────────────────────────── */
+
+/* --- 1. Hero Section Immersiva --- */
+.itin-hero {
+    background: radial-gradient(circle at 50% 150%, rgba(255, 111, 97, 0.25) 0%, #050508 60%);
+    padding: 160px 2rem 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.itin-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/></svg>');
+    pointer-events: none;
+    z-index: 1;
+}
+
+.itin-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.4);
+    color: #38bdf8;
+    padding: .5rem 1.2rem;
+    border-radius: 50px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(56,189,248,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.itin-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #FFFFFF 0%, #a0a0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+    text-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.itin-hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #8b8b9d;
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* --- 2. Layout & Console Fluttuante --- */
+.itin-main { 
+    background: #050508; 
+    min-height: 70vh; 
+    padding: 0 2rem 6rem; 
+    position: relative;
+}
+
+.itin-container { 
+    max-width: 900px; 
+    margin: -60px auto 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 3rem; 
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 3. Card Base (HUD Style) --- */
+.itin-card {
+    background: rgba(15, 15, 20, 0.7);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 24px; 
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,111,97,0.05) inset;
+}
+
+.command-center {
+    animation: float 6s ease-in-out infinite; 
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.itin-card h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.itin-subtitle {
+    font-size: 0.9rem;
+    color: #8b8b9d;
+    margin-bottom: 2rem;
+}
+
+/* --- 4. Form Grid --- */
+.itin-form-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem; 
+}
+.itin-field label { 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    color: #FF6F61; 
+    margin-bottom: 0.8rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+}
+.itin-field label i { color: #fff; opacity: 0.5;}
+
+.itin-field select { 
+    width: 100%; 
+    background: rgba(0,0,0,0.3); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    color: #fff; 
+    padding: 1rem 1.2rem; 
+    border-radius: 12px; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: all 0.3s; 
+    font-family: inherit; 
+    cursor: pointer; 
+}
+.itin-field select:focus { 
+    border-color: #FF6F61; 
+    background: rgba(255,255,255,0.05); 
+    box-shadow: 0 0 0 4px rgba(255,111,97,0.15); 
+}
+.itin-field select option { background: #0a0a0f; }
+
+/* Range Slider Styling */
+.itin-days-wrapper { 
+    background: rgba(0,0,0,0.3); 
+    padding: 1.2rem 1.5rem; 
+    border-radius: 12px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    display: flex; 
+    flex-direction: row; /* Messo in riga per un look più compatto */
+    gap: 1.5rem; 
+    align-items: center; 
+}
+#itin-days-label { 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    color: #FF6F61; 
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: right;
+}
+input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 10px; }
+input[type=range]::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    height: 22px; width: 22px; 
+    border-radius: 50%; 
+    background: #FF6F61; 
+    cursor: pointer; 
+    margin-top: -8px; 
+    box-shadow: 0 0 15px rgba(255,111,97,0.6); 
+    transition: transform 0.1s; 
+}
+input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+/* Interessi Tag/Pillole HUD */
+.itin-interests-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.itin-interest-tag { 
+    background: rgba(255,255,255,0.03); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    padding: 0.8rem 1.2rem; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    font-size: 0.9rem; 
+    font-weight: 600;
+    color: #8b8b9d;
+    user-select: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+}
+.itin-interest-tag:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); color: #fff;}
+.itin-interest-tag:has(input:checked) { 
+    background: rgba(255,111,97,0.1); 
+    border-color: #FF6F61; 
+    color: #fff; 
+    box-shadow: 0 5px 15px rgba(255,111,97,0.2); 
+}
+.itin-interest-tag input { display: none; }
+
+/* Pulsante Genera Magnetico */
+.btn-generate { 
+    width: 100%; 
+    padding: 1.5rem; 
+    background: linear-gradient(90deg, #FF6F61 0%, #ff4b3a 100%);
+    border: none; 
+    border-radius: 16px; 
+    color: #fff; 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    box-shadow: 0 15px 30px rgba(255,111,97,0.3), inset 0 2px 0 rgba(255,255,255,0.2); 
+    margin-top: 2.5rem; 
+}
+.btn-generate:not(:disabled):hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(255,111,97,0.5), inset 0 2px 0 rgba(255,255,255,0.2); }
+.btn-generate:disabled { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); box-shadow: none; cursor: not-allowed; }
+
+/* --- 5. Risultati & Effetto Glow AI (Mantenuto e potenziato) --- */
+.itin-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+.itin-result-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.itin-result-dest {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.itin-ai-badge {
+    background: rgba(56,189,248,.15);
+    border: 1px solid rgba(56,189,248,.4);
+    color: #38bdf8;
+    padding: .3rem .8rem;
+    border-radius: 50px;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Bottone Copia integrato */
+.btn-copy {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    color: #fff;
+    padding: .6rem 1.2rem;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn-copy:hover { background: rgba(255,255,255,.1); border-color: #fff; transform: translateY(-2px);}
+
+/* * EFFETTO GLOW AI APPLE INTELLIGENCE 
+ * I colori sono stati aggiornati per matchare Corallo e Azzurro Tech
+ */
+.itin-output-card { 
+    position: relative; 
+    border-radius: 24px;
+    padding: 2.5rem;
+}
+.itin-output-card::before { 
+    content: ''; 
+    position: absolute; 
+    top: -2px; left: -2px; right: -2px; bottom: -2px; 
+    /* Colori aggiornati: Corallo (#FF6F61) e Azzurro AI (#38bdf8) */
+    background: linear-gradient(45deg, #FF6F61, #38bdf8, #FF6F61, #38bdf8); 
+    background-size: 400% 400%; 
+    z-index: -1; 
+    filter: blur(15px); 
+    opacity: 0; 
+    transition: opacity 0.5s; 
+    border-radius: 26px; 
+}
+.itin-output-card.generating::before { 
+    opacity: 0.7; /* Glow più intenso */
+    animation: glowing 3s ease infinite; 
+}
+@keyframes glowing { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* Renderizzazione Markdown per AI */
+#itin-output { 
+    color: #dcdde8; 
+    font-size: 1.05rem; 
+    line-height: 1.8; 
+    white-space: pre-wrap; 
+    min-height: 100px; 
+}
+#itin-output .itin-h2 { 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+    color: #FF6F61; /* Titoli in corallo */
+    margin: 2.5rem 0 1rem; 
+    padding-bottom: .5rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+#itin-output .itin-h2:first-child { margin-top: 0; }
+#itin-output .itin-h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 1.5rem 0 .5rem; }
+#itin-output .itin-bold { color: #fff; font-weight: 700; }
+#itin-output .itin-italic { color: #8b8b9d; font-style: italic; }
+
+/* Cursore lampeggiante */
+.itin-cursor { display: inline-block; color: #38bdf8; animation: blink .8s step-end infinite; font-size: 1.2rem; vertical-align: middle; margin-left: 5px;}
+.itin-cursor.hidden { display: none; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* --- 6. Azioni Post-Generazione --- */
+.btn-secondary-action {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+    color: #fff; padding: 1rem 1.5rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; cursor: pointer; text-decoration: none; transition: all 0.3s;
+    flex: 1; /* Li fa estendere equamente */
+    min-width: 150px;
+}
+.btn-secondary-action:hover { background: #FF6F61; border-color: #FF6F61; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,111,97,0.3);}
+
+/* --- 7. API Explainer (Stile Cyberpunk Identico a Voli/Planner) --- */
+.itin-explainer-card { 
+    background: #08080b;
+    border: 1px solid rgba(255,111,97,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(255,111,97,0.05);
+    margin-top: 3rem;
+}
+.itin-explainer-card h2 { 
+    display: block; color: #FF6F61; font-family: monospace; font-size: 1.1rem; 
+    margin-bottom: 1.5rem; text-transform: none; letter-spacing: 0;
+}
+.itin-explainer-steps { display: flex; flex-direction: column; gap: 0; }
+.itin-exp-step {
+    border-left: 2px solid rgba(255,111,97,0.2);
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    color: #a0a0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.itin-exp-step:last-child { margin-bottom: 0; }
+.itin-exp-step::before {
+    content: '';
+    position: absolute;
+    left: -6px; top: 0;
+    width: 10px; height: 10px;
+    background: #FF6F61;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FF6F61;
+}
+.itin-exp-step strong { color: #fff; }
+code { 
+    background: #15151e; color: #34d399; padding: 0.2rem 0.5rem; 
+    font-family: monospace; border-radius: 4px; border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+/* Animations */
+.fade-in-section { animation: fadeIn 0.6s ease-out forwards; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .itin-form-grid { grid-template-columns: 1fr; }
+    .itin-days-wrapper { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+    #itin-days-label { text-align: center; }
+    .itin-result-header { flex-direction: column; align-items: flex-start; }
+    .btn-copy { width: 100%; justify-content: center; margin-top: 0.5rem;}
+    #itin-actions { flex-direction: column; }
+}
+@media (max-width: 600px) {
+    .itin-hero { padding: 120px 1rem 40px; }
+    .itin-main { padding: 0 1rem 4rem; }
+    .itin-card { padding: 1.5rem; }
+}

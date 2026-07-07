@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/parigi.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Parigi: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span style="font-family:'Parisienne', 'Poppins', sans-serif;" lang="fr" dir="ltr" class="logodest">Paris</span>
+
+        </div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="#">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="../../media/video/parigi.mp4" controls style="max-width: 100%; height: auto;" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Parigi, Francia</h1>
+            <p class="hero-subtitle"><b>La Ville Lumière fra arte, storia e romanticismo</b></p>
+            <br><br><br>
+            <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="Parigi" data-lat="48.8566" data-lon="2.3522" data-model-path="/media/3d/parigi/scene.glb" aria-label="Esplorazione 3D immersiva di Parigi">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">Parigi dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la Ville Lumière</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Il cuore di Parigi</h2><p class="phase-subtitle">Tra boulevard e quartieri storici</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Torre Eiffel, Louvre, Notre Dame — l'eleganza parigina</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/veduta.jpeg" alt="Vista aerea di Parigi" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Parigi" class="btn-explore-cta" aria-label="Esplora Parigi interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Parigi interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di Parigi</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/bou.jpg" alt="Veduta storica di Parigi" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Scopri <strong>Parigi</strong>, sorta dall’antico insediamento gallico dei <strong>Parisii</strong> sulle rive della <strong>Senna</strong>. Conosciuta dai Romani come <em>Lutetia</em>, divenne in seguito il fulcro politico dei <strong>Capetingi</strong>, trasformandosi in un <em>cuore pulsante</em> di cultura medievale, università e cattedrali gotiche. Il suo sviluppo sulle <strong>rotte fluviali</strong> favorì commerci, scambi d’idee e la nascita di corporazioni che ancora oggi animano i quartieri storici.</p>
+                <p>Nei secoli la città fu teatro di <strong>rivolte</strong>, dal <strong>1789</strong> al <strong>maggio ’68</strong>, oltre a grandiosi piani urbanistici come quelli di <em>Haussmann</em>, che regalarono boulevard scenografici e inconfondibili facciate in pietra chiara. Il simbolo della <strong>modernità</strong>, la <strong>Torre Eiffel</strong>, inaugurata nel 1889, riflette l’ingegno francese e l’orgoglio nazionale. Oggi Parigi è <strong>Patrimonio UNESCO</strong> per le rive della Senna e continua a ispirare artisti, designer e sognatori di tutto il mondo.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-flag icon-left"></i> Rivoluzione, Belle Époque e Rinascita</h3>
+                <img src="../../media/foto/epo.jpg" alt="Architettura storica di Parigi" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 550px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Dalla presa della <strong>Bastiglia</strong> ai fasti napoleonici, Parigi si trasformò nel laboratorio politico d’Europa. La <strong>Belle Époque</strong> portò caffè letterari, cabaret e l’Esposizione Universale del 1900. Le due Guerre Mondiali segnarono la città ma non spensero la sua anima: la <strong>Liberazione del 1944</strong> accese nuovamente le luci sui boulevard.</p>
+                <p>Restauri, <strong>musei all’avanguardia</strong> e grandi progetti – come il Centre Pompidou e la piramide del <strong>Louvre</strong> – hanno consacrato Parigi capitale mondiale dell’arte e dello stile. Oggi è un mosaico di quartieri, dai vicoli bohémien di <strong>Montmartre</strong> alle architetture avveniristiche della <strong>Défense</strong>, pronto ad accogliere ogni viaggiatore.</p>
+                <p>Ogni epoca ha lasciato un <strong>segno visibile</strong>: camminare per Parigi è come sfogliare un libro di storia a cielo aperto, dove ogni edificio racconta una pagina diversa del passato. Dai <strong>rivoluzionari</strong> agli <strong>impressionisti</strong>, ogni angolo conserva l'eco di un cambiamento.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Parigi: Le sue Gemme più preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="toureiffel" class="info-subtitle"><i class="fa-solid fa-landmark-magnifying-glass icon-left"></i> Torre Eiffel</h3>
+                <img src="../../media/foto/eiffel.jpg" alt="Torre Eiffel al tramonto" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 600px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>La <strong>Torre Eiffel</strong>, nata come struttura effimera per l’Expo del 1889, è oggi l’icona indiscussa di Parigi. Con i suoi <strong>324 metri</strong>, regala viste mozzafiato sulla città illuminata; di notte brilla con 20 000 lampadine in uno scintillio magico che si accende allo scoccare di ogni ora.</p>
+                <p>Sali in ascensore fino al secondo livello per assaporare la <strong>cuisine française</strong> al ristorante <em>Le Jules Verne</em> o prosegui fino alla vetta per una panoramica a 360°. Prenota online il tuo biglietto <strong>skip-the-line</strong>: eviterai code che possono superare due ore in alta stagione.</p>
+                <p>Da Champ-de-Mars scatta la classica foto in prospettiva, quindi passeggia lungo la Senna fino al Trocadéro per ammirare la torre nel suo scenario più spettacolare, soprattutto all’<strong>ora blu</strong> del crepuscolo.</p>
+                <p>Simbolo di ingegno e modernità, la <strong>Torre Eiffel</strong> continua a stupire generazioni di visitatori: <strong>è il monumento a pagamento più visitato al mondo</strong>.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="notredame" class="info-subtitle"><i class="fas fa-church icon-left"></i> Cattedrale di Notre-Dame</h3>
+                <img src="../../media/foto/notredame.jpeg" alt="Facciata di Notre-Dame" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Notre-Dame</strong>, capolavoro gotico del XII secolo, veglia sull’Île de la Cité con i suoi celebri rosoni e i doccioni grotteschi. Dopo l’incendio del 2019, la cattedrale rinasce grazie a un imponente restauro: la riapertura completa è prevista per <strong>dicembre 2024</strong>.</p>
+                <p>Nel frattempo ammira la facciata restaurata, visita la <strong>Cripta Archeologica</strong> per scoprire le origini romane di Parigi e passeggia lungo le bancarelle dei bouquinistes sulla Senna per respirare l’atmosfera letteraria della rive gauche.</p>
+                <p>Raggiungi poi il vicino <strong>Sainte-Chapelle</strong> per lasciarti avvolgere da 1 113 vetri istoriati: un tripudio di luce che racconta 1 000 anni di storia biblica e monarchica.</p>
+                <p>Simbolo di resilienza e fede, <strong>Notre-Dame continua a ispirare pellegrini, curiosi e amanti dell’arte</strong>.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="montmartre" class="info-subtitle"><i class="fas fa-palette icon-left"></i> Montmartre</h3>
+                <img src="../../media/foto/mont.jpg" alt="Panorama di Montmartre" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il colle di <strong>Montmartre</strong> irradia fascino bohémien con viuzze acciottolate, atelier d’artista e il candido <strong>Sacré-Cœur</strong> che domina Parigi dall’alto. Seduti in Place du Tertre, ritrattisti e caricaturisti perpetuano la tradizione di Picasso e Toulouse-Lautrec.</p>
+                <p>Perditi tra le <strong>vigne urbane</strong> di Clos-Montmartre, visita il <em>Musée de Montmartre</em> nel vecchio atelier di Renoir e assaggia un <em>crêpe au sucre</em> mentre ascolti musicisti di strada.</p>
+                <p>Scendi poi verso Pigalle per scoprire la vibrante vita notturna: cabaret storici come il <strong>Moulin Rouge</strong> continuano a richiamare spettatori in cerca di can-can e luci rosse.</p>
+                <p><strong>Montmartre è un angolo senza tempo</strong>, dove l’arte di vivere si mescola a quella di dipingere, suonare e sognare tra scorci che sembrano usciti da una cartolina.</p>
+                <div class="clear-float"></div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Parigi: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-croissant icon-left"></i> Sapori Parigini e Café Culture</h3>
+                <img src="../../media/foto/Escargot.jpg" alt="[Specialità francesi]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 400px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Parigi è un <strong>banchetto di profumi</strong>: inizia la giornata con un fragrante <strong>croissant au beurre</strong>, poi gusta <strong>escargot</strong> all’aglio, <strong>boeuf bourguignon</strong> e plateau de <strong>fromages AOP</strong>. Nei mercati di <strong>Marché d’Aligre</strong> e <strong>Enfants Rouges</strong> assapora ostriche fresche e <em>macarons</em> di pasticceria.</p>
+                <p>Siediti a un <em>bistrot</em> di Saint-Germain per sorseggiare un <strong>café crème</strong> osservando la vita che scorre; al tramonto concediti un <strong>kir royal</strong> lungo il Canal Saint-Martin. Per dessert prova un <strong>Paris-Brest</strong> ripieno di praliné o la <em>tarte tatin</em> caramellata.</p>
+                <p>Amanti del vino? Prenota una degustazione nelle storiche <strong>Caves du Louvre</strong> o partecipa a un <em>apéro</em> con <strong>charcuterie</strong> artigianale sulla terrazza di un rooftop vicino all’Opéra.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-city icon-left"></i> Meraviglie Parigine: Oltre la Torre Eiffel</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline>
+                    <source src="../../media/video/louvre.mp4" type="video/mp4"> Il tuo browser non supporta il tag video.
+                </video>
+                <p><strong>Parigi</strong> è un <strong>museo a cielo aperto</strong>: salpa sulla Senna in <em>bateau-mouche</em>, ammira le volte luminose del <strong>Musée d’Orsay</strong> e i capolavori del <strong>Louvre</strong>. Attraversa il <strong>Pont Alexandre III</strong>, quindi rilassati tra le aiuole delle <strong>Tuileries</strong> o all’ombra dei viali del <strong>Jardin du Luxembourg</strong>.</p>
+                <p><strong>Per respirare la creatività contemporanea</strong> visita la <strong>Fondation Louis Vuitton</strong>, esplora gli spazi rigenerati della <strong>Station F</strong> e i murales di Rue Denoyez. Alla Villette ascolta un concerto alla <strong>Philharmonie</strong>, poi gusta street-food d’autore al vivace <strong>Time Out Market</strong>.</p>
+                <p>Fuori dal centro, raggiungi in treno la regale <strong>Versailles</strong> con le sale degli Specchi e i giardini di Le Nôtre, oppure scopri il castello di <strong>Fontainebleau</strong>, i vicoli medievali di <strong>Provins</strong> o i giardini impressionisti di <strong>Giverny</strong>. Chi viaggia con bambini troverà divertimento al <strong>Parc Astérix</strong>.</p>
+                <p>Per rivivere la <strong>Belle Époque</strong> soffermati sotto la cupola delle <strong>Galeries Lafayette</strong>, varca i portoni allegorici del <strong>Grand Palais</strong> e osserva le entrate Guimard della <strong>Métro</strong>. Concludi con un tour dell’<strong>Opéra Garnier</strong>: scalinate di marmo, lampadari scintillanti e il soffitto di Chagall incarnano la Parigi fin-de-siècle.</p>
+                <p>Parigi sorprende a ogni angolo: una città in <strong>continuo movimento</strong>, capace di coniugare passato e futuro in un’armonia senza tempo che incanta ogni visitatore.</p>    
+                <div class="clear-float"></div>
+
+
+
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Vincente: Pass, Trasporti e Orari</h3>
+                <img src="../../media/foto/metro.jpg" alt="[Paris Museum Pass e mappa Metro]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Organizza il viaggio con anticipo: prenota online la salita alla Torre Eiffel e i biglietti <strong>skip-the-line</strong> per Louvre e Musée d’Orsay. Il <strong>Paris Museum Pass</strong> conviene se visiti almeno 4 attrazioni principali. Per spostarti, la <strong>metro</strong> è veloce e capillare: una corsa singola costa 2,15 €; la <strong>Navigo Découverte</strong> settimanale copre zone 1-5 (inclusi aeroporti) a costo fisso.</p>
+                <p>Scarica l’<strong>app Vélib’</strong> per noleggiare biciclette elettriche; di notte approfitta dei <strong>Noctilien</strong>, bus che sostituiscono la metro dopo l’una. Ricorda che molti musei sono <strong>gratuiti la prima domenica</strong> del mese da novembre a marzo.</p>
+                <div class="clear-float"></div>
+
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>Parigi è generalmente sicura, ma presta attenzione a <strong>pick-pocket</strong> nelle aree turistiche. Tieni la borsa chiusa, diffida di firme di petizioni o giochi di prestigio in strada. Il numero d’emergenza europeo è il <strong>112</strong>. Per informazioni ufficiali consulta <strong>“Viaggiare Sicuri”</strong> del MAEC.</p>
+                        <p>Evita di sederti sui gradini dei monumenti, rispetta il codice di abbigliamento in luoghi di culto e prenota alloggio in zone centrali o ben collegate (Marais, Latin, Bastille). Seguendo queste semplici norme, potrai vivere Parigi in piena tranquillità.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/FRA" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41985.79028072884!2d2.3200416!3d48.8588377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfcd8d723e7%3A0x40b82c3688c9460!2sParigi%2C%20Francia!5e0!3m2!1sit!2sit!4v1714321858983!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a Parigi. Trova le migliori offerte e pianifica ogni dettaglio.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                    <p class="booking-card-text">Confronta le tariffe e prenota il tuo volo per la Francia alle migliori condizioni.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/par/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                    <p class="booking-card-text">Dai boutique hotel sugli Champs-Élysées ai romantici rifugi di Montmartre, trova la sistemazione ideale nel cuore di Parigi.</p>
+                    <a href="https://www.trivago.it/it/srl/hotel-parigi-francia?search=200-22235;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica l'Itinerario<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di Parigi.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-parigi.pdf">Scarica Guida</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone di Parigi: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#toureiffel" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/torre.jpg" alt="Torre Eiffel" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-landmark-magnifying-glass"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Torre Eiffel</h3>
+                        <p>L'emblematica dama di ferro che domina lo skyline parigino.</p>
+                    </div>
+                </a>
+    
+                <a href="#notredame" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/notre.jpg" alt="Cattedrale di Notre-Dame" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-church"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Notre-Dame</h3>
+                        <p>Capolavoro gotico, cuore spirituale e storico della città.</p>
+                    </div>
+                </a>
+    
+                <a href="#montmartre" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/monti.jpg" alt="Montmartre e Sacré-Cœur" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-palette"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Montmartre</h3>
+                        <p>Il quartiere bohémien degli artisti, dominato dal Sacré-Cœur.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+    
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Parigi? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="Parigi" data-link="Parigi.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+    </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Parigi? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>    
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_parigi.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

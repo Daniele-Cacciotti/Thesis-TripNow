@@ -1,0 +1,323 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   scene-3d.css — Sezione 3D immersiva TripNow
+   Layout: .scene-viewport sticky contiene canvas + tutti gli overlay.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Wrapper principale (scroll container 800vh) ────────────────────────────── */
+#destination-3d-scene {
+    position: relative;
+    width: 100%;
+    height: 800vh;
+    background: #0d1929;
+}
+
+/* ── Sticky viewport: rimane fisso mentre si scorre la sezione ──────────────── */
+.scene-viewport {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: calc(100vh / 0.9);
+    overflow: hidden;
+    background: #0d1929;
+}
+
+/* Google Maps container — stesso layout del canvas Three.js */
+#google-maps-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* ── CTA "Esplora interattivamente" ──────────────────────────────────────────── */
+/* Nascosto di default, mostrato solo nella fase 6 da ScrollNarrative */
+.btn-explore-cta {
+    position: absolute;
+    bottom: 32px;
+    left: 28px;          /* allineato a sinistra, il pannello predittivo è a destra */
+    transform: none;
+    z-index: 20;
+    display: none;       /* nascosto finché ScrollNarrative non aggiunge .visible */
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: rgba(255, 111, 97, 0.92);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 999px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(255, 111, 97, 0.4);
+    transition: background 0.2s, opacity 0.3s, transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+    opacity: 0;
+}
+.btn-explore-cta.visible {
+    display: inline-flex;
+    opacity: 1;
+}
+.btn-explore-cta:hover {
+    background: rgba(255, 111, 97, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255, 111, 97, 0.55);
+}
+.btn-explore-cta .fa-arrow-right { font-size: 13px; }
+
+@media (max-width: 768px) {
+    .btn-explore-cta {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 16px;
+        font-size: 13px;
+        padding: 12px 20px;
+    }
+    .btn-explore-cta:hover { transform: translateX(-50%) translateY(-2px); }
+}
+
+/* Canvas Three.js — riempie tutto il viewport sticky */
+#three-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+}
+#three-canvas:active { cursor: grabbing; }
+
+/* ── Overlay WebGL non disponibile ─────────────────────────────────────────── */
+.webgl-unavailable #three-canvas { display: none; }
+.webgl-unavailable .fallback-3d {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* ── Overlay fasi narrative ─────────────────────────────────────────────────── */
+.phase-overlay {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8vw;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.6s ease;
+}
+
+.phase-overlay.visible { display: flex; }
+
+.phase-title {
+    font-size: clamp(28px, 5vw, 64px);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px 0;
+    line-height: 1.15;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+}
+
+.phase-subtitle {
+    font-size: clamp(13px, 2vw, 18px);
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+    max-width: 480px;
+    line-height: 1.6;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+/* ── Indicatore fase corrente (pallini a destra) ────────────────────────────── */
+.phase-indicator {
+    position: absolute;
+    top: 90px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.phase-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.phase-dot.active {
+    background: var(--color-accent, #FF6F61);
+    transform: scale(1.4);
+}
+
+/* ── Barra di progresso narrative ───────────────────────────────────────────── */
+.narrative-progress-bar-track {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: rgba(255,255,255,0.08);
+    z-index: 20;
+}
+.narrative-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secondary, #38bdf8), var(--color-accent, #FF6F61));
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* ── Barra caricamento modello .glb ─────────────────────────────────────────── */
+.model-loading-ui {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.model-load-bar-track {
+    width: 200px; height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.model-load-bar {
+    height: 100%;
+    background: var(--color-secondary, #38bdf8);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+.model-load-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── Pannello predittivo ────────────────────────────────────────────────────── */
+#predictive-panel {
+    position: absolute;
+    bottom: 24px; right: 24px;
+    width: min(520px, 90vw);
+    max-height: 85%;
+    overflow-y: auto;
+    z-index: 15;
+    display: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+#predictive-panel::-webkit-scrollbar { width: 4px; }
+#predictive-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+/* ── Pannello raccomandazioni (fase 5) ──────────────────────────────────────── */
+#recs-panel {
+    position: absolute;
+    top: 50%; right: 32px;
+    transform: translateY(-50%);
+    width: min(360px, 85vw);
+    z-index: 15;
+    display: none;
+}
+
+/* ── Controlli heatmap (fase 4) ─────────────────────────────────────────────── */
+.heatmap-controls {
+    position: absolute;
+    bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 8px;
+    z-index: 20;
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-pill, 999px);
+    padding: 6px 8px;
+    backdrop-filter: blur(12px);
+}
+
+.heatmap-controls [data-metric] {
+    padding: 7px 16px;
+    border-radius: var(--radius-pill, 999px);
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.heatmap-controls [data-metric]:hover,
+.heatmap-controls [data-metric].active {
+    background: var(--color-accent, #FF6F61);
+    color: #fff;
+}
+
+/* ── POI labels (CSS2DRenderer) ─────────────────────────────────────────────── */
+.poi-label {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-sm, 6px);
+    padding: 4px 8px;
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+    white-space: nowrap;
+}
+.poi-icon  { font-size: 14px; }
+.poi-name  { font-size: 11px; font-weight: 600; color: #fff; font-family: 'Poppins', sans-serif; }
+
+/* ── Indicatore "scorri per esplorare" (fase 0) ─────────────────────────────── */
+.scroll-hint {
+    position: absolute;
+    bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    display: none;  /* mostrato da JS solo in fase 0 */
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 20;
+    animation: scroll-hint-pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+.scroll-hint-arrow {
+    width: 20px; height: 20px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transform: rotate(45deg);
+}
+.scroll-hint-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes scroll-hint-pulse {
+    0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
+    50%       { opacity: 0.3; transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .phase-title    { font-size: 28px; }
+    .phase-overlay  { padding: 0 5vw; }
+    #predictive-panel { bottom: 0; right: 0; width: 100vw; border-radius: 16px 16px 0 0; }
+    .heatmap-controls { bottom: 16px; }
+    .phase-indicator  { top: 80px; right: 12px; }
+}

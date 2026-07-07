@@ -1,0 +1,400 @@
+/* ── Voli Page - ULTRA PREMIUM DESIGN 🚀 ───────────────────────────── */
+
+/* --- 1. Hero Section Immersiva --- */
+.voli-hero {
+    background: radial-gradient(circle at 50% 150%, rgba(255, 111, 97, 0.25) 0%, #050508 60%);
+    padding: 160px 2rem 140px; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.voli-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/></svg>');
+    pointer-events: none;
+    z-index: 1;
+}
+
+.voli-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    background: rgba(255,111,97,0.1);
+    border: 1px solid rgba(255,111,97,0.4);
+    color: #FF6F61;
+    padding: .5rem 1.2rem;
+    border-radius: 50px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(255,111,97,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.voli-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(3rem, 7vw, 5rem); 
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #FFFFFF 0%, #a0a0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+    text-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.voli-hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #8b8b9d;
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* --- 2. Layout & Console Fluttuante --- */
+.voli-main { 
+    background: #050508; 
+    min-height: 70vh; 
+    padding: 0 2rem 6rem; 
+    position: relative;
+}
+
+.voli-container { 
+    max-width: 1000px; 
+    margin: -100px auto 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 3rem; 
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 3. Il Form di Ricerca (L'astronave) --- */
+.voli-card:first-child {
+    background: rgba(15, 15, 20, 0.7);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 32px; 
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 
+                0 0 0 1px rgba(255,111,97,0.05) inset;
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite; 
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.voli-card h2 { display: none; } 
+
+/* Griglia Input Minimalista */
+.voli-form-grid {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 0;
+    background: #0a0a0f; 
+    border-radius: 20px; 
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden; 
+}
+
+.voli-field {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem 1.5rem;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+.voli-field:last-child { border-right: none; }
+
+.voli-field label {
+    display: block; 
+    font-size: 0.75rem; 
+    color: #FF6F61;
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    margin-bottom: 0.3rem;
+}
+.voli-field label i { display: none; } 
+
+.voli-field select,
+.voli-field input[type="date"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+}
+.voli-field select option { background: #0a0a0f; }
+
+/* Filtri "Neon" */
+.voli-filters {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+}
+.voli-filter-tag {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6a6a7c;
+    position: relative;
+    transition: all 0.3s;
+}
+.voli-filter-tag::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 50%; width: 0; height: 2px;
+    background: #FF6F61;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #FF6F61;
+}
+.voli-filter-tag:hover { color: #fff; }
+.voli-filter-tag:has(input:checked) { color: #fff; }
+.voli-filter-tag:has(input:checked)::after { width: 100%; }
+
+/* Bottone Cerca Magnetico */
+.btn-search-voli {
+    width: 100%;
+    padding: 1.5rem;
+    background: #FF6F61;
+    background: linear-gradient(90deg, #FF6F61 0%, #ff4b3a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 30px rgba(255, 111, 97, 0.3), inset 0 2px 0 rgba(255,255,255,0.2);
+}
+.btn-search-voli:hover { 
+    transform: scale(1.02); 
+    box-shadow: 0 20px 40px rgba(255, 111, 97, 0.5), inset 0 2px 0 rgba(255,255,255,0.2); 
+}
+
+/* --- 4. Risultati - Stile Boarding Pass Premium --- */
+.voli-results-header {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #8b8b9d;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#voli-results-count { color: #fff; font-weight: 800; font-size: 1.2rem; margin-right: 0.5rem;}
+
+/* FIX: Nascondiamo la scritta DEMO iniettata dal JS */
+.voli-results-header span:not(#voli-results-count):not(#voli-results-route) {
+    display: none !important;
+}
+
+.flight-card {
+    background: #101016;
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+/* Effetto buchi del biglietto laterali */
+.flight-card::before, .flight-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px; height: 20px;
+    background: #050508; 
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+.flight-card::before { left: -10px; border-right-color: transparent; }
+.flight-card::after { right: -10px; border-left-color: transparent; }
+
+.flight-card:hover {
+    border-color: rgba(255,111,97,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,111,97,0.1);
+    transform: translateX(5px);
+}
+
+.flight-card-top {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Divisione Biglietto: Rotta (sinistra) / Prezzo (destra) */
+.flight-route {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3rem;
+    border-right: 2px dashed rgba(255,255,255,0.1); 
+}
+
+.route-iata { font-weight: 800; font-size: 2.2rem; color: #fff; }
+.route-arrow { 
+    color: #FF6F61; 
+    font-size: 1.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5rem;
+}
+.route-duration { font-size: 0.8rem; color: #8b8b9d; font-weight: 600; text-transform: uppercase;}
+
+.flight-price { 
+    flex: 1; 
+    text-align: center; 
+    padding-left: 2rem;
+}
+.price-value { font-size: 2.8rem; font-weight: 800; color: #FF6F61; line-height: 1; }
+.price-note { font-size: 0.8rem; color: #6a6a7c; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
+
+.carrier-code {
+    position: absolute;
+    top: 1rem; left: 1.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 1rem;
+    font-weight: 800;
+}
+.flight-stops {
+    background: #FF6F61;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+/* FIX: Dettagli Volo (Risolto Bug Sovrapposizione) */
+.flight-card-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spazio tra segmenti e bottone */
+    background: rgba(0,0,0,0.2);
+    padding: 1.5rem 2rem;
+    border-top: 1px dashed rgba(255,255,255,0.1);
+}
+
+.segment-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 0.95rem;
+    color: rgba(220,221,232,.8);
+    background: rgba(255,255,255,0.03);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+.seg-time { font-weight: 700; color: #fff; min-width: 60px; font-size: 1.05rem;}
+.seg-iata { font-weight: 800; color: #FF6F61; min-width: 40px; }
+.seg-flight { color: #8b8b9d; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;}
+
+/* FIX: Bottone prenota integrato nel biglietto */
+.flight-book-btn {
+    align-self: flex-start; /* Evita che si allarghi a tutto schermo */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(90deg, #FF6F61 0%, #ff4b3a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(255,111,97,0.25);
+}
+.flight-book-btn:hover { 
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(255,111,97,0.4);
+}
+
+/* --- 5. API Explainer (Stile Cyberpunk/Terminale) --- */
+.voli-explainer-card { 
+    background: #08080b;
+    border: 1px solid rgba(255,111,97,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(255,111,97,0.05);
+}
+.voli-explainer-card h2 { display: block; color: #FF6F61; font-family: monospace; font-size: 1.1rem;}
+.voli-exp-step {
+    border-left: 2px solid rgba(255,111,97,0.2);
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    color: #a0a0b0;
+}
+.voli-exp-step::before {
+    content: '';
+    position: absolute;
+    left: -6px; top: 0;
+    width: 10px; height: 10px;
+    background: #FF6F61;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FF6F61;
+}
+.exp-icon { display: none; } 
+code { background: #15151e; color: #34d399; padding: 0.2rem 0.5rem; font-family: monospace; border-radius: 4px;}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 800px) {
+    .voli-form-grid { flex-direction: column; }
+    .voli-field { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .flight-card-top { flex-direction: column; padding: 2rem 1rem; }
+    .flight-route { border-right: none; border-bottom: 2px dashed rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 1.5rem; margin-bottom: 1.5rem; width: 100%; }
+    .flight-price { padding-left: 0; }
+    .flight-card::before, .flight-card::after { display: none; }
+    .flight-card-detail { padding: 1.5rem 1rem; }
+    .segment-row { flex-direction: column; align-items: flex-start; gap: 0.5rem;}
+    .flight-book-btn { width: 100%; justify-content: center; }
+}

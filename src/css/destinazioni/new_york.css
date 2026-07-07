@@ -1,0 +1,344 @@
+/* Variabili Colore */
+:root {
+    --nyr-deep-russet: #59251A;       
+    --nyr-muted-terracotta: #A74634;  
+    --nyr-pale-blush: #FFEAE5;        
+    --nyr-warm-copper: #F07A5D;       
+    --nyr-vibrant-redglow: #E55B3C;   
+    --nyr-text-dark: #3D1A11;         
+    --nyr-text-light: var(--nyr-pale-blush, #FFEAE5); 
+    --global-white: #ffffff;        
+    --nyr-stone-gray: var(--nyr-muted-terracotta); 
+    --nyr-scroll-hover-gray: #853829; 
+    --nyr-line-gray: var(--nyr-warm-copper); 
+    --nyr-dark-shadow: #30150D;       
+
+    --booking-button-primary-border: var(--nyr-warm-copper, #F07A5D);     
+    --booking-button-primary-text: var(--nyr-warm-copper, #F07A5D);       
+    --booking-button-primary-hover-bg: var(--nyr-vibrant-redglow, #E55B3C);
+    --booking-button-primary-hover-text: var(--nyr-text-light, #FFEAE5);  
+    --booking-button-secondary-border: var(--nyr-muted-terracotta, #A74634);
+    --booking-button-secondary-text: var(--nyr-muted-terracotta, #A74634); 
+    --booking-button-secondary-hover-bg: var(--nyr-warm-copper, #F07A5D);  
+    --booking-button-secondary-hover-text: var(--nyr-text-dark, #3D1A11); 
+
+    --nyr-muted-terracotta-rgba-15: rgba(167, 70, 52, 0.15); 
+    --nyr-deep-russet-rgba-30: rgba(89, 37, 26, 0.3);       
+    --nyr-deep-russet-rgba-50: rgba(89, 37, 26, 0.5);       
+    --nyr-warm-copper-rgba-32: rgba(240, 122, 93, 0.318);  
+}
+
+header .logo .NOWcolor{
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+body.theme {
+    background-color: var(--nyr-deep-russet, #59251A);
+}
+
+.loading-screen{
+    background: var(--nyr-muted-terracotta) !important; 
+}
+
+header .logo .logodest{
+    color: var(--nyr-vibrant-redglow, #E55B3C) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+header .dropdown a:hover {
+    background-color: var(--nyr-vibrant-redglow, #E55B3C);
+    color: var(--global-white, #fff); 
+}
+
+header nav ul li a:hover {
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+.continent-item:hover {
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+.destination-item a:hover {
+    color: var(--nyr-vibrant-redglow, #E55B3C);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 50%;
+    min-width: 100%;
+    min-height: 133%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(48, 21, 13, 0.5); 
+    z-index: 1;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white; 
+    transform: translateY(-10%);
+    padding: 20px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white; 
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white); 
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+.section-alternate-bg {
+    background-color: var(--nyr-muted-terracotta-rgba-15);
+}
+
+.theme .section-title {
+    color: var(--nyr-pale-blush, #FFEAE5);
+}
+
+.theme .section-title::after {
+    background-color: var(--nyr-line-gray, #F07A5D);
+}
+
+.info-subtitle {
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+.info-subtitle .icon-left {
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+strong { 
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+#destination-sites{
+    background-color: var(--nyr-warm-copper-rgba-32);
+}
+
+#destination-info-combined em { 
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+.booking-section-revamped {
+    background: linear-gradient(135deg, var(--nyr-line-gray, #F07A5D) 0%, var(--nyr-deep-russet, #59251A) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: var(--nyr-pale-blush, #FFEAE5); 
+}
+
+.booking-card {
+    background-color: var(--nyr-deep-russet-rgba-30); 
+    border: 1px solid rgba(240, 122, 93, 0.25); 
+}
+
+.booking-card:hover {
+    background-color: var(--nyr-deep-russet-rgba-50); 
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff); 
+}
+
+.booking-card-title {
+    color: var(--global-white);
+}
+
+.booking-card-text {
+    color: var(--nyr-pale-blush, #FFEAE5);
+}
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+.booking-button.secondary {
+    border-color: var(--nyr-warm-copper, #F07A5D);
+    color: var(--nyr-warm-copper, #F07A5D);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--nyr-muted-terracotta-rgba-15);
+}
+
+#destination-summary .section-title {
+    color: var(--global-white);
+}
+
+.summary-card {
+    background-color: var(--nyr-deep-russet-rgba-30); 
+}
+
+.summary-card-content h3 {
+    color: var(--global-white);
+}
+
+.summary-card-content p {
+    color: var(--nyr-pale-blush, #FFEAE5);
+}
+
+#destination-weather .section-title {
+    color: var(--nyr-pale-blush, #FFEAE5);
+}
+
+.weather-widget-wrapper {
+    background-color: var(--nyr-muted-terracotta-rgba-15); 
+}
+
+.weather-loading {
+    color: var(--nyr-warm-copper, #F07A5D); 
+}
+
+.weather-day {
+    background-color: rgba(255, 234, 229, 0.1); 
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 234, 229, 0.2); 
+}
+
+.day-name {
+    color: var(--global-white, #ffffff); 
+}
+
+.temp-max {
+    color: var(--global-white);
+}
+
+.temp-min {
+    color: var(--global-white);
+}
+
+.weather-attribution {
+    color: rgba(255, 234, 229, 0.7); 
+}
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--nyr-muted-terracotta, #A74634); 
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--nyr-scroll-hover-gray, #853829); 
+}
+
+.save-favorite {
+    border: 2px solid var(--nyr-deep-russet);
+    color: var(--nyr-deep-russet);
+}
+
+.save-favorite:hover {
+    background-color: var(--nyr-deep-russet);
+    color: var(--nyr-text-light, #FFEAE5);
+}
+
+.favorite-box {
+    background-color: var(--nyr-muted-terracotta-rgba-15); 
+}
+
+.favorite-box .info-subtitle {
+    color: var(--global-white, #ffffff); 
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white, #ffffff);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: rgba(240, 122, 93, 0.4); 
+}
+
+.favorite-box .save-favorite { 
+    border-color: var(--global-white); 
+    color: var(--global-white);       
+    background-color: rgba(255, 234, 229, 0.1); 
+}
+
+.favorite-box .save-favorite::before {
+    color: var(--nyr-vibrant-redglow, #E55B3C); 
+}
+
+.favorite-box .save-favorite:hover {
+    border-color: var(--nyr-vibrant-redglow);    
+    background-color: var(--nyr-vibrant-redglow);
+    color: var(--global-white); 
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--global-white); 
+}
+
+.PREFERITI{
+    padding-left: 200px; 
+}
+
+@media (max-width: 768px) {
+    .hero-destination .hero-content {
+        margin-top: 180px;
+    }
+
+    .hero-destination .hero-background video {
+        width: auto !important;
+    }
+
+    nav ul {
+        top: 102px;
+    }
+}

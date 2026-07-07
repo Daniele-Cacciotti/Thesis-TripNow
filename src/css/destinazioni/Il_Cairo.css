@@ -1,0 +1,312 @@
+/* Variabili Colore */
+:root {
+    --cairo-medium-sand: #856037;        
+    --cairo-light-medium-sand: #A58256; 
+    --cairo-night-sky: var(--cairo-medium-sand); 
+    --cairo-dark-shadow: #5A4123;       
+    --cairo-text-light: #FBF6ED;        
+    --cairo-pale-cream: #F0E6D4;        
+    --cairo-secondary-text: #D8B58A;    
+    --cairo-highlight-cream: #D8B58A;   
+    --cairo-scroll-hover-sand: #91714B; 
+    --global-white: #ffffff;            
+
+    --booking-button-primary-border:   var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-primary-text:     var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-primary-hover-bg: var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-primary-hover-text: var(--cairo-text-dark, #47341C); 
+    --booking-button-secondary-border: var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-secondary-text:   var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-secondary-hover-bg: var(--cairo-highlight-cream, #D8B58A);
+    --booking-button-secondary-hover-text: var(--cairo-text-dark, #47341C); 
+
+    --cairo-medium-sand-rgba-30: rgba(124, 89, 48, 0.3);       
+    --cairo-light-medium-sand-rgba-30: rgba(165, 130, 86, 0.3);
+    --cairo-light-medium-sand-rgba-40: rgba(165, 130, 86, 0.4);
+    --cairo-light-medium-sand-rgba-60: rgba(165, 130, 86, 0.6);
+    --cairo-highlight-cream-rgba-20: rgba(216, 181, 138, 0.2);  
+    --cairo-highlight-cream-rgba-50: rgba(216, 181, 138, 0.5);  
+    --cairo-highlight-cream-rgba-10: rgba(216, 181, 138, 0.1);  
+    --cairo-highlight-cream-rgba-32: rgba(216, 181, 138, 0.318);
+    --cairo-text-dark: #ad895e;        
+}
+
+header .logo .NOWcolor{
+    color: var(--cairo-highlight-cream);
+}
+
+body.theme {
+    background-color: var(--cairo-medium-sand); 
+    color: var(--cairo-text-light);
+}
+
+.loading-screen{
+    background: var(--cairo-light-medium-sand) !important; 
+}
+
+header .logo .logodest{
+    color: var(--cairo-highlight-cream) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--cairo-highlight-cream);
+}
+
+header .dropdown a:hover {
+    background-color: var(--cairo-highlight-cream);
+    color: var(--cairo-text-dark);
+}
+
+header nav ul li a:hover {
+    color: var(--cairo-highlight-cream);
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    padding-top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+}
+
+.continent-item:hover {
+    color: var(--cairo-highlight-cream);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--cairo-highlight-cream);
+}
+
+.destination-item a:hover {
+    color: var(--cairo-highlight-cream);
+}
+
+.theme .hero-destination {
+    position: relative;
+    color: var(--global-white);
+}
+
+.theme .hero-background {
+    
+    background-image: url('../../../media/foto/sfinge.jpg');
+}
+
+.theme .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--cairo-highlight-cream);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.section-alternate-bg {
+    background-color: var(--cairo-light-medium-sand-rgba-30);
+}
+
+.theme .section-title {
+    color: var(--cairo-text-light);
+}
+
+.theme .section-title::after {
+    background-color: var(--cairo-highlight-cream);
+    height: 2px;
+    opacity: 0.8;
+}
+
+
+.info-subtitle {
+    color: var(--cairo-highlight-cream);
+}
+
+.info-subtitle .icon-left {
+    color: var(--cairo-highlight-cream);
+}
+
+strong {
+    color: var(--cairo-highlight-cream);
+}
+
+#destination-sites{
+    background-color: var(--cairo-highlight-cream-rgba-32);
+}
+
+#destination-info-combined em {
+    color: var(--cairo-highlight-cream);
+}
+
+.booking-section-revamped {
+    background: linear-gradient(135deg, var(--cairo-medium-sand) 0%, var(--cairo-light-medium-sand) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: var(--cairo-text-light);
+}
+
+.booking-card {
+    background-color: var(--cairo-light-medium-sand-rgba-40); 
+    border: 1px solid var(--cairo-highlight-cream-rgba-50); 
+}
+
+.booking-card:hover {
+    background-color: var(--cairo-light-medium-sand-rgba-60);
+}
+
+.booking-card-icon {
+    color: var(--cairo-highlight-cream);
+}
+
+.booking-card-title {
+    color: var(--cairo-highlight-cream);
+}
+
+.booking-card-text {
+    color: var(--cairo-secondary-text);
+}
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--cairo-light-medium-sand-rgba-30); 
+}
+
+#destination-summary .section-title {
+    color: var(--cairo-text-light);
+}
+
+.summary-card {
+    background-color: var(--cairo-light-medium-sand-rgba-40); 
+}
+
+.summary-card-content h3 {
+    color: var(--global-white); 
+}
+
+.summary-card-content p {
+    color: var(--cairo-secondary-text);
+}
+
+#destination-weather .section-title {
+    color: var(--cairo-text-light);
+}
+
+.weather-widget-wrapper {
+    background-color: var(--cairo-light-medium-sand-rgba-40); 
+}
+
+.weather-loading {
+    color: var(--cairo-secondary-text);
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.day-name {
+    color: var(--global-white);
+}
+
+.temp-max {
+    color: var(--global-white);
+}
+
+.temp-min {
+    color: var(--global-white);
+    opacity: 0.7;
+}
+
+.weather-attribution {
+    color: var(--global-white);
+    opacity: 0.6;
+}
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--cairo-highlight-cream);
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--cairo-scroll-hover-sand);
+}
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--cairo-highlight-cream);
+    color: var(--cairo-highlight-cream);
+}
+
+.save-favorite:hover {
+    background-color: var(--cairo-highlight-cream);
+    color: var(--cairo-text-dark);
+}
+
+.favorite-box {
+    background-color: var(--cairo-light-medium-sand-rgba-40); 
+}
+
+.favorite-box .info-subtitle {
+    color: var(--global-white);
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: var(--cairo-highlight-cream-rgba-50);
+}
+
+.favorite-box .save-favorite {
+    border-color: var(--cairo-highlight-cream);
+    color: var(--cairo-highlight-cream);
+    background-color: var(--cairo-highlight-cream-rgba-10);
+}
+
+.favorite-box .save-favorite::before {
+    color: var(--cairo-highlight-cream);
+}
+
+.favorite-box .save-favorite:hover {
+    background-color: var(--cairo-highlight-cream);
+    color: var(--cairo-text-dark);
+    border-color: var(--cairo-highlight-cream);
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--cairo-text-dark);
+}

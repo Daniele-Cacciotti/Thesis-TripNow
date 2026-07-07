@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cabin+Sketch&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/destinazioni/cuzco.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Cuzco: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span style="font-family:'Cabin Sketch', 'Poppins', sans-serif;" lang="qu" dir="ltr" class="logodest">Qosqo</span>
+        </div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <!-- Lista destinazioni -->
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="#">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua<i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="../../media/video/peru.mp4" type="video/mp4">
+                Il tuo browser non supporta il video HTML5.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Cuzco, Perù</h1>
+            <p class="hero-subtitle"><b>Antica capitale Inca tra storia e Ande</b></p>
+            <br><br><br>
+            <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="Cuzco" data-lat="-13.5320" data-lon="-71.9675" data-model-path="/media/3d/cuzco/scene.glb" aria-label="Esplorazione 3D immersiva di Cuzco">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">Cuzco dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la capitale Inca</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Il cuore di Cuzco</h2><p class="phase-subtitle">Tra Plaza de Armas e mura ciclopiche</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Qorikancha, Sacsayhuamán, Mercado de San Pedro</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/cuzco.jpg" alt="Vista aerea di Cuzco" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Cuzco" class="btn-explore-cta" aria-label="Esplora Cuzco interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Cuzco interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di Cuzco</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/cuzco.jpg" alt="Veduta storica di Cuzco" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Immergiti nella leggenda di Cuzco, <strong>“capitale sacra”</strong> Inca incastonato tra le Ande peruviane a oltre 400 m di quota. Fondata, secondo la tradizione, dall’eroe Manco Cápac intorno al XII secolo, la città crebbe fino a trasformarsi in un vero <em>cuore pulsante</em> dell’impero, con templi ricoperti d’oro che riflettevano il sole andino. La sua posizione strategica sulle <strong>rotte andine</strong> – un intricato sistema di sentieri chiamato <em>Qhapaq Ñan</em> – collegava la costa del Pacifico, l’Amazzonia e l’altipiano boliviano, assicurando scambi di merci, idee e culture.</p>
+                <p>Gli Inca non erano solo sovrani illuminati, ma anche maestri ingegneri: progettarono sofisticati <strong>canali idraulici</strong> che convogliavano l’acqua dagli altipiani circostanti, costruirono <strong>terrazzamenti fertili</strong> che ancora oggi sostengono le comunità locali e innalzarono mura ciclopiche antisismiche dal taglio perfetto. Tra le loro meraviglie, oltre al celeberrimo <strong>Machu Picchu</strong>, spiccano il <em>Qorikancha</em> – il leggendario Tempio del Sole – e l’immenso sistema di strade imperiali percorribile ancora oggi dagli escursionisti moderni.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-church icon-left"></i> Conquista Spagnola e Rinascita</h3>
+                <img src="../../media/foto/cattedrale.jpg" alt="Architettura coloniale a Cuzco" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>L’arrivo dei conquistadores nel 1533 trasformò Cuzco: sui <strong>fondamenta incaiche</strong> sorsero imponenti <strong>chiese barocche</strong>, come la Cattedrale dell’Assunzione, e sontuosi palazzi in stile andaluso. Terremoti, rivolte indigene e carestie segnarono secoli di declino, ma la città conservò un’aura mistica grazie alla fusione di simboli cattolici e tradizioni quechua che si riflettono ancora oggi in feste coloratissime come il Corpus Christi e l’Inti Raymi.</p>
+                <p>Riscoperta dagli storici, restaurata negli anni ‘70 e proclamata <strong>Sito UNESCO</strong> nel 1983, Cuzco è ora un vibrante crocevia di culture: un mosaico di strade acciottolate, balconi in legno intagliato e mercati brulicanti di artigianato. Funziona da trampolino verso Machu Picchu, la Valle Sacra e le montagne arcobaleno, rappresentando una tappa imprescindibile per chi desidera comprendere l’anima profonda del Perù.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Cuzco: Le sue Gemme più preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="machupicchu" class="info-subtitle"><i class="fas fa-mountain icon-left"></i> Machu Picchu</h3>
+                <img src="../../media/foto/machupicchu.jpg" alt="Vista di Machu Picchu" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 600px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Machu Picchu</strong>, la <strong>“città perduta”</strong> sospesa fra nubi e picchi granitici, è l’emblema del genio costruttivo inca. Le sue <strong>terrazze vertiginose</strong> e i templi di pietra perfettamente incastrata testimoniano una raffinata astronomia e una profonda spiritualità. Oggi il santuario è inserito tra le <strong>Nuove Sette Meraviglie del Mondo</strong> e offre un panorama senza tempo che lascia senza fiato chiunque lo raggiunga.</p>
+                <p>Visitala all’alba o al tramonto per cogliere le <strong>sfumature dorate</strong> che avvolgono l’Intihuatana e la Plaza Sagrada: un’esperienza mistica che regala silenzio, meraviglia e connessione con la natura andina. Nelle ore centrali la luce cambia colore, rivelando toni smeraldo e <strong>grigi misteriosi</strong> che esaltano la maestosità delle montagne circostanti.</p>
+                <p>Per gli spiriti avventurosi, la salita a <strong>Huayna Picchu</strong> o alla Montaña offre una prospettiva vertiginosa sulle rovine: i posti sono limitati, quindi prenota con largo anticipo per vivere un punto di vista ancora più esclusivo sulla “città nelle nuvole”.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="sacsayhuaman" class="info-subtitle"><i class="fa-solid fa-block-brick icon-left"></i>  Sacsayhuamán</h3>
+                <img src="../../media/foto/matt.jpg" alt="Rovine di Sacsayhuamán" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Sacsayhuamán</strong> domina Cuzco con bastioni megalitici impressionanti: blocchi di oltre 100 tonnellate incastrati con precisione millimetrica. Teatro di cerimonie solenni e battaglie epiche, oggi offre un <strong>panorama a 360°</strong> sulla città e sulle valli circostanti. Secondo la leggenda, le sue mura rappresentano la testa dell’antico puma che delineava la pianta urbanistica di <strong>Qosqo</strong>, il nome quechua di Cuzco.</p>
+                <p>Ogni 24 giugno qui si celebra l’<strong>Inti Raymi</strong>, la festa del Sole: un’immersione viva nella cosmologia Inca fra costumi, danze e rituali ancestrali.</p>
+                <p>Osserva da vicino l’enigmatico <strong>pietrone a dodici angoli</strong> e le mura a forma di fulmine che testimoniano la maestria antisismica degli antichi costruttori. Al tramonto, quando il cielo si tinge di arancio, <strong>Sacsayhuamán</strong> diventa il punto perfetto per fotografare Cuzco illuminata ai tuoi piedi.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="vallesacra" class="info-subtitle"><i class="fas fa-seedling icon-left"></i> La Valle Sacra</h3>
+                <img src="../../media/foto/vallesacra.jpg" alt="Panorama della Valle Sacra" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>La <strong>Valle Sacra degli Inca</strong> costeggia il fiume Urubamba tra campi di quinoa e vette innevate. Villaggi come <strong>Pisac</strong> e <strong>Ollantaytambo</strong> custodiscono rovine, mercati artigianali e terrazze agricole che ancora alimentano le comunità locali. Questa fertile valle fu il principale <strong>granaio imperiale</strong> e conserva varietà di mais gigante uniche al mondo.</p>
+                <p>Navigare tra i suoi colori, profumi e tradizioni è un viaggio nel tempo che rivela l’armonia millenaria fra uomo e montagna. Fermati in una <strong>chichería tradizionale</strong> per gustare la bevanda di mais fermentato e sentirti parte della quotidianità andina.</p>
+                <p>Completa l’esperienza esplorando le saline di <strong>Maras</strong>, sospese su migliaia di vasche bianche, o i misteriosi anfiteatri agricoli di <strong>Moray</strong>, dove gli Inca sperimentavano microclimi. Tra tessitrici di <strong>Chinchero</strong>, trekking sulle alte cime e mercati variopinti, la Valle Sacra regala giornate dense di storia, natura e spiritualità.</p>
+                <div class="clear-float"></div>
+
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Cuzco: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-pepper-hot icon-left"></i> Sapori Andini e Oasi di Relax</h3>
+                <img src="../../media/foto/ceviche.jpg" alt="[Piatti tradizionali peruviani]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: auto; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Esplorare Cuzco è un'<strong>avventura</strong> in alta quota: ricaricati con i <strong>sapori autentici</strong> del Perù. Delizia il palato con <strong>ceviche</strong> di trota andina, <strong>lomo saltado</strong> saltato al wok e il tradizionale <strong>cuy arrosto</strong>. Nei mercati di <strong>San Pedro</strong> troverai succhi freschi di maracuja, quinoa croccante e l'immancabile <em>chicha morada</em>.</p>
+                <p>Per un’esperienza più informale, prova la <strong>pachamanca</strong> cotta sotto terra o assapora un <strong>mate de coca</strong> su una terrazza panoramica della Plaza de Armas mentre il <strong>sole tramonta</strong> dietro le montagne violette: un momento di pura magia andina.</p>
+                <p>Se ami i dolci, assaggia il <strong>quinoa pudding</strong> o il <em>sachollo de cacao</em>, accompagnati da una tazza di caffè peruviano delle valli di Quillabamba, noto per il suo aroma floreale.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-mountain-sun icon-left"></i> Meraviglie Andine: Oltre Machu Picchu</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline>
+                    <source src="../../media/video/nuovo.mp4" type="video/mp4"> Il tuo browser non supporta il tag video.
+                </video>
+                <p><strong>Cuzco</strong> è un <strong>museo a cielo aperto</strong>: dalla variopinta <strong>Montagna Arcobaleno (Vinicunca, 5 200 m)</strong> ai salares di <strong>Maras</strong>, ogni escursione rivela paesaggi surreali. Passeggia nel quartiere bohemien di <strong>San Blas</strong>, visita il <strong>Qorikancha</strong> – un tempo tempio d’oro del Sole – e percorri l’<strong>Inca Trail</strong> (permesso obbligatorio, da prenotare con 6 mesi di anticipo) per un’immersione totale nella storia.</p>
+                <p>Gli spiriti delle Ande ti accompagnano fra <strong>lagune turchesi</strong>, terrazze sospese e antiche vie lastricate: un labirinto di meraviglie che aspetta solo di essere esplorato con calma e rispetto. Valuta la più accessibile <strong>Rainbow di Palccoyo</strong> se temi l’altitudine: minore dislivello, stessi colori cangianti.</p>
+                <p>Spingiti fino ai <strong>craterici laghi di Ausangate</strong>, ammira i riflessi smeraldo del <strong>Lago Humantay</strong> o cimentati in un’escursione notturna sotto il cielo limpido delle alte quote: un firmamento punteggiato da milioni di stelle ti racconterà le stesse storie che guidavano gli astronomi inca. Per i fotografi, l’ora blu regala scatti da cartolina sulle vette nevose di <strong>Salkantay</strong>.</p>
+                <p><strong>Consigli pratici:</strong> parti prima dell’alba, porta strati termici, crema solare ad alta protezione e abbondante acqua; l’ingresso a Vinicunca costa circa <strong>30 soles</strong>, quello alle saline di Maras 10 soles. Ingaggia guide certificate: sostieni l’economia locale e ricevi spiegazioni culturali profonde.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Vincente: Biglietti, Pass e Spostamenti Intelligenti</h3>
+                <img src="../../media/foto/btc.jpg" alt="[Biglietto per l’ingresso a Machu Picchu]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Una <strong>pianificazione oculata</strong> è la chiave per <strong>massimizzare la tua esperienza</strong> a Cuzco. Prenota con largo anticipo il <strong>biglietto per Machu Picchu</strong> (ingressi contingentati) e il <strong>treno per Aguas Calientes</strong>. Valuta il <strong>Boleto Turístico del Cuzco</strong> per accedere a rovine e musei risparmiando tempo e denaro.</p>
+                <p>Cammina con <strong>scarpe da trekking</strong> robuste, vesti a strati, idratati di frequente e proteggi la pelle dal sole di alta quota. Per affrontare la salita a Huayna Picchu o alla Montaña, concorda sempre gli orari in anticipo e rispetta i limiti di capienza stabiliti dalle autorità peruviane.</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>Il <strong>Perù</strong> accoglie i viaggiatori con calore, e Cuzco è generalmente sicura. Tuttavia, l’altitudine (oltre 3 400 m) può causare <strong>soroche</strong>: riposa, bevi molta acqua e prova il <strong>mate de coca</strong>. Resta aggiornato consultando <strong>“Viaggiare Sicuri”</strong> del MAEC o il portale del tuo paese.</p>
+                        <p>Registra il viaggio su <strong>“Dove Siamo nel Mondo”</strong>, evita aree isolate di notte e usa solo <strong>taxi autorizzati</strong>. Rispetta usanze e ambiente: lascia le rovine come le trovi, non acquistare reperti archeologici e privilegia <strong>guide ufficiali</strong> per percorsi meno battuti. Seguendo queste buone pratiche, potrai goderti la magia di Cuzco e delle Ande in totale serenità.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/PER" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.8760556626204!2d-71.98108338560253!3d-13.53195039048664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f100!3m3!1m2!1s0x914265de3d90c8c3%3A0x9c8bdbd70811dc91!2sCusco%2C%20Per%C3%B9!5e0!3m2!1sit!2sit!4v1714317070243!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a Cuzco. Trova le migliori offerte e pianifica ogni dettaglio.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                    <p class="booking-card-text">Confronta le tariffe e prenota il tuo volo per il Perù alle migliori condizioni.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/cuz/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                    <p class="booking-card-text">Dai boutique hotel coloniali ai lodge nella Valle Sacra, trova la sistemazione ideale vicino a Cuzco.</p>
+                    <a href="https://www.trivago.it/it/srl/hotel-cusco-per%C3%B9?search=200-66633;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-hiking"></i></div>
+                    <h3 class="booking-card-title">Scarica l'Itinerario<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di Cuzco e Machu Picchu.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-peru.pdf">Scarica Guida</button>
+                </div>
+            </div>
+        </div>
+  </section>
+
+  <section id="destination-summary" class="destination-section section-alternate-bg">
+    <div class="container">
+        <h2 class="section-title text-center reveal-on-scroll">Icone di Cuzco: Da Non Perdere</h2>
+        <div class="summary-grid reveal-on-scroll">
+
+            <a href="#machupicchu" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/machu.jpg" alt="Machu Picchu" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fas fa-mountain"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>Machu Picchu</h3>
+                    <p>Il leggendario santuario inca avvolto tra le nubi delle Ande.</p>
+                </div>
+            </a>
+
+            <a href="#sacsayhuaman" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/Sacsayhuamán.jpg" alt="Sacsayhuamán" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fa-solid fa-block-brick"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>Sacsayhuamán</h3>
+                    <p>La poderosa fortezza megalitica che veglia su Cuzco.</p>
+                </div>
+            </a>
+
+            <a href="#vallesacra" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/valle.jpg" alt="Valle Sacra degli Inca" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fas fa-seedling"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>Valle Sacra</h3>
+                    <p>Fiumi, terrazze e villaggi tradizionali nel cuore delle Ande.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Cuzco? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="Cuzco" data-link="Cuzco.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+    </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Cuzco? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>    
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_cuzco.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

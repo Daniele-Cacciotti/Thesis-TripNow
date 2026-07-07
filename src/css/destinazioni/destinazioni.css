@@ -1,0 +1,340 @@
+/* --- Variabili Colore --- */
+:root {
+    --dest-primary: #3a3a3a;
+    --dest-secondary: #4f4f4f;
+    --dest-accent: #FF6F61;
+    --dest-text-light: #f0f0f0;
+    --dest-text-medium: #b0b0b0;
+    --dest-card-bg: #444;
+    --dest-tab-active-bg: var(--dest-accent);
+    --dest-tab-active-text: var(--dest-primary);
+    --dest-tab-inactive-bg: rgba(255, 255, 255, 0.05);
+    --dest-tab-inactive-text: var(--dest-text-medium);
+    --dest-tab-hover-bg: rgba(255, 255, 255, 0.1);
+    --dest-transition-fast: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --dest-transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Stile Base della Pagina --- */
+body.theme-dark {
+    background: linear-gradient(to bottom, #000000, var(--dest-tab-active-text));
+    color: var(--dest-text-light);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.destinations-hero {
+    height: 65vh;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.destinations-hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../../../media/foto/oblo.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.5) blur(2px);
+    transform: scale(1.1);
+    animation: zoomOutBg 15s ease-out infinite alternate;
+}
+
+.destinations-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    z-index: 1;
+}
+
+.destinations-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.destinations-hero-content h1,
+.destinations-hero-content p,
+.destinations-hero-content .scroll-indicator {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-hero-title {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    animation: fadeInSlideUp 0.8s 0.5s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.animate-hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    color: var(--dest-text-medium);
+    margin-bottom: 30px;
+    animation: fadeInSlideUp 0.8s 0.7s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.scroll-indicator {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeInSlideUp 0.8s 0.9s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.animate-bounce {
+    animation: fadeInSlideUp 0.8s 0.9s forwards cubic-bezier(0.25, 0.8, 0.25, 1), bounceArrow 2s 1.7s infinite ease-in-out;
+}
+
+.destinations-main-content {
+    padding: 80px 0;
+}
+
+.continent-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 60px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-tab {
+    background-color: var(--dest-tab-inactive-bg);
+    color: var(--dest-tab-inactive-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--dest-transition-fast);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.filter-tab i {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.filter-tab:hover {
+    background-color: var(--dest-tab-hover-bg);
+    color: var(--dest-text-light);
+}
+
+.filter-tab.active {
+    background-color: var(--dest-tab-active-bg);
+    color: var(--dest-tab-active-text);
+    box-shadow: 0 4px 15px rgba(232, 200, 193, 0.3);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.destination-card {
+    background-color: var(--dest-card-bg);
+    border-radius: 20px;;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0, 0.3);
+    transition: var(--dest-transition-slow);
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    display: flex;
+    flex-direction: column;
+    animation: cardFadeIn 0.6s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-delay: var(--card-delay, 0s);
+}
+
+.destination-card.hidden {
+    animation: cardFadeOut 0.4s forwards ease-out;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0, 0.4);
+}
+
+.card-image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.destination-card:hover .card-image-container img {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--dest-transition-fast);
+}
+
+.destination-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-discover-btn {
+    background-color: var(--dest-accent);
+    color: var(--dest-primary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid var(--dest-accent);
+    transition: var(--dest-transition-fast);
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.destination-card:hover .card-discover-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.card-discover-btn:hover {
+    background-color: transparent;
+    color: var(--dest-accent);
+    transform: scale(1.05);
+}
+
+.card-discover-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card-discover-btn:hover i {
+    transform: translateX(5px);
+}
+
+.card-content {
+    padding: 20px 25px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dest-text-light);
+    margin: 0 0 10px 0;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--dest-text-medium);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: 0px;
+}
+
+/* Animazioni */
+@keyframes zoomOutBg {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+  
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cardFadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .continent-filters {
+        border-radius: 15px;
+        padding: 15px;
+        gap: 8px;
+    }
+    .filter-tab {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    .destinations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .card-image-container {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+     .filter-tab {
+        flex-grow: 1;
+        justify-content: center;
+    }
+     .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/petra.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Petra: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span lang="ar" dir="rtl" class="logodest" style="font-family:'Amiri','Poppins',sans-serif;">البترا</span></div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="#">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francesco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Petra, Giordania</h1>
+            <p class="hero-subtitle"><b>La città perduta scolpita nella roccia rosa</p></b>
+        </div>
+        <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="Petra" data-lat="30.3285" data-lon="35.4444" data-model-path="/media/3d/petra/scene.glb" aria-label="Esplorazione 3D immersiva di Petra">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">Petra dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la città rosa</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Il cuore di Petra</h2><p class="phase-subtitle">Tra canyon e monumenti nabatei</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Al-Khazneh, Ad-Deir, la Via delle Facciate</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/petra.jpg" alt="Vista aerea di Petra" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Petra" class="btn-explore-cta" aria-label="Esplora Petra interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Petra interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di Petra</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/petraantica.jpeg" alt="Veduta storica di Petra" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Immergiti nella leggenda di Petra, la <strong>"città rosa"</strong> scolpita nell'arenaria, un gioiello archeologico nel cuore della Giordania. Fondata dai <strong>Nabatei</strong>, un ingegnoso popolo nomade arabo, intorno al IV secolo a.C., Petra divenne una fiorente metropoli grazie alla sua posizione cruciale sulle antiche <strong>rotte carovaniere</strong> che trasportavano incenso, mirra e spezie preziose tra Arabia, Egitto e il Mediterraneo.</p>
+                <p>I Nabatei non erano solo mercanti astuti, ma anche maestri ingegneri. Conquistarono il deserto creando un complesso <strong>sistema idraulico</strong> di canali e cisterne, vitale per la sopravvivenza della città. La loro eredità più spettacolare è l'<strong>architettura rupestre</strong>: facciate monumentali, tombe elaborate e templi grandiosi furono intagliati direttamente nella roccia, creando capolavori come il famoso <strong>Tesoro (Al-Khazneh)</strong> e l'imponente <strong>Monastero (Ad-Deir)</strong>, simboli eterni della loro abilità.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-masks-theater icon-left"></i> Dominio Romano e Declino</h3>
+                <img src="../../media/foto/romapetra.jpg" alt="Dettaglio di sculture e incisioni nabatee" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>L'influenza romana arrivò nel 106 d.C. con l'annessione all'<strong>Impero Romano</strong> sotto Traiano. Questo periodo portò nuove costruzioni come strade colonnate e terme, integrando lo stile romano con quello nabateo. Tuttavia, il cambiamento delle rotte commerciali e violenti terremoti portarono a un lento declino. Petra svanì dalle mappe del mondo occidentale, custodita solo dalla memoria delle tribù beduine locali.</p>
+                <p>Fu solo nel 1812 che l'esploratore svizzero <strong>Johann Ludwig Burckhardt</strong>, travestito, svelò nuovamente Petra al mondo. Da allora, il suo fascino non ha smesso di attrarre viaggiatori, studiosi e sognatori. Riconosciuta come <strong>Patrimonio UNESCO</strong> e una delle <strong>Sette Meraviglie del Mondo Moderno</strong>, Petra oggi non è solo un sito archeologico, ma un'esperienza indimenticabile, un portale verso un passato scolpito nella pietra e nel tempo.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Petra: Le sue Gemme più preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="khazneh" class="info-subtitle"><i class="fas fa-landmark icon-left"></i>Il Tesoro (Al-Khazneh)</h3>
+                <img src="../../media/foto/aaaaaaa.jpg" alt="Facciata del Tesoro di Petra" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il <strong>Tesoro</strong>, conosciuto come <strong>Al-Khazneh</strong>, è senza dubbio l'<strong>emblema più celebre</strong> di Petra. Questa magnifica <strong>facciata alta quasi 40 metri</strong> scolpita interamente nella roccia rappresenta un capolavoro dell'<strong>ingegneria</strong> e dell'<strong>arte nabatea</strong>. Situata alla fine del <strong>Siq</strong>, la sua comparsa improvvisa lascia senza parole. Si ritiene che l'edificio sia stato originariamente un <strong>mausoleo reale</strong>, anche se molte leggende locali parlano di <strong>tesori nascosti</strong> in cima alla struttura. Le sue <strong>colonne corinzie</strong>, le <strong>sculture minuziose</strong> e la <strong>perfezione simmetrica</strong> testimoniano la grandezza della civiltà che l'ha realizzata.</p>
+                <p>Visitare il Tesoro nelle <strong>prime ore del mattino</strong> o nel <strong>tardo pomeriggio</strong> regala un'esperienza ancora più suggestiva, quando la <strong>luce solare</strong> accende le <strong>sfumature rosa e arancio</strong> dell’arenaria. È un luogo che incarna tutto il <strong>fascino</strong> e il <strong>mistero</strong> di Petra, una <strong>porta simbolica</strong> verso un <strong>mondo antico</strong> e affascinante che non smette mai di meravigliare.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="addeir" class="info-subtitle"><i class="fas fa-place-of-worship icon-left"></i> Il Monastero (Ad-Deir)</h3>
+                <img src="../../media/foto/AdDeir.jpg" alt="Facciata del Monastero Ad-Deir" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il <strong>Monastero</strong>, o <strong>Ad-Deir</strong>, è una delle <strong>strutture più maestose</strong> di Petra. Simile al Tesoro ma ancora più grande, la sua <strong>imponente facciata</strong> domina un altopiano raggiungibile solo dopo una lunga <strong>salita di oltre 800 gradini</strong> intagliati nella roccia. Originariamente probabilmente utilizzato come <strong>tempio</strong> o <strong>luogo di culto</strong>, durante l'epoca bizantina fu convertito in una <strong>chiesa</strong>, da cui deriva il nome moderno. La <strong>semplicità decorativa</strong> della sua facciata esterna contrasta con la sua imponenza e lo rende un monumento di <strong>spiritualità</strong> e <strong>potenza</strong>.</p>
+                <p>Arrivare ad Ad-Deir è un’impresa che viene <strong>ampiamente ricompensata</strong>. Oltre alla bellezza della struttura stessa, il luogo offre uno dei <strong>panorami più spettacolari</strong> dell’intera regione: da qui si domina l’intera <strong>valle di Petra</strong> e si può godere di un <strong>silenzio solenne</strong>, rotto solo dal vento. È uno di quei luoghi che invitano alla <strong>riflessione</strong> e al <strong>rispetto per la grandezza del passato</strong>.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="siq" class="info-subtitle"><i class="fas fa-route icon-left"></i> Il Siq</h3>
+                <img src="../../media/foto/ilsiq1.jpg" alt="Ingresso del Siq a Petra" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il <strong>Siq</strong> è molto più di un semplice <strong>ingresso</strong>: è una vera e propria <strong>introduzione scenografica</strong> all’universo di Petra. Questo <strong>stretto canyon naturale</strong>, lungo circa <strong>1.2 km</strong>, si snoda tra pareti di roccia alte fino a <strong>80 metri</strong>, creando un percorso <strong>suggerente</strong> e <strong>misterioso</strong>. Camminare lungo il Siq è come intraprendere un <strong>pellegrinaggio nel tempo</strong>: ogni curva svela nuove sfumature, <strong>giochi di luce</strong> e <strong>antichi resti nabatei</strong> come bassorilievi e canali scavati nella pietra per incanalare l’acqua.</p>
+                <p>Il momento più magico si verifica quando, alla fine del percorso, si intravede per la prima volta il <strong>Tesoro</strong> che appare incorniciato dalle pareti rocciose. Questo passaggio è considerato uno dei più <strong>emozionanti</strong> dell’intero viaggio a Petra. Il Siq non è solo un accesso, ma una <strong>componente essenziale</strong> dell’esperienza, capace di costruire <strong>tensione</strong>, <strong>meraviglia</strong> e una <strong>connessione profonda</strong> con l’ambiente naturale e spirituale della città antica.</p>
+                <div class="clear-float"></div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Petra: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-utensils icon-left"></i> Delizie Culinarie e Oasi di Relax</h3>
+                <img src="../../media/foto/mansaf.jpg" alt="[Immagine di una tavola imbandita con piatti giordani]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: auto; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Esplorare Petra è un'<strong>avventura</strong> che richiede energia, e quale modo migliore per ricaricarsi se non immergendosi nei <strong>sapori autentici</strong> della Giordania? La vicina cittadina di <strong>Wadi Musa</strong> è il tuo punto di riferimento gastronomico. Lasciati tentare dal <strong>Mansaf</strong>, il piatto nazionale per eccellenza: un <strong>trionfo di agnello tenerissimo</strong> cotto in uno yogurt fermentato (<em>jameed</em>) e servito su un letto di <strong>riso aromatico</strong>, spesso guarnito con <strong>mandorle</strong> e <strong>pinoli tostati</strong>. È più di un pasto, è un <strong>rito sociale</strong>.</p>
+                <p>Per un'esperienza più informale, esplora i <strong>ristoranti locali</strong> che offrono una vasta gamma di <strong>mezze</strong>: hummus cremoso, moutabel affumicato (crema di melanzane), croccanti <strong>falafel</strong>, tabbouleh fresco e <strong>warak enab</strong> (involtini di foglie di vite). Accompagna il tutto con il <strong>pane arabo caldo</strong> (<em>khubz</em>). Se cerchi un'atmosfera familiare, <strong>"My Mom's Recipe Restaurant"</strong> è rinomato per le sue <strong>ricette tradizionali</strong>, mentre <strong>"Beit Al-Barakah"</strong> conquista con le sue <strong>proposte vegetariane</strong> creative. Dopo le tue <strong>scoperte archeologiche</strong>, trova rifugio in una delle tante <strong>terrazze panoramiche</strong> degli hotel o dei caffè di Wadi Musa. <strong>Sorseggiare un tè alla menta</strong> dolce e profumato mentre il <strong>sole tramonta</strong> dietro le montagne rosate di Petra è un momento di <strong>pura magia</strong>, un'oasi di <strong>tranquillità</strong> per riflettere sulle meraviglie viste durante il giorno.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-monument icon-left"></i> Meraviglie Scolpite: Oltre il Tesoro e il Monastero</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline> <source src="../../media/video/clip.mp4" type="video/mp4"> Il tuo browser non supporta il tag video.</video>
+                <p><strong>Petra</strong> è un <strong>museo a cielo aperto</strong> vasto e complesso, e mentre il <strong>Tesoro</strong> e il <strong>Monastero</strong> catturano l'immaginazione collettiva, innumerevoli altri <strong>monumenti</strong> attendono di essere scoperti. Percorrendo la <strong>Via delle Facciate</strong>, ti troverai circondato da <strong>tombe nabatee</strong> scavate nella roccia, ognuna con la sua <strong>storia silenziosa</strong>. Non limitarti a guardare dal basso: avventurati verso le <strong>Tombe Reali</strong>. La <strong>Tomba dell'Urna</strong>, così chiamata per l'urna scolpita sulla sua sommità, ti accoglierà con un'ampia <strong>terrazza</strong> e interni sorprendentemente spaziosi, usati in epoca bizantina come chiesa. Ammira le <strong>incredibili venature naturali</strong> dell'arenaria nella <strong>Tomba della Seta</strong> e lasciati stupire dalla <strong>grandiosità della Tomba Palazzo</strong>, che imita la facciata di un palazzo romano.</p>
+                <p>Scendi poi verso il cuore della città antica per scoprire il <strong>Teatro Romano</strong>, interamente scavato nella roccia dai Nabatei e successivamente ampliato dai Romani, capace di contenere circa <strong>8500 spettatori</strong>. Immagina le rappresentazioni che un tempo animavano questa cavea spettacolare. Per i più avventurosi, la salita all'<strong>Altare del Sacrificio (Al-Madbah)</strong> è un must. Il <strong>sentiero è ripido</strong> ma ben segnalato, e una volta in cima, sarai ricompensato con una <strong>vista a 360 gradi</strong> che abbraccia l'intera vallata, inclusa una <strong>prospettiva unica</strong> sul Tesoro nascosto laggiù. Lungo la discesa (seguendo un percorso alternativo), scoprirai <strong>altre tombe meno conosciute</strong> e affascinanti, come la <strong>Tomba del Soldato Romano</strong> e il <strong>Triclinio del Giardino</strong>. Petra è un <strong>labirinto di storia</strong>, concediti il tempo di perderti tra le sue meraviglie.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Vincente: Biglietti, Pass e Spostamenti Intelligenti</h3>
+                <img src="../../media/foto/Jordan-pass.jpg" alt="[Immagine composita con una mappa di Petra e il Jordan Pass]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Una <strong>pianificazione oculata</strong> è la chiave per <strong>massimizzare la tua esperienza</strong> a Petra. Il consiglio numero uno è acquistare il <strong>Jordan Pass</strong> online (www.jordanpass.jo) <strong>prima</strong> del tuo arrivo in Giordania. Questo <strong>pass turistico digitale</strong> non solo include il <strong>costo del visto</strong> d'ingresso nel paese (a condizione di rimanere almeno 3 notti), ma ti garantisce anche l'<strong>accesso a Petra</strong> per 1, 2 o 3 giorni consecutivi (a seconda del pacchetto scelto) e l'<strong>ingresso gratuito</strong> a oltre 40 siti turistici in tutta la Giordania. È un <strong>risparmio significativo</strong> di tempo e denaro. Scaricalo sul tuo telefono o stampalo per mostrarlo all'aeroporto e all'ingresso dei siti.</p>
+                <p>Una volta a Petra, preparati a <strong>esplorare a piedi</strong>. Il sito è enorme! Indossa <strong>scarpe da trekking</strong> comode e chiuse, <strong>vestiti a strati</strong> (le temperature possono variare), porta <strong>abbondante acqua</strong>, <strong>crema solare</strong> ad alta protezione, <strong>occhiali da sole</strong> e un <strong>cappello</strong>. Il percorso principale dal <strong>Visitor Centre</strong> attraverso il suggestivo <strong>Siq</strong> fino al <strong>Tesoro</strong> è di circa <strong>1.2 km</strong>, prevalentemente pianeggiante. Da lì, le distanze aumentano: per raggiungere il <strong>Monastero</strong>, ad esempio, dovrai affrontare una <strong>salita di circa 800 gradini</strong> scavati nella roccia. Se la fatica si fa sentire o hai limitazioni fisiche, puoi usufruire dei <strong>servizi di trasporto locali a pagamento</strong>: carrozze trainate da cavalli percorrono il Siq, mentre <strong>asini e cammelli</strong> sono disponibili per le salite più impegnative. <strong>Ricorda di concordare sempre il prezzo</strong> prima di salire e sii un <strong>viaggiatore responsabile</strong>, valutando le condizioni degli animali.</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>La <strong>Giordania</strong> è rinomata per la sua <strong>ospitalità</strong> e per essere una <strong>destinazione generalmente sicura</strong> per i viaggiatori internazionali. Le aree turistiche come Petra sono <strong>ben presidiate</strong> e le autorità locali sono molto <strong>attente alla sicurezza</strong> dei visitatori. Tuttavia, come per ogni viaggio, è fondamentale adottare un <strong>approccio informato e prudente</strong>. La situazione geopolitica nella regione mediorientale richiede di <strong>rimanere aggiornati</strong> sugli ultimi sviluppi.</p>
+                        <p>Prima della partenza, consulta tassativamente il sito <strong>"Viaggiare Sicuri"</strong> curato dall'<strong>Unità di Crisi del Ministero degli Affari Esteri italiano</strong> (o il portale equivalente del tuo paese). Qui troverai le <strong>informazioni più recenti</strong> sulla sicurezza, eventuali <strong>avvisi specifici</strong> e <strong>consigli sanitari</strong>. È altamente raccomandato <strong>registrare il proprio viaggio</strong> sul sito "Dove Siamo nel Mondo" per essere rintracciabili in caso di emergenza. Durante il soggiorno, usa il <strong>buon senso</strong>: evita <strong>manifestazioni pubbliche</strong>, non fotografare <strong>installazioni militari</strong> o di polizia, rispetta le <strong>usanze locali</strong> (soprattutto nell'abbigliamento fuori dalle aree prettamente turistiche) e non avventurarti in zone remote o vicine ai confini senza una <strong>guida autorizzata</strong>. Affidati a <strong>guide ufficiali</strong> all'interno del sito di Petra per <strong>percorsi meno battuti</strong>. Seguendo queste semplici precauzioni, potrai <strong>goderti la maestosità</strong> di Petra in <strong>totale serenità</strong>.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/JOR" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.2269319172057!2d35.478105!3d30.321635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f50!3m3!1m2!1s0x15016effa1de141b%3A0x62491d6900b98396!2sWadi%20Musa%2C%20Giordania!5e0!3m2!1sit!2sit!4v1714406500000!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+      <section id="destination-booking" class="destination-section booking-section-revamped">
+            <div class="container text-center">
+                <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+                <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a Petra. Trova le migliori offerte e pianifica ogni dettaglio.</p>
+                <div class="booking-cards-container reveal-on-scroll">
+                    <div class="booking-card">
+                        <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                        <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                        <p class="booking-card-text">Compara le tariffe e prenota il tuo volo per la Giordania alle migliori condizioni.</p>
+                        <a href="https://www.skyscanner.it/trasporti/voli/it/amm/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-card-icon"><i class="fas fa-hotel"></i></div>
+                        <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                        <p class="booking-card-text">Dagli hotel di lusso ai campi beduini, trova la sistemazione ideale vicino a Petra.</p>
+                        <a href="https://www.trivago.it/it/srl/hotel-wadi-musa-petra-giordania?search=200-409767;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                        <h3 class="booking-card-title">Scarica l'Itinerario <br> (by Travel365) </h3>
+                        <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di Petra.</p>
+                        <button class="booking-button secondary download-btn" data-file="guida-petra.pdf">Scarica Guida</button>
+                    </div>
+                </div>
+            </div>
+      </section>
+
+      <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone di Petra: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#khazneh" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/al-khazneh.jpg" alt="Il Tesoro di Petra" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-landmark"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Il Tesoro (Al-Khazneh)</h3>
+                        <p>L'iconica facciata che emerge dal Siq, simbolo eterno di Petra.</p>
+                    </div>
+                </a>
+    
+                <a href="#addeir" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/addeir1.jpg" alt="Il Monastero di Petra" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-place-of-worship"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Il Monastero (Ad-Deir)</h3>
+                        <p>Imponente e maestoso, raggiungibile con una scalinata panoramica.</p>
+                    </div>
+                </a>
+    
+                <a href="#siq" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/siq1.jpg" alt="Il Siq di Petra" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-route"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Il Siq</h3>
+                        <p>Lo stretto e suggestivo canyon d'ingresso alla città antica.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Petra? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="Petra" data-link="Petra.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+        </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Petra? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_petra.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_red.css" />
+    <!-- I file css sono stati divisi in sezioni per migliorare manutenibilità e leggibilità -->
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/homepage/hero_searchbar.css">
+    <link rel="stylesheet" href="../css/homepage/special_offers.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/special_offers.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/featured_trip.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/featured_trip.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/portfolio.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/portfolio.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/info-usp.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/info-usp.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/testimonials.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/testimonials.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/contatti.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/contatti.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/newsletter.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/newsletter.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/cookie_banner.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/cookie_banner.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Homepage | TripNow.com</title>
+</head>
+<body>
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="continent-list">
+                                <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                            </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+                <li><a href="#specoff">Offerte</a></li>
+                <li><a href="#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="login-modal" class="modal" style="display:none;">
+        <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+        <div id="modal-form-container">
+            <h2 id="modal-title">Accedi</h2>
+            <form id="modal-form">
+                <input type="email" id="modal-email" placeholder="Email" required>
+                <input type="password" id="modal-password" placeholder="Password" required>
+                <button type="submit" id="modal-submit-btn">Accedi</button>
+            </form>
+            <p id="modal-switch-text">Non hai un account? <a href="#" id="modal-switch-link">Registrati</a></p>
+            <p id="modal-message"></p>
+        </div>
+        <div id="totp-step" style="display:none;">
+            <h2>Verifica 2FA</h2>
+            <input type="text" id="totp-input" maxlength="6" pattern="[0-9]{6}" placeholder="000 000" autocomplete="one-time-code">
+            <button id="totp-submit-btn">Verifica</button>
+            <div style="margin-top:.75rem;">
+                <input type="text" id="backup-input" placeholder="Oppure inserisci un backup code" style="font-size:.82rem;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Prima sezione con la barra di ricerca -->
+    <section class="hero">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted playsinline>
+            <source src="../../media/video/video-background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content reveal-on-load">
+            <h1><i class="fas fa-compass"></i> <span id="hero-typewriter"></span><span class="typewriter-cursor">|</span></h1>
+            <p>Viaggi semplici, esperienze uniche.</p>
+        </div>
+        <!-- Sezione di ricerca con suggerimenti -->
+        <form id="searchForm" class="search-form-integrated reveal-on-load-delayed search-two-rows ultra-smart-search">
+            <div class="search-top-row">
+            <div class="search-input-group destination-group">
+                <i class="fas fa-map-marker-alt input-icon"></i>
+                <input list="destinations" name="destination" type="text" id="destination" placeholder="Dove vuoi andare? (Powered by Booking.com)" class="search-input" required>
+                <datalist id="destinations">
+                    <option value="Roma">
+                    <option value="Parigi">
+                    <option value="Istanbul">
+                    <option value="Petra">
+                    <option value="Il Cairo">
+                    <option value="New York">
+                    <option value="San Francisco">
+                    <option value="Rio de Janeiro">
+                    <option value="Cuzco">      
+                </datalist>
+            </div>
+            </div>
+            <div class="search-bottom-row">
+            <div class="search-input-group date-group">
+                <i class="fas fa-calendar-day input-icon"></i>
+                <input type="date" name="checkin" id="checkin" placeholder="Check-in" class="search-input date-input" required>
+            </div>
+            <div class="search-input-group date-group">
+                <i class="fas fa-calendar-alt input-icon"></i>
+                <input type="date" name="checkout" id="checkout" placeholder="Check-out" class = "search-input date-input" required>
+            </div>
+            <div class="search-input-group guests-group">
+                <i class="fas fa-users input-icon"></i>
+                <input type="number" name="guests" id="guests" placeholder="Ospiti" min="1" class="search-input guests-input" required>
+            </div>
+            <button class="search-button-integrated" id="searchButton" type="submit">
+                <i class="fas fa-search"></i>
+                <span>Cerca</span>
+            </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Sezione Stats -->
+    <section class="stats-section reveal-on-scroll">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-globe-europe"></i>
+                <span class="stat-number" data-target="120">0</span><span class="stat-suffix">+</span>
+                <p>Destinazioni</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span class="stat-number" data-target="50000">0</span><span class="stat-suffix">+</span>
+                <p>Viaggiatori Felici</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span class="stat-number" data-target="4" data-decimal="1">0</span><span class="stat-suffix">/5</span>
+                <p>Valutazione Media</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-headset"></i>
+                <span class="stat-number" data-target="24">0</span><span class="stat-suffix">/7</span>
+                <p>Supporto Clienti</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Deals Ticker -->
+    <div class="deals-ticker-wrap">
+        <span class="ticker-label"><i class="fas fa-bolt"></i> OFFERTE LIVE</span>
+        <div class="deals-ticker">
+            <div class="ticker-track">
+                <span>✈️ Roma → New York da <strong>€399</strong></span>
+                <span>🏨 Hotel 5★ a Parigi <strong>-30%</strong></span>
+                <span>🌊 Crociera Mediterraneo da <strong>€599</strong></span>
+                <span>🏔️ Avventura Machu Picchu da <strong>€1.199</strong></span>
+                <span>🏖️ Maldive All-Inclusive da <strong>€1.899</strong></span>
+                <span>🕌 Istanbul Weekend da <strong>€249</strong></span>
+                <span>🗽 New York City Break da <strong>€549</strong></span>
+                <span>🌅 Santorini 7 notti da <strong>€799</strong></span>
+                <!-- duplicati per loop continuo -->
+                <span>✈️ Roma → New York da <strong>€399</strong></span>
+                <span>🏨 Hotel 5★ a Parigi <strong>-30%</strong></span>
+                <span>🌊 Crociera Mediterraneo da <strong>€599</strong></span>
+                <span>🏔️ Avventura Machu Picchu da <strong>€1.199</strong></span>
+                <span>🏖️ Maldive All-Inclusive da <strong>€1.899</strong></span>
+                <span>🕌 Istanbul Weekend da <strong>€249</strong></span>
+                <span>🗽 New York City Break da <strong>€549</strong></span>
+                <span>🌅 Santorini 7 notti da <strong>€799</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seconda sezione: Offerte Speciali -->
+    <section class="special-offers" id = "specoff">
+        <h2>Ancora indeciso? Lasciati ispirare!</h2>
+        <div class="offers">
+            <div class="offer-card reveal-on-scroll">
+                <div class="offer-card-image-container">
+                    <img src="../../media/foto/copacabana.jpg" alt="Offerta Viaggio Spiaggia" loading="lazy" decoding="async" width="600" height="400">
+                </div>
+                <div class="offer-card-content">
+                    <h3><i class= "fa-solid fa-tree-palm" ></i> Copacabana, Brasile </h3>
+                    <p>Lasciati travolgere dalla magia di Rio: spiagge dorate, mare cristallino e il calore del Brasile. Un paradiso tropicale per chi sogna relax e festa.</p>
+                    <a href="rio_de_janeiro.html" class="cta-button">Scopri di più</a>
+                </div>
+            </div>
+            <div class="offer-card reveal-on-scroll">
+                <div class="offer-card-image-container">
+                    <img src="../../media/foto/machupicchu.jpg" alt="Offerta Viaggio Montagna" loading="lazy" decoding="async" width="600" height="400">
+                </div>
+                <div class="offer-card-content">
+                    <h3><i class="fas fa-mountain"></i> Machu Picchu, Perù</h3>
+                    <p>Esplora una delle meraviglie del mondo tra le Ande peruviane. Un viaggio spirituale tra rovine incantate e panorami mozzafiato.</p>
+                    <a href="Cuzco.html" class="cta-button">Scopri di più</a>
+                </div>
+            </div>
+            <div class="offer-card reveal-on-scroll">
+                <div class="offer-card-image-container">
+                    <img src="../../media/foto/newyork.jpg" alt="Offerta Viaggio Città" loading="lazy" decoding="async" width="600" height="400">
+                </div>
+                <div class="offer-card-content">
+                    <h3><i class="fas fa-city"></i> New York, USA</h3>
+                    <p>Vivi l’energia unica della Grande Mela: skyline iconici, cultura cosmopolita e shopping sfrenato ti aspettano a ogni angolo.</p>
+                    <a href="New_York.html" class="cta-button">Scopri di più</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terza sezione: Offerte Estive -->
+    <section id="featured-trips" class="featured-trips reveal-on-scroll"> 
+        <div class="featured-trips-bg"></div> 
+        <div class="featured-trips-overlay"></div> 
+        
+        <div class="featured-trips-content">
+            <div class="featured-trips-header">
+                <h2>Estate con TripNow.com</h2> 
+                <p>Scopri le nostre selezioni speciali e le mete più richieste del momento!</p>
+            </div>
+            
+            <div class="offers"> 
+                <div class="offer-card">
+                    <div class="offer-card-image-container">
+                        <img src="../../media/foto/goldengate.jpg" alt="Viaggio a San Francisco" loading="lazy" decoding="async" width="600" height="400">
+                    </div>
+                    <div class="offer-card-content">
+                        <h3><i class="fa-solid fa-bridge-suspension"></i>Esplora San Francisco</h3>
+                        <p>Scopri le meraviglie della città del Golden Gate: luoghi iconici, dritte di viaggio, itinerari e link utili per prenotare.</p>
+                        <a href="San_Francisco.html" class="cta-button">Vai alla Pagina</a>
+                    </div>
+                </div> 
+
+                <div class="offer-card"> 
+                    <div class="offer-card-image-container">
+                        <img src="../../media/foto/costa.jpg" alt="Viaggio Crociera" loading="lazy" decoding="async" width="600" height="400">
+                    </div>
+                    <div class="offer-card-content">
+                        <h3><i class="fas fa-ship"></i> Crociere da Sogno</h3> 
+                        <p>Visita il sito ufficiale Costa per scoprire destinazioni, offerte aggiornate e prenotare facilmente la tua crociera ideale.</p>
+                        <a href="https://www.costacrociere.it/crociere-2025.html" target="_blank" class="cta-button">Vai al sito Ufficiale</a>
+                    </div>
+                </div>
+
+                <div class="offer-card"> 
+                    <div class="offer-card-image-container">
+                        <img src="../../media/foto/cairo.jpg" alt="Viaggio Egitto" loading="lazy" decoding="async" width="600" height="400">
+                    </div>
+                    <div class="offer-card-content">
+                        <h3><i class="fa-classic fa-solid fa-chart-pyramid fa-fw"></i> Viaggio "Faraonico"</h3> 
+                        <p>Lasciati affascinare dai misteri dell'antico Egitto: scopri come prenotare il tuo viaggio tra le meraviglie dell'antico Egitto.</p>
+                        <a href="Il_Cairo.html" class="cta-button">Vai alla Pagina</a>
+                    </div>
+                </div>
+
+                <div class="offer-card"> 
+                    <div class="offer-card-image-container">
+                        <img src="../../media/foto/colosseo.jpg" alt="Viaggio Roma" loading="lazy" decoding="async" width="600" height="400">
+                    </div>
+                    <div class="offer-card-content">
+                        <h3><i class="fa-solid fa-landmark"></i>Roma "Caput Mundi"</h3>
+                        <p>Storia, monumenti e consigli locali: accedi alla pagina su Roma con info dettagliate e link diretti per prenotare.</p>
+                        <a href="Roma.html" class="cta-button">Vai alla Pagina</a>
+                    </div>
+                </div>
+                
+                <div class="offer-card"> 
+                    <div class="offer-card-image-container">
+                        <img src="../../media/foto/torre.jpg" alt="Viaggio a Parigi" loading="lazy" decoding="async" width="600" height="400">
+                    </div>
+                     <div class="offer-card-content">
+                        <h3><i class="fa-solid fa-croissant"></i>Très Parisien</h3>
+                        <p>Romanticismo, arte e caffè ti aspettano: vivi Parigi con info pratiche e link per organizzare il viaggio.</p>
+                        <a href="Parigi.html" class="cta-button">Vai alla Pagina</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quarta sezione: portfolio -->
+    <section class="portfolio-grid reveal-on-scroll">
+        <h2 class="portfolio-title">Proposte da Piattaforme Selezionate</h2>
+        <div class="portfolio-container">
+            <a href="https://www.booking.com/dealspage.it.html" target="_blank" class="portfolio-item item-1">
+                <div class="portfolio-overlay"></div> <div class="portfolio-content">
+                    <h3>Estate 2025</h3>
+                    <p>Offerte di tendenza by Booking.com!</p>
+                </div>
+                <span class="portfolio-arrow"><i class="fas fa-chevron-right"></i></span> 
+            </a>
+            <a href="https://www.it.lastminute.com" target="_blank" class="portfolio-item item-2 item-tall">
+                <div class="portfolio-overlay"></div>
+                <div class="portfolio-content">
+                    <h3>Last minute</h3>
+                    <p>Viaggi scontati in partenza nei prossimi 30 giorni</p>
+                </div>
+                <span class="portfolio-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="https://www.skyscanner.it/notizie/isole-tropicali" target="_blank" class="portfolio-item item-3">
+                <div class="portfolio-overlay"></div>
+                <div class="portfolio-content">
+                    <h3>Ponte di Ferragosto</h3>
+                    <p>Gli ultimi posti disponibili</p>
+                </div>
+                <span class="portfolio-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="https://www.weroad.it/viaggi-ponte-2-giugno" target="_blank" class="portfolio-item item-4">
+                <div class="portfolio-overlay"></div>
+                <div class="portfolio-content">
+                    <h3>Ponte 2 giugno</h3>
+                    <p>Dai inizio alla tua estate!</p>
+                </div>
+                <span class="portfolio-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="https://www.airbnb.it/?refinement_paths%5B%5D=%2Fhomes&search_mode=flex_destinations_search&flexible_trip_lengths%5B%5D=one_week&location_search=MIN_MAP_BOUNDS&monthly_start_date=2025-05-01&monthly_length=3&monthly_end_date=2025-08-01&category_tag=Tag%3A5348&price_filter_input_type=0&channel=EXPLORE&adults=2&source=structured_search_input_header&search_type=filter_change" target="_blank" class="portfolio-item item-5">
+                <div class="portfolio-overlay"></div>
+                <div class="portfolio-content">
+                    <h3>Camera Per due</h3>
+                    <p>Se prenoti in 2, in questi viaggi è gratuita!</p>
+                </div>
+                <span class="portfolio-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quinta sezione: Perchè sceglierci? -->
+    <section class="info-usp reveal-on-scroll"> 
+        <div class="info-usp-container">
+            <div class="info-columns">
+                <div class="info-column">
+                    <span class="column-tag tag-chi">CHI?</span>
+                    <h3>Tutto il viaggio,Un solo posto</h3>
+                    <p>Stanco di aprire mille schede per confrontare voli, hotel e treni? TripNow riunisce le migliori offerte dai principali siti di prenotazione in un'unica piattaforma facile da usare. Il tuo viaggio perfetto inizia qui.</p>
+                </div>
+                <div class="info-column">
+                    <span class="column-tag tag-cosa">COSA?</span>
+                    <h3>Voli,Alloggi e Altro</h3>
+                    <p>Cerchiamo e confrontiamo per te milioni di opzioni per voli (di linea e low-cost), hotel, appartamenti, case vacanza, treni e altro ancora. Visualizza prezzi e disponibilità aggregati, tutto in un'unica ricerca.</p>
+                </div>
+                <div class="info-column">
+                    <span class="column-tag tag-come">COME?</span>
+                    <h3>Trova,Confronta,Prenota!</h3>
+                    <p> Inserisci destinazione e date, confronta facilmente le opzioni trovate per te sui migliori siti. Una volta scelto, ti reindirizziamo in un click al sito partner per completare la prenotazione sulla loro piattaforma fidata e sicura.</p>
+                </div>
+            </div>
+            <div class="info-images">
+                <div class="info-image-item">
+                    <img src="../../media/foto/providers.jpeg" alt="Aggregatore di offerte viaggio voli e hotel" loading="lazy" decoding="async" width="800" height="500">
+                </div>
+                <div class="info-image-item">
+                    <img src="../../media/foto/room.jpg" alt="Confronto Voli,Hotel,Treni" loading="lazy" decoding="async" width="800" height="500">
+                </div>
+                <div class="info-image-item">
+                    <img src="../../media/foto/prenot.jpg" alt="Facilità di confronto e prenotazione viaggi" loading="lazy" decoding="async" width="800" height="500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sesta sezione: area testimonials -->
+    <section class="testimonials">
+        <h2>Cosa Dicono i Nostri Viaggiatori <i class="fas fa-comments" style="margin-left: 10px; color: #FF6F61;"></i></h2>
+        <div class="testimonial-carousel-container">
+            <div class="testimonial-carousel">
+                <div class="testimonial-card active">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Marco" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">TripNow ha reso il nostro viaggio fantastico! Pianificazione perfetta e supporto eccellente durante tutta la vacanza. Servizio impeccabile!</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <cite class="testimonial-author">- Marco Rossi</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Laura" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">Un'esperienza indimenticabile dall'inizio alla fine. Consigliatissimo per chi cerca viaggi organizzati senza stress e con un tocco personale!</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <cite class="testimonial-author">- Laura Bianchi</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Giuseppe" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">Vasta scelta di destinazioni e le migliori offerte che ho trovato online. Nessun problema durante il viaggio, tutto come promesso. Affidabili!</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <cite class="testimonial-author">- Giuseppe Verdi</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Sofia" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">Assistenza clienti eccezionale! Hanno risolto un piccolo imprevisto durante il nostro soggiorno in modo rapido ed efficiente. Davvero professionali.</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <cite class="testimonial-author">- Sofia Moretti</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Andrea" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">Il viaggio avventura in Patagonia è stato organizzato alla perfezione. Grazie TripNow per questa esperienza unica!</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <cite class="testimonial-author">- Andrea Conti</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../../media/foto/user.jpg" alt="Avatar Cliente Elena" class="testimonial-avatar" loading="lazy" decoding="async" width="56" height="56">
+                    <i class="fas fa-quote-left testimonial-quote-icon start"></i>
+                    <p class="testimonial-text">Prenotare è stato semplicissimo tramite il sito e l'app. Ottimo rapporto qualità-prezzo per il nostro weekend a Lisbona. Lo useremo ancora!</p>
+                    <i class="fas fa-quote-right testimonial-quote-icon end"></i>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <cite class="testimonial-author">- Elena Gallo</cite>
+                </div>
+            </div> 
+            <button class="carousel-arrow prev" aria-label="Testimonianza Precedente">&#10094;</button>
+            <button class="carousel-arrow next" aria-label="Testimonianza Successiva">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div> 
+    </section>
+
+    <!-- Sezione Raccomandazioni (visibile solo agli utenti loggati con preferiti) -->
+    <section id="recommendations-section" class="recommendations-section" style="display:none;">
+        <div class="recommendations-inner">
+            <div class="recommendations-header">
+                <span class="rec-badge"><i class="fas fa-magic"></i> AI Powered</span>
+                <h2>Potrebbe Piacerti</h2>
+                <p>Basato sui tuoi preferiti — filtro content-based con similarità coseno</p>
+            </div>
+            <div id="recommendations-grid" class="recommendations-grid"></div>
+        </div>
+    </section>
+
+    <!--Settima sezione: contatti-->
+    <section class="contact" id="contatti">
+        <div class="contact-header reveal-on-scroll">
+            <h2><i class="fas fa-envelope-open-text" style="margin-right: 10px;"></i> Mettiti in Contatto</h2>
+            <p>Hai domande, richieste particolari o vuoi semplicemente salutarci? Usa il modulo sottostante o i nostri contatti diretti!</p>
+        </div>
+        <div class="contact-content-wrapper">
+            <div class="contact-details-container reveal-on-scroll">
+                <h3>Informazioni Dirette</h3>
+                <p>Preferisci parlare direttamente con noi? Ecco come trovarci:</p>
+                <ul class="contact-details-list">
+                    <li><i class="fas fa-phone"></i> <a href="tel:+390123456789">+39 012 345 6789</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:nowtripnow@gmail.com?subject=Richiesta%20di%20informazioni">nowtripnow@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Via Roma 1, 00100 Roma, Italia</li>
+                </ul>
+                <h4>Orari Ufficio</h4>
+                <p>Lunedì - Venerdì<br>9:00 - 13:00 / 14:00 - 18:00</p>
+            </div>
+            <div class="contact-form-container reveal-on-scroll">
+                <h3>Invia un Messaggio</h3>
+                <form id="contact-form"> 
+                    <div class="form-group">
+                        <label for="contact-name"><i class="fas fa-user"></i> Nome Completo</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Es. Mario Rossi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email"><i class="fas fa-at"></i> Indirizzo Email</label>
+                        <input type="email" id="contact-email" name="email" placeholder="iltuoindirizzo@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message"><i class="fas fa-pen-alt"></i> Il Tuo Messaggio</label>
+                        <textarea id="contact-message" name="message" placeholder="Scrivi qui la tua richiesta, domanda o suggerimento..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button contact-submit-btn">Invia Ora <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="form-privacy-note">Cliccando su Invia, accetti la nostra <a href="privacy.html">Privacy Policy</a>.</p> 
+            </div>
+        </div>
+    </section>
+            
+    <!-- Ottava sezione: newsletter -->
+    <section class="newsletter-signup">
+        <div class="newsletter-bg-shapes">
+            <div class="shape-bg shape-bg-1"></div>
+            <div class="shape-bg shape-bg-2"></div>
+            <div class="shape-bg shape-bg-3"></div>
+            <div class="shape-bg shape-bg-4"></div>
+        </div>
+        <div class="newsletter-content reveal-on-scroll"> 
+            <h2><i class="fas fa-paper-plane"></i> Pronti a Partire?</h2>
+            <p>Ricevi le migliori offerte, guide esclusive e ispirazioni di viaggio direttamente nella tua casella di posta. Unisciti alla community di TripNow!</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <label for="newsletter-email-main" class="visually-hidden">Indirizzo Email</label> 
+                <div class="newsletter-input-group">
+                    <i class="fas fa-at input-icon-newsletter"></i> 
+                    <input type="email" id="newsletter-email-main" name="email" placeholder="Il tuo indirizzo email..." required aria-label="Indirizzo Email per Newsletter">
+                    <button type="submit" class="newsletter-submit-btn" aria-label="Iscriviti alla Newsletter">Iscrivimi <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </form>
+            <div id="toast-newsletter" class="hidden"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li> 
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li> 
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- Banner Cookie -->
+    <div id="cookie-banner" class="cookie-banner"> 
+        <div class="stamp-container">
+            <i class="fas fa-passport stamp s1"></i>
+            <i class="fas fa-plane-departure stamp s2"></i>
+            <i class="fas fa-anchor stamp s3"></i>
+            <i class="fas fa-map-marked-alt stamp s4"></i>
+            <i class="fas fa-globe-europe stamp s5"></i>
+            <i class="fas fa-signature stamp s6"></i> 
+            <i class="fas fa-stamp stamp s7"></i> 
+        </div>
+        <div class="cookie-banner-content">
+            <div class="cookie-icon-text">
+                <i class="fas fa-cookie-bite cookie-icon"></i>
+                <p class="cookie-text">
+                    Il nostro sito usa i cookie per rendere il tuo viaggio digitale più 
+                    <span style="color: #e87b3a; font-weight: 600;">dolce</span>
+                    ! 🍪 Accettali tutti per un'esperienza completa (consigliato!) o scegli solo quelli essenziali. La tua privacy è la nostra priorità. Consulta la nostra 
+                    <a href="/cookie-policy.html">Cookie Policy</a>.
+                </p>
+             </div>
+            <div class="cookie-banner-actions">
+                <button id="accept-cookies" class="cookie-btn accept">Accetta e Naviga!</button>
+                <button id="reject-cookies" class="cookie-btn reject">Solo Essenziali</button>
+            </div>
+        </div>
+    </div>
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/homepage.js"></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/new_york.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>New York: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo">
+            <div class="logo">
+                Trip<span class="NOWcolor">NOW</span><span style="font-family:'Bebas Neue', 'Poppins', sans-serif;" lang="en" dir="ltr" class="logodest">New York</span>
+            </div> 
+        </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="#">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="../../media/video/newyorkvideo.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">New York, USA</h1>
+            <p class="hero-subtitle"><b>La città che non dorme mai: tra skyline iconici, cultura e infinite possibilità</b></p>
+            <br><br><br>
+            <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="New York" data-lat="40.7128" data-lon="-74.0060" data-model-path="/media/3d/new-york/scene.glb" aria-label="Esplorazione 3D immersiva di New York">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">New York dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la Grande Mela</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Manhattan e i 5 borough</h2><p class="phase-subtitle">Lo skyline più iconico del mondo</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Statua della Libertà, Central Park, Empire State Building</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/veduta.jpeg" alt="Vista aerea di New York" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=New%20York" class="btn-explore-cta" aria-label="Esplora New York interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora New York interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di New York</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/new_york_bridge.webp" alt="Veduta storica di New York" class="content-image image-float-right reveal-image-right visible" style="max-width: 55%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Scopri New York, fondata nel 1624 come avamposto commerciale olandese con il nome di <strong>New Amsterdam</strong> sull'isola di Manhattan. Con l'arrivo degli inglesi nel 1664 e il cambio di nome in <strong>New York</strong>, la città iniziò la sua ascesa come centro vitale di commercio, cultura e innovazione. Grazie alla sua posizione strategica sull'Atlantico, New York divenne una <strong>porta d'accesso</strong> fondamentale per milioni di immigrati e un crocevia globale di opportunità e sogni.</p>
+                <p>Attraverso secoli di trasformazioni, New York ha saputo <strong>resistere e rinascere</strong>: dai devastanti incendi del XVIII secolo, passando per la crisi economica del 1929, fino agli eventi dell'<strong>11 settembre 2001</strong>. Simbolo di resilienza, la città si è sempre rialzata, continuando a brillare con la sua energia inarrestabile e il suo spirito indomabile, incarnato nei suoi grattacieli, nei parchi, nei quartieri multietnici e nei suoi iconici ponti come il <em>Brooklyn Bridge</em>.</p>
+                <div class="clear-float"></div>
+            
+                <h3 class="info-subtitle"><i class="fas fa-flag-usa icon-left"></i> Immigrazione, Cultura e Innovazione</h3>
+                <img src="../../media/foto/ellis_island.jpg" alt="Quartieri storici di New York" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Dalla corsa all'immigrazione di <strong>Ellis Island</strong>, che accolse milioni di speranze provenienti da ogni angolo del mondo, alla rivoluzione culturale di <strong>Harlem</strong> durante il <strong>Rinascimento di Harlem</strong>, New York è sempre stata un <strong>motore di cambiamento</strong> globale. Le lotte per i diritti civili, la nascita della cultura <strong>hip-hop</strong> nel Bronx e l'affermazione artistica di quartieri come <strong>SoHo</strong> e <strong>Greenwich Village</strong> hanno scolpito un'identità unica: vibrante, inclusiva e rivoluzionaria.</p>
+                <p>Creativa, dinamica, eterna: New York continua a plasmare il futuro nei suoi <strong>laboratori d'arte contemporanea</strong>, nei centri finanziari come <strong>Wall Street</strong>, nei teatri di <strong>Broadway</strong> e nelle start-up innovative di <strong>Brooklyn</strong>. Dai prati sconfinati di <strong>Central Park</strong> alle luci inesauribili di <strong>Times Square</strong>, ogni angolo racconta una storia di ambizione, sfida e rinascita continua, rendendo la città uno dei simboli più potenti e ammirati della modernità mondiale.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">New York: Le sue Gemme più Preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="statueofliberty" class="info-subtitle"><i class="fa-solid fa-landmark icon-left"></i></i> Statua della Libertà</h3>
+                <img src="../../media/foto/statueofliberty.jpg" alt="Statua della Libertà al tramonto" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>La <strong>Statua della Libertà</strong>, eretta nel <strong>1886</strong>, è molto più di un semplice monumento: è il <strong>simbolo vivente della libertà</strong> e della democrazia nel mondo. Donata dalla <strong>Francia</strong> agli Stati Uniti, domina l’ingresso del porto di New York, accogliendo da oltre un secolo generazioni di immigrati in cerca di una nuova vita.</p>
+                <p>Visitarla significa attraversare i secoli: dalla traversata in traghetto dal <strong>Battery Park</strong> fino alla salita verso la corona, ogni momento regala emozioni profonde e viste straordinarie. Non perdere anche il <strong>Museo di Ellis Island</strong>, dove sono custodite le storie di milioni di famiglie che hanno costruito il sogno americano.</p>
+                <p>Con il suo volto solenne e la sua torcia fiammeggiante, la Statua continua a ispirare speranza, orgoglio e un senso di appartenenza in tutti coloro che mettono piede a New York.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="centralpark" class="info-subtitle"><i class="fa-solid fa-tree-city icon-left"></i> Central Park</h3>
+                <img src="../../media/foto/centralpark.jpg" alt="Veduta autunnale di Central Park" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Central Park</strong> è il cuore verde pulsante di Manhattan, un capolavoro progettato nel <strong>1858</strong> da <strong>Frederick Law Olmsted</strong> e <strong>Calvert Vaux</strong>. Estendendosi su oltre <strong>340 ettari</strong>, questo parco offre un rifugio rigoglioso in mezzo alla giungla urbana, dove ogni sentiero, lago e prato racconta una storia diversa.</p>
+                <p>Tra i suoi angoli più iconici troviamo il romantico <strong>Bow Bridge</strong>, il maestoso <strong>Great Lawn</strong>, e la suggestiva <strong>Bethesda Terrace</strong>, cornice perfetta per fotografie indimenticabili. Noleggiare una bicicletta o remare sul lago permette di vivere il parco da prospettive uniche, immerse nella natura e circondate da grattacieli scintillanti.</p>
+                <p>In ogni stagione <strong>Central Park</strong> si trasforma, passando dalle tinte accese dell'autunno ai paesaggi innevati dell'inverno, regalando sempre esperienze indimenticabili a chiunque lo attraversi.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="timesquare" class="info-subtitle"><i class="fa-solid fa-star icon-left"></i> Times Square</h3>
+                <img src="../../media/foto/timessquare.jpg" alt="Times Square illuminata di notte" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Times Square</strong> non è solo una piazza: è un'esplosione di energia, colori e luci che racchiude l'essenza stessa di New York. Situata all'incrocio tra <strong>Broadway</strong> e la <strong>Seventh Avenue</strong>, è soprannominata "The Crossroads of the World" e rappresenta un vero e proprio spettacolo a cielo aperto, attivo 24 ore su 24.</p>
+                <p>Qui ogni passo è una scoperta: tra cartelloni pubblicitari giganti, artisti di strada, teatri leggendari e una folla internazionale che non si ferma mai. Sedersi sui celebri <strong>Red Steps</strong> di TKTS offre una prospettiva unica su questo vortice di luci e vita, mentre uno spettacolo di Broadway può trasformare una serata in un'esperienza magica.</p>
+                <p>Di giorno come di notte, <strong>Times Square</strong> incarna l'incredibile <strong>vitalità di New York</strong>, dove tutto può accadere e ogni momento può diventare indimenticabile.</p>
+                <div class="clear-float"></div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">New York: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fa-solid fa-hotdog icon-left"></i> New York da Gustare: Dalla Strada ai Rooftop</h3>
+                <img src="../../media/foto/sabrett.jpg" alt="[Specialità culinarie di New York]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>New York è una <strong>capitale gastronomica</strong> mondiale: inizia la giornata con un vero <strong>bagel newyorkese</strong> farcito nei locali storici di <strong>Midtown</strong>, oppure goditi un brunch raffinato a <strong>SoHo</strong> o <strong>West Village</strong> con avocado toast e pancake al burro d'acero.</p>
+                <p>Non puoi dire di aver vissuto New York senza aver addentato un <strong>hot dog</strong> fumante da un chiosco ambulante vicino a <strong>Times Square</strong> o lungo <strong>Central Park</strong>. E se la fame chiama a qualsiasi ora, fermati per una classica <strong>slice di pizza</strong> newyorkese: sottile, piegata su sé stessa, da gustare in piedi tra una strada e l’altra. Le migliori? Provale da <strong>Joe's Pizza</strong> a Greenwich Village o da <strong>Prince Street Pizza</strong> a SoHo, celebre per le sue fette quadrate cariche di formaggio.</p>
+                <p>Assaggia la leggendaria <strong>New York cheesecake</strong> di Junior’s, il <strong>pastrami sandwich</strong> di Katz's Delicatessen, e chiudi la serata su uno dei tanti <strong>rooftop bar</strong> sorseggiando un <strong>Manhattan</strong> cocktail mentre la città si accende di luci.</p>
+                    
+                <h3 class="info-subtitle"><i class="fas fa-city icon-left"></i> Meraviglie di New York: Oltre la Fifth Avenue</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline>
+                    <source src="../../media/video/newyorkvideo2.webm" type="video/webm"> Il tuo browser non supporta il tag video.
+                </video>
+                <p><strong>New York</strong> è un <strong>mosaico di emozioni</strong> che si svela ad ogni passo: attraversa il <strong>Brooklyn Bridge</strong> per ammirare la skyline scintillante di Manhattan, poi immergiti nell'atmosfera industriale e artistica di <strong>DUMBO</strong>, tra gallerie, mercatini vintage e viste perfette per una foto da cartolina sotto i piloni del ponte.</p>
+                <p>Prosegui lungo la spettacolare <strong>High Line</strong>, un parco sospeso tra i tetti di Chelsea, dove giardini, sculture e street art convivono con il frenetico skyline. Ammira l'incredibile silhouette del <strong>Flatiron Building</strong> e lasciati rapire dalla magia della <strong>Grand Central Terminal</strong>, dove il soffitto blu notte, punteggiato di costellazioni, racconta la storia eterna della città.</p>
+                <p>Scopri i capolavori del <strong>Metropolitan Museum of Art</strong> e le opere rivoluzionarie del <strong>MoMA</strong>, poi concediti una pausa verde nei prati di <strong>Bryant Park</strong>, magari gustando un caffè sotto il sole o partecipando a un evento culturale all'aperto. Ogni quartiere di New York offre un'anima diversa: la creatività ribelle di <strong>Williamsburg</strong>, i ritmi intensi di <strong>Harlem</strong> e la tranquillità bohémienne di <strong>Greenwich Village</strong>.</p>
+                <p>Per una vista da togliere il fiato, sali sulle terrazze panoramiche di <strong>Edge Hudson Yards</strong> o del futuristico <strong>Summit One Vanderbilt</strong>, dove specchi, vetrate e giochi di luce trasformano l'orizzonte in uno spettacolo senza fine. Quando il sole tramonta dietro i grattacieli, capirai perché <strong>New York</strong> è e resterà la città che fa sognare il mondo intero.</p>
+
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Vincente: Pass, Trasporti e Orari</h3>
+                <img src="../../media/foto/newyorkcitypass.jpg" alt="[New York CityPASS e mappa della Subway]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Organizza la visita con anticipo per vivere al meglio New York: acquista il <strong>New York CityPASS</strong> o l'<strong>Explorer Pass</strong> per accedere rapidamente a icone come la <strong>Statua della Libertà</strong>, l'<strong>Empire State Building</strong> e il <strong>Top of the Rock</strong>.</p>
+                <p>Per muoverti agilmente, usa la <strong>MetroCard</strong> ricaricabile e approfitta della metropolitana attiva 24/7. I taxi gialli sono un'esperienza iconica, ma per risparmiare considera i <strong>rideshare</strong> come Uber o Lyft. Attraversare il traghetto gratuito di Staten Island offre una vista magnifica sulla skyline senza spendere nulla.</p>
+                <p>Ricorda: alcune attrazioni richiedono la prenotazione anticipata online, specialmente nei periodi di alta stagione (estate e fine anno).</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>New York è generalmente sicura, ma come in ogni metropoli occorre prestare attenzione nei luoghi molto affollati come <strong>Times Square</strong>, le stazioni della <strong>Subway</strong> e durante eventi pubblici. Tieni borse e oggetti di valore sempre sotto controllo.</p>
+                        <p>Evita di camminare da solo di notte in zone periferiche poco illuminate e preferisci alloggi nei quartieri centrali come <strong>Midtown</strong>, <strong>Upper West Side</strong> o <strong>Brooklyn Heights</strong>. Il numero d'emergenza rimane il <strong>911</strong>.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/USA" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Scopri la Mappa di New York</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7633179051297!2d-73.97762082481873!3d40.78306097138488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f120!3m3!1m2!1s0x89c2588f5eafff3f%3A0xdcecc0633d5c0e2c!2sManhattan%2C%20New%20York%2C%20NY%2C%20USA!5e0!3m2!1sit!2sit!4v1714390322250!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a New York. Scopri le migliori offerte e pianifica ogni dettaglio della tua esplorazione nella Grande Mela.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                    <p class="booking-card-text">Confronta le tariffe e prenota il tuo volo per New York alle migliori condizioni.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/nyca/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                    <p class="booking-card-text">Dai boutique hotel a Times Square agli eleganti rifugi dell'Upper East Side, trova la sistemazione ideale nel cuore di New York.</p>
+                    <a href="https://www.trivago.it/it/srl/hotel-new-york?search=200-14734;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica l'Itinerario<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di New York.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-new-york.pdf">Scarica Guida</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone di New York: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#statueofliberty" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/statueofliberty2.jpeg" alt="Statua della Libertà" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-landmark"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Statua della Libertà</h3>
+                        <p>Simbolo universale di libertà e speranza, accoglie i visitatori dal 1886.</p>
+                    </div>
+                </a>
+    
+                <a href="#centralpark" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/centralpark2.jpg" alt="Veduta di Central Park" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-tree-city"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Central Park</h3>
+                        <p>Il cuore verde di Manhattan: natura, arte e relax nel pieno della città.</p>
+                    </div>
+                </a>
+    
+                <a href="#timesquare" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/timessquare2.jpg" alt="Times Square illuminata di notte" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-star"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Times Square</h3>
+                        <p>Il crocevia del mondo, dove luci, energia e vita si fondono senza sosta.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+    
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta New York? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="New York" data-link="New_York.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+    </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per New York? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>    
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_new_york.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

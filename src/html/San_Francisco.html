@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/san_francisco.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>San Francisco: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span style="font-family:'Josefin Sans', 'Poppins', sans-serif;" lang="en" dir="ltr" class="logodest">San Francisco</span>
+
+        </div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="#">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="../../media/video/sanfranciscobackground.mp4" controls style="max-width: 100%; height: auto;" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">San Francisco, USA</h1>
+            <p class="hero-subtitle"><b>La città della baia tra il fascino del Golden Gate, innovazione e cultura</b></p>
+            <br><br><br>
+            <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="San Francisco" data-lat="37.7749" data-lon="-122.4194" data-model-path="/media/3d/san-francisco/scene.glb" aria-label="Esplorazione 3D immersiva di San Francisco">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">San Francisco dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la città della baia</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Tra colline e oceano</h2><p class="phase-subtitle">Quartieri, cable car e il Golden Gate</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Golden Gate Bridge, Fisherman's Wharf, Alcatraz</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/veduta.jpeg" alt="Vista aerea di San Francisco" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=San%20Francisco" class="btn-explore-cta" aria-label="Esplora San Francisco interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora San Francisco interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di San Francisco</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/sanfranciscostorica.jpg" alt="Veduta storica di San Francisco" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Scopri San Francisco, nata nel 1776 come presidio spagnolo di <strong>Yerba Buena</strong> lungo la costa frastagliata della California. Con la travolgente <em>Corsa all'Oro</em> del 1849, la città esplose in una frenetica corsa verso il futuro, diventando un <strong>crocevia vitale</strong> di commerci, culture e avventure. Il suo porto naturale e la posizione sulla <strong>baia</strong> favorirono una crescita rapida e irrefrenabile, gettando le basi di quella società multiculturale e audace che ancora oggi definisce il suo carattere unico.</p>
+                <p>Nei decenni successivi, San Francisco ha saputo <strong>rinascere dalle macerie</strong>: dal disastroso <strong>terremoto del 1906</strong> alla sua trasformazione in icona globale dell'innovazione. Il <em>Golden Gate Bridge</em>, aperto nel 1937, incarna la forza visionaria di una città che non teme le sfide e che, anche nella fitta nebbia, continua a brillare come un faro di resilienza e ambizione.</p>
+                <div class="clear-float"></div>
+            
+                <h3 class="info-subtitle"><i class="fas fa-flag icon-left"></i> Gold Rush, Controcultura e Innovazione</h3>
+                <img src="../../media/foto/sanfranciscocity.jpg" alt="Quartieri storici di San Francisco" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Dalla febbre dell'oro che travolse la California nel 1849 alla rivoluzione culturale degli anni '60, San Francisco è sempre stata una <strong>scintilla di cambiamento</strong> per il mondo intero. La leggendaria <strong>Summer of Love</strong>, i movimenti per i diritti civili e la nascita della cultura LGBTQ+ hanno scolpito un'identità ribelle e visionaria, che pulsa ancora oggi tra i tram storici di <strong>Haight-Ashbury</strong>, i murales colorati di Mission District e le strade brulicanti di vita e creatività.</p>
+                <p>Innovativa, sfacciata, inclusiva: San Francisco plasma il futuro dal cuore pulsante della <em>Silicon Valley</em>, alimentando sogni e rivoluzioni tecnologiche, senza mai rinnegare il suo spirito libero. Dai colli avvolti nella nebbia ai moli colorati della baia, ogni angolo racconta una storia di audacia, resistenza e trasformazione continua, in un dialogo incessante tra passato e futuro.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">San Francisco: Le sue Gemme più preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="goldengate" class="info-subtitle"><i class="fa-solid fa-bridge-suspension icon-left"></i> Golden Gate Bridge</h3>
+                <img src="../../media/foto/goldengate2.jpg" alt="Golden Gate Bridge nella nebbia" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il <strong>Golden Gate Bridge</strong>, con la sua elegante silhouette color rosso "International Orange", collega San Francisco alla contea di Marin attraverso le acque tumultuose dello stretto. Aperto al traffico nel <strong>1937</strong>, il ponte ha resistito a venti impetuosi e terremoti ed è oggi una delle meraviglie ingegneristiche del mondo moderno.</p>
+                <p>Attraversarlo a piedi o in bicicletta regala un’esperienza mozzafiato, immersi tra nebbie cangianti e viste spettacolari sulla baia. Per ammirarlo al meglio, raggiungi il <em>Vista Point</em> a nord o le colline di <strong>Battery Spencer</strong>, ideali al tramonto per scatti da cartolina.</p>
+                <p>Non perderti una visita al <strong>Welcome Center</strong> per scoprire la storia di questa impresa visionaria che ha cambiato per sempre il volto della città. E ricorda: anche nella fitta nebbia, il Golden Gate continua a raccontare la sua magia.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="alcatraz" class="info-subtitle"><i class="fa-solid fa-tower-observation icon-left"></i> Isola di Alcatraz</h3>
+                <img src="../../media/foto/alcatraz2.jpg" alt="Veduta di Alcatraz dalla baia" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Alcatraz</strong>, un tempo soprannominata "The Rock", custodisce storie di detenuti celebri, tentativi di fuga impossibili e leggende scolpite nell'immaginario collettivo. La prigione federale, attiva dal 1934 al 1963, ha ospitato figure famigerate come <strong>Al Capone</strong> e <strong>Robert Stroud</strong>, il "Birdman of Alcatraz".</p>
+                <p>Il viaggio comincia al <strong>Pier 33</strong>, da cui partono i traghetti per l’isola: il suggestivo tragitto sulla baia anticipa l’atmosfera cupa e affascinante della visita. All’interno delle celle, l’audioguida narrata da ex detenuti e guardie ti farà rivivere la vita quotidiana di uno dei luoghi più inaccessibili d'America.</p>
+                <p>Concludi la tua esplorazione camminando tra i giardini selvaggi, un tempo curati dai prigionieri stessi, e goditi una vista senza eguali sulla skyline di San Francisco, incorniciata dal profilo delle torri del Golden Gate.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="paintedladies" class="info-subtitle"><i class="fa-solid fa-house-chimney icon-left"></i> Painted Ladies</h3>
+                <img src="../../media/foto/paintedladies.webp" alt="Le Painted Ladies di Alamo Square" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Tra le immagini più iconiche di San Francisco spiccano le <strong>Painted Ladies</strong> di Alamo Square, una fila di eleganti case vittoriane ornate da colori pastello che sembrano uscite da una fiaba. Costruite tra il 1892 e il 1896, hanno resistito al grande terremoto del 1906 e sono diventate simboli immortali della resilienza architettonica della città.</p>
+                <p>Il parco di Alamo Square, perfetto per un picnic o una pausa rilassante, offre una vista impareggiabile: le case in primo piano, e dietro di loro i grattacieli moderni, creano un affascinante contrasto fra storia e futuro. Non a caso, questo scorcio è stato immortalato in serie TV e film, diventando uno degli angoli più fotografati di San Francisco.</p>
+                <p>Prosegui l'esplorazione nei quartieri vicini come <strong>Lower Haight</strong> o <strong>Hayes Valley</strong>, dove boutique indipendenti, murales artistici e caffè di tendenza completano il fascino rilassato e creativo della zona.</p>
+                <div class="clear-float"></div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">San Francisco: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-bread-slice icon-left"></i> Sapori Californiani e Caffetterie Locali</h3>
+                <img src="../../media/foto/cibosfo.webp" alt="[Specialità californiane]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 400px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>San Francisco è un <strong>paradiso gastronomico</strong>: comincia la giornata con un cremoso <strong>cappuccino artigianale</strong> a Mission District, poi gusta la celebre <strong>clam chowder</strong> servita in una pagnotta di pane al <strong>Fisherman’s Wharf</strong> o i famosi <em>tacos</em> del Ferry Building Marketplace.</p>
+                <p>Siediti nei <em>coffee shop</em> di North Beach per un brunch con avocado toast e uova alla benedict; la sera esplora le birrerie artigianali di SoMa o sorseggia un <strong>Negroni</strong> con vista sull'oceano a Outer Sunset.</p>
+                <p>Amanti del vino? Raggiungi Napa Valley per una degustazione di <strong>cabernet sauvignon</strong> oppure prenota un tour enogastronomico a Sonoma con assaggi di formaggi artigianali e cioccolato locale.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fa-solid fa-bridge-suspension icon-left"></i> Meraviglie di San Francisco: Oltre il Golden Gate</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline>
+                    <source src="../../media/video/videogoldengate.webm" type="video/webm"> Il tuo browser non supporta il tag video.
+                </video>
+                <p><strong>San Francisco</strong> è un <strong>mosaico di quartieri e paesaggi unici</strong>: percorri il <strong>Golden Gate Bridge</strong> a piedi o in bici, esplora il fascino vittoriano delle <strong>Painted Ladies</strong> ad Alamo Square e rilassati tra le colline verdi di <strong>Golden Gate Park</strong>. Salendo su un tram storico lungo <strong>California Street</strong>, potrai ammirare scorci mozzafiato della baia tra salite vertiginose e case colorate.</p>
+                <p><strong>Per vivere la cultura contemporanea</strong> visita il <strong>San Francisco Museum of Modern Art (SFMOMA)</strong>, scopri i murales di <strong>Clarion Alley</strong> a Mission e partecipa a un concerto indie a The Fillmore. Non perderti una passeggiata a <strong>Yerba Buena Gardens</strong>, o un evento d'arte e gastronomia al vivace quartiere di Dogpatch. A Treasure Island, gusta street food gourmet e cocktail artigianali con vista panoramica sullo skyline.</p>
+                <p>Fuori città, prendi un traghetto per la misteriosa <strong>Alcatraz Island</strong> con i suoi racconti di evasione, oppure organizza un'escursione tra le sequoie giganti del <strong>Muir Woods National Monument</strong>. Gli amanti del mare potranno esplorare le spiagge selvagge di <strong>Point Reyes National Seashore</strong>. Chi viaggia con bambini troverà intrattenimento scientifico e divertente al <strong>California Academy of Sciences</strong> e all'interattivo <strong>Exploratorium</strong>.</p>
+                <p>Per un tocco retrò, sali a bordo dei leggendari <strong>cable car</strong>, osserva i mosaici artistici della <strong>16th Avenue Tiled Steps</strong> e fotografa il tramonto infuocato da <strong>Twin Peaks</strong>, uno dei punti panoramici più suggestivi della città.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Vincente: Pass, Trasporti e Orari</h3>
+                <img src="../../media/foto/sfocitypass.jpg" alt="[Muni Passport e mappa Cable Car]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Organizza gli spostamenti in anticipo per evitare code: prenota i biglietti per <strong>Alcatraz</strong> (specie d'estate) e i tour guidati di <strong>Chinatown</strong> o <strong>Haight-Ashbury</strong>. Il <strong>San Francisco CityPASS</strong> è ideale se vuoi visitare più attrazioni come l'<strong>Exploratorium</strong>, il <strong>de Young Museum</strong> e l'Aquarium of the Bay.</p>
+                <p>Per muoverti facilmente, usa il <strong>Muni</strong> (autobus, metro leggera e cable car): un biglietto singolo costa circa 3$, ma il <strong>Muni Passport</strong> o la <strong>Clipper Card</strong> ti danno viaggi illimitati. I cable car sono affollati nelle ore centrali, meglio salirci al mattino o la sera. Per spostarti verso Oakland o Berkeley, affidati alla rapida rete <strong>BART</strong>.</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>San Francisco è generalmente sicura, ma presta attenzione a <strong>borseggiatori</strong> nei mezzi pubblici e nei luoghi molto affollati come Market Street e i terminal dei traghetti. Mantieni gli oggetti di valore nascosti e usa borse antiscippo. Il numero d'emergenza negli Stati Uniti è il <strong>911</strong>.</p>
+                        <p>Evita di lasciare oggetti visibili all'interno dell'auto parcheggiata; prediligi garage custoditi. Scegli alloggi in quartieri centrali e sicuri come Nob Hill, Pacific Heights o Inner Sunset. Consulta sempre il sito <strong>“Viaggiare Sicuri”</strong> del MAEC prima della partenza.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/USA" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50460.530756562946!2d-122.5107355125!3d37.7576798475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e2b6970a709%3A0xdea0f89efb58289f!2sSan%20Francisco%2C%20California%2C%20USA!5e0!3m2!1sit!2sit!4v1714329729570!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a San Francisco. Scopri le migliori offerte e pianifica ogni dettaglio della tua esplorazione nella City by the Bay.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                    <p class="booking-card-text">Confronta le tariffe e prenota il tuo volo per San Francisco alle migliori condizioni.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/sfo/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                    <p class="booking-card-text">Dai boutique hotel a Union Square agli affascinanti rifugi di Nob Hill, trova la sistemazione ideale nel cuore di San Francisco.</p>
+                    <a href="https://www.trivago.it/it/srl/hotel-san-francisco-california?search=200-14267;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica l'Itinerario<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di San Francisco.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-san-francisco.pdf">Scarica Guida</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone di San Francisco: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#goldengate" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/goldengate.jpg" alt="Golden Gate Bridge nella nebbia" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-bridge-suspension"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Golden Gate Bridge</h3>
+                        <p>Il ponte più famoso al mondo, avvolto nella suggestiva nebbia della Baia.</p>
+                    </div>
+                </a>
+    
+                <a href="#alcatraz" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/alcatraz.jpg" alt="Veduta di Alcatraz dalla baia" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-tower-observation"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Isola di Alcatraz</h3>
+                        <p>La celebre prigione su un'isola, custode di storie leggendarie e fughe impossibili.</p>
+                    </div>
+                </a>
+    
+                <a href="#paintedladies" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/paintedladies2.jpg" alt="Le Painted Ladies di Alamo Square" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Painted Ladies</h3>
+                        <p>Le iconiche case vittoriane di Alamo Square, simbolo pittoresco della città.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+    
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta San Francisco? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="San Francisco" data-link="San_Francisco.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+    </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per San Francisco? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>    
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_san_francisco.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

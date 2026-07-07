@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/rio_de_janeiro.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Rio De Janeiro: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span lang="pt" dir="ltr" class="logodest" style="font-family: 'Poppins', sans-serif;">Rio</span></div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="#">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Rio de Janeiro, Brasile</h1>
+            <p class="hero-subtitle"><b>Tra spiagge dorate e il Cristo Redentore</b></p>
+        </div>
+        <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="Rio de Janeiro" data-lat="-22.9068" data-lon="-43.1729" data-model-path="/media/3d/rio-de-janeiro/scene.glb" aria-label="Esplorazione 3D immersiva di Rio de Janeiro">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">Rio dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la Cidade Maravilhosa</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">Tra foresta e oceano</h2><p class="phase-subtitle">Favelas, spiagge e il Cristo Redentore</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Cristo Redentore, Copacabana, Pão de Açúcar</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/veduta.jpeg" alt="Vista aerea di Rio de Janeiro" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Rio%20de%20Janeiro" class="btn-explore-cta" aria-label="Esplora Rio de Janeiro interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Rio de Janeiro interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nella Meraviglia: La Storia di Rio de Janeiro</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/riostorica.jpg" alt="Veduta storica di Rio de Janeiro" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Scopri il fascino senza tempo di <strong>Rio de Janeiro</strong>, la leggendaria <strong>"Cidade Maravilhosa"</strong>, una città incastonata tra il <strong>blu dell'Oceano Atlantico</strong> e le <strong>montagne tropicali</strong>. Fondata il <strong>1º marzo 1565</strong> dai portoghesi come avamposto difensivo nella <strong>Baia di Guanabara</strong>, Rio si trasformò presto da piccolo presidio militare a uno dei principali <strong>centri culturali e commerciali dell'America del Sud</strong>. Le sue strade polverose, percorse da mercanti e marinai, videro nascere una società vivace, intreccio di tradizioni europee, africane e indigene.</p>
+                <p>Con la scoperta delle <strong>miniere d’oro e diamanti</strong> nel <strong>Minas Gerais</strong> nel XVIII secolo, Rio divenne la principale via d’uscita verso l’Europa per queste ricchezze. Questo sviluppo portò Rio a diventare <strong>capitale del Brasile</strong> nel <strong>1763</strong>, anticipando l’arrivo della <strong>corte portoghese</strong> nel <strong>1808</strong>, in fuga dalle truppe napoleoniche. Per un breve ma significativo periodo, Rio fu <strong>l'unica capitale europea fuori dall'Europa</strong>, trasformandosi in una città regale, abbellita da palazzi, teatri e biblioteche che ancora oggi raccontano una stagione di splendore e innovazione urbana.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-masks-theater icon-left"></i> Modernizzazione, Icone Mondiali e L’Anima della Cidade Maravilhosa</h3>
+                <img src="../../media/foto/riomoderna.jpg" alt="Veduta moderna di Rio de Janeiro" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 620px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Nel corso del XIX e XX secolo, <strong>Rio de Janeiro</strong> si modernizzò rapidamente, divenendo un simbolo della crescita brasiliana. La creazione di ampi boulevard come Avenida Rio Branco, l'inaugurazione del <strong>Porto di Rio</strong> e la costruzione di eleganti quartieri come Flamengo e Botafogo ridisegnarono il volto della città. Monumenti iconici come il <strong>Cristo Redentore</strong>, completato nel 1931 sul Corcovado, e il <strong>Pan di Zucchero</strong> divennero simboli eterni di una città capace di fondere natura e cultura in una sinfonia perfetta di bellezza e spiritualità.</p>
+                <p>Rio è molto più di uno scenario mozzafiato: è energia viva, è ritmo incessante. Dal <strong>Carnevale di Rio</strong>, il più famoso del mondo, alle melodie malinconiche della bossa nova nate tra le spiagge di Ipanema, ogni angolo della città racconta una storia di resilienza, passione e creatività. Riconosciuta oggi come <strong>Patrimonio UNESCO</strong> per il suo straordinario connubio di paesaggio urbano e naturale, Rio de Janeiro resta una delle città più affascinanti e contraddittorie del pianeta: una metropoli che danza con il sole e sogna sotto le stelle, sospesa tra la bellezza selvaggia e l’eleganza della sua cultura senza tempo.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Rio de Janeiro: Le sue Gemme più Preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="corcovado" class="info-subtitle"><i class="fas fa-mountain icon-left"></i> Il Cristo Redentore (Cristo Redentor)</h3>
+                <img src="../../media/foto/cristoredentor.jpg" alt="Statua del Cristo Redentore a Rio" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Costruito tra il <strong>1922</strong> e il <strong>1931</strong>, il <strong>Cristo Redentore</strong> nacque in un'epoca in cui <strong>Rio de Janeiro</strong> voleva affermarsi come grande capitale moderna e spirituale. La sua costruzione fu una sfida ingegneristica: ogni pezzo venne trasportato su stretti sentieri ferroviari e assemblato sulla vetta. Realizzato in <strong>cemento armato</strong> e rivestito di migliaia di triangolini di <strong>pietra saponaria</strong>, il monumento resiste da quasi un secolo alle intemperie tropicali, mantenendo intatta la sua maestosità.</p>
+                <p>Visitare il Cristo Redentore è un’esperienza insieme <strong>estetica</strong> e <strong>spirituale</strong>. Attraversando la lussureggiante <strong>Foresta di Tijuca</strong>, uno degli ecosistemi più ricchi al mondo, si raggiunge la piattaforma panoramica che regala <strong>una delle viste più spettacolari del pianeta</strong>. In quel momento, con Rio ai tuoi piedi e il mare scintillante all'orizzonte, comprendi davvero perché è chiamata <strong>"la città meravigliosa"</strong>.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="pao-de-acucar" class="info-subtitle"><i class="fas fa-route icon-left"></i> Il Pan di Zucchero (Pão de Açúcar)</h3>
+                <img src="../../media/foto/pandizucchero.jpg" alt="Vista del Pan di Zucchero" class="content-image image-float-left reveal-image-left visible" style="max-width: 56%; height: 610px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Il <strong>Pan di Zucchero</strong>, o <strong>Pão de Açúcar</strong>, è una delle meraviglie naturali più celebri di <strong>Rio de Janeiro</strong>. Questo massiccio di <strong>granito e quarzite</strong>, alto <strong>396 metri</strong>, domina l'ingresso della <strong>Baia di Guanabara</strong>, diventando nei secoli un simbolo per marinai e viaggiatori. La sua sagoma inconfondibile si staglia contro il cielo tropicale come un guardiano eterno. Salire al Pan di Zucchero è un’esperienza emozionante: la storica <strong>funivia del Bondinho</strong>, inaugurata nel <strong>1912</strong>, collega il <strong>Morro da Urca</strong> alla cima, sorvolando la vegetazione rigogliosa e l’oceano, mentre il panorama si apre su <strong>Copacabana</strong>, <strong>Botafogo</strong> e il <strong>Corcovado</strong>.</p>
+                <p>Dalla vetta, Rio si svela in tutta la sua bellezza: spiagge dorate, colline verdi e grattacieli che brillano al sole. Al tramonto, il <strong>Pan di Zucchero</strong> si trasforma in un <strong>teatro naturale</strong> dove cielo e mare si fondono in un'esplosione di colori indimenticabili, racchiudendo l'anima vibrante di <strong>Rio de Janeiro</strong>.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="copacabana" class="info-subtitle"><i class="fas fa-umbrella-beach icon-left"></i> La Spiaggia di Copacabana</h3>
+                <img src="../../media/foto/copacabana.jpg" alt="Spiaggia di Copacabana" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Copacabana</strong> è molto più di una spiaggia: è un'icona mondiale, simbolo dell'energia inesauribile di <strong>Rio de Janeiro</strong>. Questa ampia distesa di sabbia dorata, lunga oltre <strong>4 chilometri</strong>, è lambita dall’oceano e incorniciata da colline rigogliose. Il celebre mosaico a onde nere e bianche, disegnato da <strong>Roberto Burle Marx</strong>, accompagna il lungomare dell’Avenida Atlântica, teatro quotidiano di incontri tra turisti, sportivi, musicisti e venditori ambulanti in un caleidoscopio umano unico e vibrante.</p>
+                <p>Al tramonto, <strong>Copacabana</strong> si trasforma: il cielo si infiamma e la spiaggia si anima di musica, beach soccer e risate che si fondono con il rumore delle onde. La sera, le luci dei palazzi si specchiano sull’acqua, mentre bar, ristoranti e locali storici fanno vibrare il quartiere. <strong>Copacabana</strong> non è solo un luogo da visitare, è un’esperienza che incarna il ritmo, la passione e l'anima autentica di Rio.</p>
+                <div class="clear-float"></div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Rio de Janeiro: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-utensils icon-left"></i> Sapori Carioca e Ritmi di Relax</h3>
+                <img src="../../media/foto/feijoada.jpg" alt="[Immagine di una feijoada brasiliana]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: auto; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Visitare Rio de Janeiro è un'esperienza che coinvolge tutti i sensi, e la cucina carioca è una vera e propria esplosione di sapori e cultura. Tra una passeggiata sulla spiaggia e una salita al Corcovado, concediti una sosta in uno dei tanti ristoranti locali per assaggiare la tradizionale <strong>feijoada</strong>, un ricco stufato di fagioli neri e carne, servito con riso, farofa e arancia. È il piatto nazionale del Brasile, una festa di sapori profondi che raccontano storie di commistione tra culture indigene, africane ed europee.</p>
+                <p>Se preferisci sapori più leggeri, esplora i <strong>churrascos</strong> (barbecue brasiliani) o i deliziosi <strong>pastéis</strong> fritti ripieni di formaggio o gamberi. Non mancare di provare una <strong>moqueca de peixe</strong> (zuppa di pesce) profumata al latte di cocco. Per un’esperienza più rilassata, siediti in uno dei <strong>chioschi sulla spiaggia</strong> di Ipanema o Leblon, sorseggiando una <strong>caipirinha</strong> ghiacciata mentre il sole si tuffa nell'oceano. Tra i locali consigliati ci sono <strong>"Aprazível"</strong> a Santa Teresa, per un pasto panoramico immerso nel verde, e <strong>"Bar do Mineiro"</strong> per un'autentica esperienza popolare brasiliana.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-monument icon-left"></i> Oltre i Classici: Tesori Nascosti e Meraviglie Urbane</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline> 
+                    <source src="../../media/video/riovideo.mp4" type="video/mp4"> 
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p>Rio de Janeiro è una città che sa incantare anche oltre i suoi monumenti più celebri. Un esempio è il <strong>quartiere di Santa Teresa</strong>, cuore bohémien della città, con le sue stradine acciottolate, le case coloniali colorate e l'atmosfera artistica senza tempo. Passeggiare tra atelier, caffè storici e scorci sulla baia è un viaggio nella Rio più autentica e intima.</p>
+                <p>A pochi passi, la vibrante <strong>Escadaria Selarón</strong> offre un'esplosione di colori: questa scalinata, decorata con migliaia di piastrelle provenienti da tutto il mondo, racconta la passione dell'artista Jorge Selarón e rappresenta uno dei luoghi più iconici e fotografati della città.</p>
+                <p>Per chi cerca una pausa immersa nella natura, il <strong>Parque Lage</strong> è una tappa imperdibile. Questo elegante parco ai piedi del Corcovado mescola giardini tropicali, laghetti e un'affascinante villa storica, oggi sede di una scuola di arti visive. È il luogo ideale per una passeggiata rilassante, con lo sguardo che si perde verso la statua del Cristo tra le fronde.</p>
+                <p>Infine, esplora il rinnovato <strong>Porto Maravilha</strong> e visita il <strong>Museu do Amanhã</strong>, capolavoro architettonico proiettato verso il futuro. Le sue mostre interattive e la sua struttura avveniristica fanno di Rio una città che sa guardare avanti, senza dimenticare la propria identità unica e vibrante.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Intelligente: Come Muoversi e Vivere Rio al Meglio</h3>
+                <img src="../../media/foto/riocard.jpg" alt="[Immagine mappa metro Rio de Janeiro]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Pianificare bene i propri spostamenti a Rio è fondamentale per vivere la città in modo comodo e sicuro. Il sistema della <strong>metropolitana di Rio</strong> è efficiente, pulito e sicuro, collegando il centro con i principali quartieri turistici come Copacabana, Ipanema e Leblon. È il mezzo ideale per evitare il traffico urbano, soprattutto durante le ore di punta. Per pagare i trasporti, ti conviene acquistare una <strong>RioCard</strong>, una tessera ricaricabile valida anche su autobus e VLT (tram leggeri).</p>
+                <p>Per tratte più brevi o scorci pittoreschi, i <strong>taxi ufficiali</strong> e le app come Uber sono un’ottima opzione. Ricorda di evitare taxi senza licenza e di preferire quelli chiamati tramite app o servizio alberghiero. Se vuoi esplorare quartieri come Lapa o Santa Teresa, affidati a visite guidate o a tour a piedi organizzati, per scoprire in sicurezza angoli pieni di storia e cultura. E non dimenticare che Rio, con il suo clima tropicale, invita a vestirsi leggeri ma sempre con attenzione al sole: <strong>cappello, occhiali da sole e crema solare</strong> sono compagni di viaggio indispensabili!</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Sicurezza e Consigli Pratici per Rio</h3>
+                        <p>Rio de Janeiro è una città che accoglie con calore, ma come ogni grande metropoli richiede un pizzico di attenzione. Le zone turistiche principali sono generalmente sicure, soprattutto di giorno. È comunque consigliabile mantenere un comportamento prudente: evita di esibire oggetti di valore, usa borse a tracolla chiuse e preferisci carte contactless ai contanti. Di sera, resta nelle aree più frequentate e, se vuoi esplorare luoghi meno conosciuti, affidati sempre a guide autorizzate.</p>
+                        <p>Prima del viaggio, consulta i consigli aggiornati sui siti ufficiali come <strong>Viaggiare Sicuri</strong> (www.viaggiaresicuri.it) per essere sempre informato sulla situazione locale. È utile anche registrare il proprio soggiorno tramite "Dove Siamo nel Mondo". A Rio, l’ospitalità è sincera, la gente è accogliente, e con un po’ di attenzione in più potrai vivere appieno la magia della città: tra panorami mozzafiato, cultura vibrante e la leggerezza unica che solo Rio sa offrire.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/BRA" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.8354527164477!2d-43.18870928462828!3d-22.906419685007504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f100!3m3!1m2!1s0x997f5b8d8e4a65%3A0x3027a76e352b2d0!2sCentro%20Rio%20de%20Janeiro%2C%20RJ%2C%20Brasile!5e0!3m2!1sit!2sit!4v1714399501234!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto a Scoprire la Cidade Maravilhosa?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio da sogno a Rio de Janeiro. Trova le migliori offerte e vivi ogni istante al massimo.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Vola verso l'Avventura</h3>
+                    <p class="booking-card-text">Confronta le migliori tariffe e prenota il tuo volo per Rio de Janeiro in modo semplice e veloce.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/rioa/250524/250525/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+    
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-hotel"></i></div>
+                    <h3 class="booking-card-title">Trova il Tuo Rifugio Ideale</h3>
+                    <p class="booking-card-text">Dagli hotel con vista sull'oceano agli accoglienti boutique hotel di Santa Teresa, scegli l'alloggio perfetto per te.</p>
+                    <a href="https://www.trivago.it/it/lm/hotel-rio-de-janeiro-brasile?search=200-59182;dr-20250524-20250525-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+    
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica la Guida di Rio<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per esplorare Rio al meglio: itinerari, consigli, luoghi imperdibili.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-rio-de-janeiro.pdf">Scarica Guida</button>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone di Rio de Janeiro: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#corcovado" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/cristoredentor2.jpeg" alt="Cristo Redentore Rio" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-mountain"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Il Cristo Redentore</h3>
+                        <p>La statua simbolo di Rio che domina la città dal Monte Corcovado.</p>
+                    </div>
+                </a>
+    
+                <a href="#pao-de-acucar" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/pandizucchero2.jpg" alt="Pan di Zucchero Rio" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-route"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Il Pan di Zucchero</h3>
+                        <p>La montagna di granito più famosa, raggiungibile con la storica funivia.</p>
+                    </div>
+                </a>
+    
+                <a href="#copacabana" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/copacabana2.jpg" alt="Spiaggia di Copacabana" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-umbrella-beach"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Copacabana</h3>
+                        <p>La spiaggia più celebre di Rio, tra relax, sport e tramonti da sogno.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> 
+        <div class="container"> 
+            <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+                <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Rio? Salvala per dopo!</span>
+                </h3>
+                <button class="save-favorite" data-name="Rio de Janeiro" data-link="rio_de_janeiro.html">
+                    <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+                </button>
+            </div> 
+        </div> 
+    </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Rio de Janeiro? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_rio_de_janeiro.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

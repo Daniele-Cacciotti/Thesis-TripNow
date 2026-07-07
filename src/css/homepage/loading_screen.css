@@ -1,0 +1,68 @@
+/* ── Loading Screen ──────────────────────────────────────────────────────────── */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    zoom: calc(1 / 0.9);
+    background: radial-gradient(ellipse at 30% 40%, #1a0a08 0%, #0f0f0f 60%, #0d0d1a 100%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+
+/* Stato uscita pagina (slide verso l'alto) — applicato da JS */
+.loading-screen.exit {
+    transform: translateY(-100vh);
+}
+
+/* Logo centrato nel loader */
+.loading-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.loading-logo .accent {
+    color: var(--color-accent, #FF6F61);
+}
+
+/* Spinner ad arco */
+.loading-spinner {
+    width: 52px;
+    height: 52px;
+    border: 3px solid rgba(255, 111, 97, 0.15);
+    border-top-color: var(--color-accent, #FF6F61);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Tagline sotto */
+.loading-tagline {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInUp 0.8s 0.2s ease both;
+}
+
+/* Compat: il vecchio wrapper viene nascosto se lasciato */
+.wrapper { display: none; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

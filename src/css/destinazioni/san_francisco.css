@@ -1,0 +1,350 @@
+/* Variabili Colore*/
+:root {
+    --sf-deep-ocean-blue: #1A3A4F;      
+    --sf-fog-gray: #8D9AA6;           
+    --sf-light-fog: #E8EAEB;          
+    --sf-steel-gray: #B0B8BF;         
+    --sf-accent-orange: #D75134;      
+    --sf-text-dark: #1F2833;           
+    --sf-text-light: #F8F9FA;          
+    --global-white: #ffffff;
+    --sf-stone-gray: var(--sf-steel-gray); 
+    --sf-scroll-hover-gray: #788896;   
+    --sf-line-gray: var(--sf-steel-gray);  
+    --sf-dark-shadow: #0D1D28;         
+
+    --booking-button-primary-border: var(--sf-steel-gray, #B0B8BF);       
+    --booking-button-primary-text: var(--sf-steel-gray, #B0B8BF);         
+    --booking-button-primary-hover-bg: var(--sf-accent-orange, #D75134);  
+    --booking-button-primary-hover-text: var(--sf-text-light, #F8F9FA);   
+    --booking-button-secondary-border: var(--sf-fog-gray, #8D9AA6);       
+    --booking-button-secondary-text: var(--sf-fog-gray, #8D9AA6);         
+    --booking-button-secondary-hover-bg: var(--sf-steel-gray, #B0B8BF);   
+    --booking-button-secondary-hover-text: var(--sf-text-dark, #1F2833);  
+
+    --sf-fog-gray-rgba-15: rgba(141, 154, 166, 0.15); 
+    --sf-deep-ocean-blue-rgba-30: rgba(26, 58, 79, 0.3);    
+    --sf-deep-ocean-blue-rgba-50: rgba(26, 58, 79, 0.5);    
+    --sf-steel-gray-rgba-32: rgba(176, 184, 191, 0.318);
+}
+
+header .logo .NOWcolor{
+    color: var(--sf-accent-orange, #D75134);
+}
+
+body.theme {
+    background-color: var(--sf-deep-ocean-blue, #1A3A4F);
+}
+
+.loading-screen{
+    background: rgba(56, 99, 127, 1) !important;
+}
+
+header .logo .logodest{
+    color: var(--sf-accent-orange, #D75134) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+header .dropdown a:hover {
+    background-color: var(--sf-accent-orange, #D75134);
+    color: var(--global-white, #fff); 
+}
+
+header nav ul li a:hover {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+.continent-item:hover {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+.destination-item a:hover {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    width: auto;
+    height: 130%;
+    transform: translate(-50%, -51%);
+    object-fit: contain;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100;
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    transform: translateY(10%);
+    padding: 20px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white); 
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--sf-steel-gray, #8D9AA6);
+}
+
+.section-alternate-bg {
+    background-color: var(--sf-fog-gray-rgba-15);
+}
+
+.theme .section-title {
+    color: var(--global-white); 
+}
+
+.theme .section-title::after {
+    background-color: var(--sf-line-gray, #B0B8BF);
+}
+
+
+.info-subtitle {
+    color: var(--sf-steel-gray, #B0B8BF);
+}
+
+.info-subtitle .icon-left {
+    color: var(--sf-steel-gray, #B0B8BF);
+}
+
+strong {
+    color: var(--sf-steel-gray, #B0B8BF);
+}
+
+#destination-sites{
+    background-color: var(--sf-steel-gray-rgba-32);
+}
+
+#destination-info-combined em {
+    color: var(--sf-steel-gray, #B0B8BF);
+}
+
+
+.booking-section-revamped {
+    background: linear-gradient(135deg, var(--sf-line-gray, #B0B8BF) 0%, var(--sf-deep-ocean-blue, #1A3A4F) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: rgba(255, 255, 255, 0.9); 
+}
+
+.booking-card {
+    background-color: var(--sf-deep-ocean-blue-rgba-30); 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.booking-card:hover {
+    background-color: var(--sf-deep-ocean-blue-rgba-50); 
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-title {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg); 
+}
+
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg); 
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--sf-fog-gray-rgba-15);
+}
+
+#destination-summary .section-title {
+    color: var(--global-white);
+}
+
+.summary-card {
+    background-color: var(--sf-deep-ocean-blue-rgba-30); 
+}
+
+.summary-card-content h3 {
+    color: var(--global-white, #ffffff); 
+}
+
+.summary-card-content p {
+    color: var(--global-white, #1F2833); 
+}
+
+#destination-weather .section-title {
+    color: var(--global-white);
+}
+
+.weather-widget-wrapper {
+    background-color: rgba(56, 99, 127, 0.5); 
+}
+
+.weather-loading {
+    color: var(--sf-stone-gray, #B0B8BF); 
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.day-name {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-max {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-min {
+    color: var(--sf-steel-gray, #B0B8BF);
+}
+
+.weather-attribution {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--sf-fog-gray, #8D9AA6); 
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--sf-scroll-hover-gray, #788896); 
+}
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--sf-deep-ocean-blue);
+    color: var(--sf-deep-ocean-blue);
+}
+
+.save-favorite:hover {
+    background-color: var(--sf-deep-ocean-blue);
+    color: var(--sf-text-light, #F8F9FA);
+}
+
+.favorite-box {
+    background-color: rgba(56, 99, 127, 0.5); 
+}
+
+.favorite-box .info-subtitle {
+    color: var(--global-white, #ffffff); 
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white, #ffffff);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.favorite-box .save-favorite {
+    border-color: rgba(56, 99, 127, 0.5);;
+    color: var(--global-white);
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.favorite-box .save-favorite::before {
+    color: var(--sf-accent-orange, #D75134);
+}
+
+.favorite-box .save-favorite:hover {
+    border-color: rgba(56, 99, 127, 0.5);;
+    background-color: var(--sf-deep-ocean-blue);
+    color: var(--global-white); 
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--global-white);
+}
+
+.PREFERITI{
+    padding-left: 190px; 
+}
+
+
+@media (max-width: 768px) {
+
+    .hero-destination .hero-content {
+        margin-top: -200px;
+    }
+
+    .hero-destination .hero-background video {
+        height: 110% !important;
+    }
+
+    nav ul {
+        top: 102px;
+    }
+}

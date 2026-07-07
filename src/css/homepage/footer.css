@@ -1,0 +1,220 @@
+footer {
+    position: relative;
+    background: linear-gradient(to top, #06090f 0%, #11141a 70%); 
+    color: #aab1bf;
+    padding: 130px 40px 40px 40px;
+    overflow: hidden;
+    margin-top: 0 !important;
+}
+
+footer::before,
+footer::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 250%;
+    height: 120px;
+    background-repeat: repeat-x;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+footer::before {
+    background-image: radial-gradient(circle at 50% 100%, transparent 25px, #1e1e1e 26px); 
+    background-size: 50px 100px;
+    opacity: 1;
+    animation: wave 12s infinite linear;
+}
+
+footer::after {
+    background-image: radial-gradient(circle at 50% 100%, transparent 30px, #11141a 31px);
+    background-size: 70px 100px;
+    opacity: 0.7;
+    animation: wave 20s infinite linear;
+    animation-delay: -1s;
+    top: 5px; 
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: normal;
+    gap: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 230px; 
+}
+
+.footer-column.about .footer-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    filter: brightness(1.1);
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 320px;
+    color: #b0b8c9;
+}
+
+.footer-column h4 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #FF6F61;
+    border-radius: 1.5px;
+}
+
+.footer-column ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #aab1bf;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.footer-column ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: #FF6F61;
+    transition: width .3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #FF6F61;
+}
+
+.footer-column ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px; 
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: #aab1bf;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #FF6F61;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #778899;
+    position: relative;
+    z-index: 2;
+}
+
+/* Animazione onde */
+@keyframes wave {
+    0% { 
+        background-position-x: 0; 
+    }
+    100% { 
+        background-position-x: -140px; 
+    }
+}
+
+@media (max-width: 768px) {
+    footer { 
+        padding: 90px 20px 30px 20px; 
+    }
+
+    footer::before, footer::after { 
+        height: 80px; 
+        top: -40px; 
+    }
+
+    .footer-content { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 30px; 
+    }
+
+    .footer-column { 
+        min-width: 100%; 
+    }
+
+    .footer-column.about { 
+        align-items: center; 
+    }
+
+    .footer-description { 
+        max-width: 90%; 
+    }
+
+    .footer-column h4::after { 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+
+    .social-icons { 
+        justify-content: center; 
+    }
+
+    .footer-column ul li a::after { 
+        left: 50%; 
+        transform: translateX(-50%); 
+        right: auto; 
+    }
+
+    .footer-column ul li a:hover::after { 
+        width: 60%; 
+        transform: translateX(-50%); 
+        left: 50%;
+    }
+}

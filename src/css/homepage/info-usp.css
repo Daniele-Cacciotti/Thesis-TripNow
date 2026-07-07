@@ -1,0 +1,110 @@
+.info-usp {
+    background: linear-gradient(180deg, var(--color-bg-elevated, #1c1c2e) 0%, var(--color-bg-surface, #131320) 100%);
+    padding: 80px 20px;
+    color: var(--color-text-primary, #e8e8f0);
+    overflow: hidden;
+}
+
+.info-usp-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.info-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 40px; 
+    margin-bottom: 60px; 
+}
+
+.info-column {
+    text-align: left;
+}
+
+.column-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff; 
+}
+
+.tag-chi { 
+    background-color: #FF6F61; 
+}
+
+.tag-cosa {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+}
+
+.tag-come {
+    background: linear-gradient(135deg, #34d399, #059669);
+}
+
+.info-column h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--color-white, #fff);
+    margin-bottom: 15px;
+}
+
+.info-column p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary, #9090a8);
+}
+
+.info-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-image-item img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius-lg, 20px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-image-item img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,111,97,0.15);
+}
+
+@media (max-width: 768px) {
+    .info-usp { 
+        padding: 60px 15px;
+    }
+
+    .info-columns { 
+        gap: 35px; 
+        margin-bottom: 40px; 
+    }
+
+    .info-images { 
+        gap: 20px; 
+    }
+
+    .info-image-item img { 
+        height: 220px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .info-column h3 { 
+        font-size: 1.5rem; 
+    }
+     
+    .info-column p { 
+        font-size: 0.9rem; 
+    }
+}

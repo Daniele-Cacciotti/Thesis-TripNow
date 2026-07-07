@@ -1,0 +1,331 @@
+/* Variabili Colore */
+:root {
+    --paris-deep-powderblue: #52677A;      
+    --paris-medium-powderblue: #9EB3C9;    
+    --paris-light-powderblue: #EFF3F7;     
+    --paris-highlight-powderblue: #BCD2E8; 
+    
+    --paris-text-dark: #2C3742;           
+    --paris-text-light: #F8FBF9;          
+    --global-white: #ffffff;
+    --paris-stone-powderblue: #BCD2E8;     
+    --paris-scroll-hover-powderblue: #7D97B0;
+    --paris-line-powderblue: #BCD2E8;      
+    --paris-dark-shadow: #1E262E;         
+
+    --booking-button-primary-border: var(--paris-medium-powderblue, #9EB3C9);
+    --booking-button-primary-text: var(--paris-medium-powderblue, #9EB3C9);
+    --booking-button-primary-hover-bg: var(--paris-medium-powderblue, #9EB3C9);
+    --booking-button-primary-hover-text: var(--paris-text-light, #F8FBF9);
+    --booking-button-secondary-border: var(--paris-highlight-powderblue, #BCD2E8);
+    --booking-button-secondary-text: var(--paris-highlight-powderblue, #BCD2E8);
+    --booking-button-secondary-hover-bg: var(--paris-highlight-powderblue, #BCD2E8);
+    --booking-button-secondary-hover-text: var(--paris-text-dark, #2C3742);
+
+    --paris-medium-powderblue-rgba-15: rgba(158, 179, 201, 0.15); 
+    --paris-deep-powderblue-rgba-30: rgba(82, 103, 122, 0.3);    
+    --paris-deep-powderblue-rgba-50: rgba(82, 103, 122, 0.5);    
+    --paris-highlight-powderblue-rgba-32: rgba(188, 210, 232, 0.318);
+}
+
+header .logo .NOWcolor{
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+body.theme {
+    background-color: var(--paris-deep-powderblue, #52677A);
+}
+
+.loading-screen{
+    background: var(--paris-medium-powderblue, #9EB3C9) !important;
+}
+
+header .logo .logodest{
+    color: var(--paris-medium-powderblue, #9EB3C9) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+header .dropdown a:hover {
+    background-color: var(--paris-medium-powderblue, #9EB3C9);
+    color: var(--global-white, #fff);
+}
+
+header nav ul li a:hover {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+.continent-item:hover {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+.destination-item a:hover {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 130%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: rgba(0, 0, 0, 0.1); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    transform: translateY(10%);
+    padding: 20px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white);
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--paris-highlight-powderblue, #BCD2E8);
+}
+
+.section-alternate-bg {
+    background-color: var(--paris-medium-powderblue-rgba-15);
+}
+
+.theme .section-title {
+    color: var(--global-white); 
+}
+
+.theme .section-title::after {
+    background-color: var(--paris-line-powderblue, #BCD2E8);
+}
+
+.info-subtitle {
+    color: var(--paris-highlight-powderblue, #BCD2E8);
+}
+
+.info-subtitle .icon-left {
+    color: var(--paris-highlight-powderblue, #BCD2E8);
+}
+
+strong { 
+    color: var(--paris-highlight-powderblue, #BCD2E8);
+}
+
+#destination-sites{
+    background-color: var(--paris-highlight-powderblue-rgba-32);
+}
+
+#destination-info-combined em { 
+    color: var(--paris-highlight-powderblue, #BCD2E8);
+}
+
+.booking-section-revamped {
+    
+    background: linear-gradient(135deg, var(--paris-line-powderblue, #BCD2E8) 0%, var(--paris-deep-powderblue, #52677A) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: rgba(255, 255, 255, 0.9); 
+}
+
+.booking-card {
+    background-color: var(--paris-deep-powderblue-rgba-30); 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.booking-card:hover {
+    background-color: var(--paris-deep-powderblue-rgba-50); 
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-title {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--paris-medium-powderblue-rgba-15);
+}
+
+#destination-summary .section-title {
+    color: var(--global-white);
+}
+
+.summary-card {
+    background-color: var(--paris-medium-powderblue, #9EB3C9); 
+}
+
+.summary-card-content h3 {
+    color: var(--global-white, #ffffff); 
+}
+
+.summary-card-content p {
+    color: var(--paris-text-light, #F8FBF9); 
+}
+
+
+#destination-weather .section-title {
+    color: var(--global-white);
+}
+
+.weather-widget-wrapper {
+    background-color: var(--paris-medium-powderblue, #9EB3C9); 
+}
+
+.weather-loading {
+    color: var(--paris-stone-powderblue, #BCD2E8); 
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.day-name {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-max {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-min {
+    color: var(--global-white, #ffffff);
+}
+
+.weather-attribution {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--paris-medium-powderblue, #9EB3C9); 
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--paris-scroll-hover-powderblue, #7D97B0); 
+}
+
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--paris-highlight-powderblue, #BCD2E8); 
+    color: var(--paris-text-light, #F8FBF9); 
+}
+
+.save-favorite:hover {
+    background-color: var(--paris-highlight-powderblue, #BCD2E8); 
+    color: var(--paris-text-dark, #2C3742); 
+}
+
+.favorite-box {
+    background-color: var(--paris-medium-powderblue, #9EB3C9); 
+}
+
+.favorite-box .info-subtitle {
+    color: var(--global-white, #ffffff); 
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white, #ffffff);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.favorite-box .save-favorite { 
+    border-color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.favorite-box .save-favorite::before {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.favorite-box .save-favorite:hover {
+    border-color: var(--global-white);
+    background-color: var(--global-white);
+    color: var(--paris-medium-powderblue, #9EB3C9); 
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--paris-medium-powderblue, #9EB3C9);
+}

@@ -1,0 +1,461 @@
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: #fff;
+    padding: 0 28px;
+    height: var(--header-height, 70px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+/* Classe aggiunta da JS quando la pagina viene scrollata */
+header.scrolled {
+    background-color: rgba(8, 8, 8, 0.88);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Logo ───────────────────────────────────────────────────────────────────── */
+header .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: opacity 0.2s ease;
+}
+
+header .logo:hover {
+    opacity: 0.85;
+}
+
+header .logo .NOWcolor {
+    color: var(--color-accent, #FF6F61);
+}
+
+/* ── Nav links ──────────────────────────────────────────────────────────────── */
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 28px;
+}
+
+header nav ul li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.2s ease;
+}
+
+/* Underline animato */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent, #FF6F61);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ── Auth links ─────────────────────────────────────────────────────────────── */
+header .auth-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header .auth-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+header .auth-links a:hover {
+    color: #fff;
+}
+
+header .auth-links .login-icon {
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--color-accent, #FF6F61);
+    transform: scale(1.1);
+}
+
+header .auth-links .login-icon i {
+    display: block;
+}
+
+/* ── Dropdown utente ────────────────────────────────────────────────────────── */
+header .auth-links .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    background: rgba(15, 15, 15, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md, 12px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    min-width: 160px;
+    text-align: left;
+}
+
+header .auth-links .login-icon:hover .dropdown,
+header .auth-links:hover .dropdown {
+    display: block;
+}
+
+header .dropdown a {
+    display: block;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 10px 14px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0;
+    font-size: 0.88rem;
+    border-radius: var(--radius-sm, 6px);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header .dropdown a:hover {
+    background-color: var(--color-accent, #FF6F61);
+    color: #fff;
+}
+
+/* ── Login icon ─────────────────────────────────────────────────────────────── */
+.login-icon {
+    margin-left: auto;
+    margin-right: 24px;
+    pointer-events: auto;
+}
+
+/* ── Hamburger ──────────────────────────────────────────────────────────────── */
+.menu-toggle {
+    display: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm, 6px);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-toggle::before {
+    content: "☰";
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ── Mega menu ──────────────────────────────────────────────────────────────── */
+li.has-megamenu {
+    position: relative;
+}
+
+.nav-arrow {
+    font-size: 0.6em;
+    margin-left: 5px;
+    transition: transform 0.25s ease;
+}
+
+li.has-megamenu:hover .nav-arrow {
+    transform: rotate(180deg);
+}
+
+li.has-megamenu:hover > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.2s ease-out, visibility 0s linear 0s, transform 0.2s ease-out;
+    pointer-events: auto;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: -60px;
+    background: rgba(14, 15, 18, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-md, 12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transform-origin: top center;
+    transition: opacity 0.2s ease-out, visibility 0s linear 0.2s, transform 0.2s ease-out;
+    z-index: 990;
+    pointer-events: auto;
+    padding: 20px;
+    width: 220px;
+}
+
+.mega-menu-content {
+    position: relative;
+    display: flex;
+    gap: 0;
+    padding-right: 400px;
+    transition: width 0.4s ease;
+}
+
+.mega-menu:has(.destinations-panel.active) .destinations-panel-container {
+    opacity: 1;
+}
+
+.mega-menu:has(.destinations-panel.active) .mega-menu-content {
+    width: 540px;
+}
+
+.mega-menu:has(.destinations-panel.active) {
+    min-width: 540px;
+    transition: min-width 0.4s ease;
+}
+
+.continent-list {
+    padding: 0;
+    width: 180px;
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.continent-item {
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+    border-radius: var(--radius-sm, 6px);
+    margin-bottom: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.continent-item .icon-before {
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.35);
+    width: 1.2em;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.continent-item:hover {
+    color: var(--color-accent, #FF6F61);
+    background-color: rgba(255, 111, 97, 0.08);
+    transform: translateX(3px);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--color-accent, #FF6F61);
+}
+
+.destinations-panel-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    z-index: 999;
+    background-color: transparent;
+}
+
+.destinations-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.destinations-panel.active {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s ease-out, visibility 0s linear 0s;
+}
+
+.destinations-panel h4 {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 16px 0;
+    padding: 0 0 10px 130px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.destinations-panel .america {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 16px 0;
+    padding: 0 0 10px 100px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.destinations-panel ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.destination-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.flag-icon {
+    font-size: 1.05rem;
+    margin-right: 10px;
+    font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    opacity: 0.9;
+}
+
+.destination-item a {
+    color: rgba(200, 210, 230, 0.9);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.destination-item a:hover {
+    color: var(--color-accent, #FF6F61);
+    transform: translateX(3px);
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: var(--header-height, 70px);
+        left: 0;
+        width: 100%;
+        background: rgba(8, 8, 8, 0.96);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        text-align: center;
+        visibility: hidden;
+        height: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease, height 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    nav ul.active {
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateY(0);
+        height: auto;
+        min-height: 280px;
+        padding: 10px 0 20px;
+    }
+
+    nav ul.active li {
+        margin-top: 10px;
+        padding: 8px 0;
+    }
+
+    .login-icon {
+        margin-bottom: 5px;
+    }
+
+    .auth-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .auth-links .dropdown-container {
+        text-align: center;
+        width: 100%;
+    }
+
+    .auth-links .dropdown a {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+
+    li.has-megamenu:hover > .mega-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,341 @@
+/* Variabili Colore */
+:root {
+    --cuzco-deep-green: #344E41;      
+    --cuzco-medium-green: #588157;    
+    --cuzco-light-neutral: #DAD7CD;   
+    --cuzco-highlight-sage: #A3B18A;  
+    --cuzco-accent-earth: #BC6C25;    
+    --cuzco-text-dark: #2A3D35;       
+    --cuzco-text-light: #F8FBF9;      
+    --global-white: #ffffff;
+    --cuzco-stone-grey: #D4D2C9;      
+    --cuzco-medium-olive: #7A916E;    
+    --cuzco-light-green: #B5C99A;     
+    --cuzco-dark-shadow: #1E2A22;     
+
+    --booking-button-primary-border: var(--cuzco-medium-green, #588157);
+    --booking-button-primary-text: var(--cuzco-medium-green, #588157);
+    --booking-button-primary-hover-bg: var(--cuzco-medium-green, #588157);
+    --booking-button-primary-hover-text: var(--global-white);
+    --booking-button-secondary-border: var(--cuzco-highlight-sage, #A3B18A);
+    --booking-button-secondary-text: var(--cuzco-highlight-sage, #A3B18A);
+    --booking-button-secondary-hover-bg: var(--cuzco-highlight-sage, #A3B18A);
+    --booking-button-secondary-hover-text: var(--cuzco-text-dark, #2A3D35);
+
+    --cuzco-medium-green-rgba-15: rgba(88, 129, 87, 0.15);   
+    --cuzco-deep-green-rgba-30: rgba(52, 78, 65, 0.3);       
+    --cuzco-deep-green-rgba-50: rgba(52, 78, 65, 0.5);       
+    --cuzco-highlight-sage-rgba-32: rgba(163, 177, 138, 0.318); 
+}
+
+header .logo .NOWcolor{
+    color: var(--cuzco-medium-green, #588157);
+}
+
+body.theme {
+    background-color: var(--cuzco-deep-green, #344E41);
+}
+
+
+.loading-screen{
+    background: var(--cuzco-medium-green, #588157) !important;
+}
+
+header .logo .logodest{
+    color: var(--cuzco-medium-green, #588157) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--cuzco-medium-green, #588157);
+}
+
+header .dropdown a:hover {
+    background-color: var(--cuzco-medium-green, #588157);
+    color: var(--global-white, #fff);
+}
+
+header nav ul li a:hover {
+    color: var(--cuzco-medium-green, #588157);
+}
+
+.continent-item:hover {
+    color: var(--cuzco-medium-green, #588157);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--cuzco-medium-green, #588157);
+}
+
+.destination-item a:hover {
+    color: var(--cuzco-medium-green, #588157);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+ 
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 140%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+ 
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white; 
+    transform: translateY(-50%);
+    padding: 20px;
+}
+ 
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white; 
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white);
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--cuzco-highlight-sage, #A3B18A); 
+}
+
+.section-alternate-bg {
+    background-color: var(--cuzco-medium-green-rgba-15); 
+}
+
+.theme .section-title {
+    color: var(--global-white); 
+}
+
+.theme .section-title::after {
+    background-color: var(--cuzco-light-green, #B5C99A); 
+}
+
+.info-subtitle {
+    color: var(--cuzco-highlight-sage, #A3B18A); 
+}
+
+.info-subtitle .icon-left {
+    color: var(--cuzco-highlight-sage, #A3B18A); 
+}
+
+strong { 
+    color: var(--cuzco-highlight-sage, #A3B18A); 
+}
+
+#destination-sites{
+    background-color: var(--cuzco-highlight-sage-rgba-32); 
+}
+
+#destination-info-combined em { 
+    color: var(--cuzco-highlight-sage, #A3B18A); 
+}
+
+.booking-section-revamped {
+     
+    background: linear-gradient(135deg, var(--cuzco-light-green, #B5C99A) 0%, var(--cuzco-deep-green, #344E41) 100%); 
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: rgba(255, 255, 255, 0.9); 
+}
+
+.booking-card {
+    background-color: var(--cuzco-deep-green-rgba-30); 
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+}
+
+.booking-card:hover {
+    background-color: var(--cuzco-deep-green-rgba-50); 
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff); 
+}
+
+.booking-card-title {
+    color: var(--global-white, #fff); 
+}
+
+.booking-card-text {
+    color: rgba(255, 255, 255, 0.85); 
+}
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--cuzco-medium-green-rgba-15); 
+}
+
+#destination-summary .section-title {
+    color: var(--global-white); 
+}
+
+.summary-card {
+    background-color: var(--cuzco-medium-green, #588157); 
+}
+
+.summary-card-content h3 {
+    color: var(--global-white, #ffffff); 
+}
+
+.summary-card-content p {
+    color: var(--cuzco-text-light, #F8FBF9); 
+}
+
+#destination-weather .section-title {
+    color: var(--global-white); 
+}
+
+.weather-widget-wrapper {
+    background-color: var(--cuzco-medium-green, #588157); 
+}
+
+.weather-loading {
+    color: var(--cuzco-stone-grey, #D4D2C9); 
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.day-name {
+    color: var(--global-white, #ffffff); 
+}
+
+.temp-max {
+    color: var(--global-white, #ffffff); 
+}
+
+.temp-min {
+    color: var(--global-white, #ffffff); 
+}
+
+.weather-attribution {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--cuzco-medium-green, #588157); 
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--cuzco-medium-olive, #7A916E); 
+}  
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--cuzco-highlight-sage, #A3B18A); 
+    color: var(--cuzco-text-light, #F8FBF9);
+}
+
+.save-favorite:hover {
+    background-color: var(--cuzco-highlight-sage, #A3B18A); 
+    color: var(--cuzco-text-dark, #2A3D35);
+}
+
+.favorite-box {
+    background-color: var(--cuzco-medium-green, #588157); 
+}
+ 
+.favorite-box .info-subtitle {
+    color: var(--global-white, #ffffff); 
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white, #ffffff); 
+}
+ 
+.favorite-box .info-subtitle::after {
+    background-color: rgba(255, 255, 255, 0.4); 
+}
+ 
+.favorite-box .save-favorite {
+    border-color: rgba(255, 255, 255, 0.7); 
+    color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.08); 
+}
+ 
+.favorite-box .save-favorite::before {
+    color: rgba(255, 255, 255, 0.9); 
+}
+ 
+.favorite-box .save-favorite:hover {
+    border-color: var(--global-white);
+    background-color: var(--global-white);
+    color: var(--cuzco-medium-green, #588157); 
+}
+ 
+.favorite-box .save-favorite:hover::before {
+    color: var(--cuzco-medium-green, #588157); 
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+
+    .hero-destination .hero-content {
+        position: center;
+        margin-top: 500px;
+    }
+
+    .hero-destination .scroll-down-arrow {
+        bottom: 100px;
+    }
+}

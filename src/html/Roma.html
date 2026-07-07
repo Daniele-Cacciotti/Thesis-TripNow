@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/roma.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Roma: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span style="font-family:'Cinzel', 'Poppins', sans-serif;" lang="it" dir="ltr" class="logodest">Roma</span>
+
+        </div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="#">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="../../media/video/romabackground.mp4" controls style="max-width: 100%; height: auto;" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Roma, Italia</h1>
+            <p class="hero-subtitle"><b>L’<strong>Urbe Eterna</strong>, mosaico di impero, arte e dolce vita</b></p>
+            <br><br><br>
+            <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ══ SEZIONE 3D IMMERSIVA — scroll-driven narrative ══════════════════════ -->
+    <section id="destination-3d-scene"
+             data-destination="Roma"
+             data-lat="41.9028"
+             data-lon="12.4964"
+             data-model-path="/media/3d/roma/scene.glb"
+             aria-label="Esplorazione 3D immersiva di Roma">
+
+        <div class="scene-viewport">
+        <!-- Canvas Three.js -->
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+        <!-- Barra progresso narrative -->
+        <div class="narrative-progress-bar-track">
+            <div class="narrative-progress-bar"></div>
+        </div>
+
+        <!-- Indicatori fase (pallini laterali) -->
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0" title="Panoramica"></div>
+            <div class="phase-dot" data-phase="1" title="Zoom città"></div>
+            <div class="phase-dot" data-phase="2" title="Punti di interesse"></div>
+            <div class="phase-dot" data-phase="3" title="Itinerario"></div>
+            <div class="phase-dot" data-phase="4" title="Heatmap"></div>
+            <div class="phase-dot" data-phase="5" title="Raccomandazioni"></div>
+            <div class="phase-dot" data-phase="6" title="Pianifica viaggio"></div>
+        </nav>
+
+        <!-- Overlay fase 0: Hero panoramico -->
+        <div class="phase-overlay" id="phase-hero">
+            <h2 class="phase-title">Roma dall'alto</h2>
+            <p class="phase-subtitle">Scorri per esplorare la città eterna</p>
+        </div>
+
+        <!-- Overlay fase 1: Zoom città -->
+        <div class="phase-overlay" id="phase-zoom">
+            <h2 class="phase-title">Il cuore dell'Urbe</h2>
+            <p class="phase-subtitle">Avvicinati per scoprire i quartieri storici</p>
+        </div>
+
+        <!-- Overlay fase 2: POI -->
+        <div class="phase-overlay" id="phase-poi">
+            <h2 class="phase-title">Punti di interesse</h2>
+            <p class="phase-subtitle">Colosseo, Vaticano, Fontana di Trevi — i monumenti più iconici</p>
+        </div>
+
+        <!-- Overlay fase 3: Itinerario -->
+        <div class="phase-overlay" id="phase-route">
+            <h2 class="phase-title">Itinerario ottimizzato</h2>
+            <p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt) per minimizzare i km</p>
+        </div>
+
+        <!-- Overlay fase 4: Heatmap -->
+        <div class="phase-overlay" id="phase-heatmap">
+            <h2 class="phase-title">Analisi urbana in tempo reale</h2>
+            <p class="phase-subtitle">Colori = affollamento previsto per il mese selezionato</p>
+        </div>
+
+        <!-- Controlli heatmap -->
+        <div class="heatmap-controls" role="group" aria-label="Seleziona metrica heatmap">
+            <button data-metric="crowd"  class="active">Folla</button>
+            <button data-metric="cost">Costo</button>
+            <button data-metric="season">Stagione</button>
+        </div>
+
+        <!-- Overlay fase 5: Raccomandazioni -->
+        <div class="phase-overlay" id="phase-recs">
+            <h2 class="phase-title">Pensato per te</h2>
+            <p class="phase-subtitle">Destinazioni simili consigliate dal motore AI ibrido</p>
+        </div>
+
+        <!-- Overlay fase 6: Booking simulator -->
+        <div class="phase-overlay" id="phase-booking">
+            <h2 class="phase-title">Pianifica il tuo viaggio</h2>
+            <p class="phase-subtitle">Stima costi, folla e impronta CO₂ mese per mese</p>
+        </div>
+
+        <!-- Pannello predittivo (fase 6) -->
+        <div id="predictive-panel"></div>
+
+        <!-- Barra caricamento modello 3D -->
+        <div class="model-loading-ui" id="model-loading-ui">
+            <div class="model-load-bar-track">
+                <div class="model-load-bar"></div>
+            </div>
+            <span class="model-load-label">Caricamento modello 3D…</span>
+        </div>
+
+        <!-- Suggerimento scroll (scompare dopo la fase 0) -->
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-hint-arrow"></div>
+            <span class="scroll-hint-text">Scorri</span>
+        </div>
+
+        </div><!-- /.scene-viewport -->
+        <!-- Fallback per browser senza WebGL -->
+        <noscript>
+            <img src="../../media/foto/veduta.jpeg" alt="Vista aerea di Roma" class="fallback-3d">
+        </noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Roma" class="btn-explore-cta" aria-label="Esplora Roma interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Roma interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+    <!-- Script 3D immersivo (ES Module) -->
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nel Tempo: La Storia di Roma</h2>
+
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/veduta.jpeg" alt="Veduta storica di Roma" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 600px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+
+                <p>Fondata secondo la leggenda da <strong>Romolo</strong> nel 753&nbsp;a.C., <strong>Roma</strong> passò da umile villaggio sul Tevere a <em>caput mundi</em> dell’<strong>Impero Romano</strong>. Le sue <strong>vie consolari</strong> irradiavano verso ogni provincia, mentre fori, templi e anfiteatri trasformavano il paesaggio collinare in un palcoscenico monumentale che ancora riecheggia di orazioni e trionfi.</p>
+                <p>Dopo la caduta imperiale del 476&nbsp;d.C., la città conobbe secoli turbolenti, rinascendo come fulcro della cristianità con la costruzione di basiliche paleocristiane e palazzi papali. Dal <strong>Rinascimento</strong> al <strong>Barocco</strong>, maestri come Michelangelo e Bernini scolpirono piazze, cupole e fontane che scintillano alla luce dorata del tramonto. Oggi Roma è Patrimonio UNESCO e incanta viaggiatori con strati di storia sovrapposti come i marmi del Foro.</p>
+                <p>Ogni strato archeologico è un capitolo: dalle domus sotterranee di San Clemente ai murali di Tor Marancia, la città rivela continuamente nuovi volti.  
+                Sette colli, mille storie: Roma vive nell’equilibrio tra mito e quotidianità, gelato alla mano e passi che risuonano sul basolato antico.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-landmark icon-left"></i> Impero, Papato e Modernità</h3>
+                <img src="../../media/foto/colosseovero.jpg" alt="Architettura storica di Roma" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Nei secoli dell’<strong>Impero</strong>, il Colosseo ospitò giochi gladiatori, gli acquedotti portarono acqua alle terme e il <strong>Foro Romano</strong> divenne cuore politico dell’orbe. Con il dominio papale, Roma si vestì di logge affrescate, scalinate scenografiche e obelischi egizi a segnare assi urbanistici.</p>
+                <p>Dopo l’Unità d’Italia (1870) la città fu eletta capitale e si aprì ai viali alberati del <strong>Rione Prati</strong>, ai ministeri neoclassici e alle vivaci caffetterie di Via Veneto. Oggi grattacieli dell’EUR si affacciano su rovine millenarie; musei contemporanei come il <strong>MAXXI</strong> dialogano con catacombe e catene di chiese barocche, offrendo al viaggiatore un ininterrotto ponte fra passato e futuro.</p>
+                <p>Start-up, street-art e cucina d’autore convivono con colonne spezzate e cortili rinascimentali: la <strong>Città Eterna</strong> continua a dettare tendenze senza rinunciare al proprio mito.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+</section>
+
+
+
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Roma: Le sue <strong>Gemme</strong> più preziose</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="colosseo-fori" class="info-subtitle"><i class="fa-solid fa-monument icon-left"></i> <strong>Colosseo e Fori Imperiali</strong></h3>
+                <img src="../../media/foto/foriveri.jpg" alt="Colosseo e Fori Imperiali" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 550px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Camminare tra il <strong>Colosseo</strong> e i <strong>Fori Imperiali</strong> significa attraversare novecento anni di storia – dall’arena degli spettacoli gladiatori alle colonne di <strong>Traiano</strong> che celebrano le conquiste dacia. I resti dei templi, le basiliche civili e la pavimentazione originale raccontano l’evoluzione dell’<strong>Impero Romano</strong> meglio di qualsiasi libro.</p>
+                <p>Scendi nei <strong>passaggi ipogei</strong> per ammirare botole, montacarichi e corridoi che animavano l’arena, poi percorri la passerella sopraelevata del Foro di Cesare fino al <strong>Mercato di Traiano</strong>, primo centro commerciale coperto della storia.</p>
+                <p>Al calar della sera partecipa allo spettacolo multimediale “<strong>Viaggio nei Fori</strong>”: proiezioni immersive sui marmi illuminati che ridanno voce a Cesare, Augusto e alle Vestali. Prenota online il biglietto combinato per evitare code e goderti la passeggiata archeologica in completa libertà.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="sanpietro-basiliche" class="info-subtitle"><i class="fas fa-church icon-left"></i> San Pietro e le Basiliche di Roma</h3>
+                <img src="../../media/foto/sanpietrop.jpg" alt="Cupola di San Pietro" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 600px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>La <strong>Basilica di San Pietro</strong>, cuore della cristianità, accoglie fedeli e viaggiatori con la cupola progettata da <strong>Michelangelo</strong> e il colonnato abbracciante di Bernini. All’interno si custodiscono capolavori come la <strong>Pietà</strong> e il Baldacchino bronzeo, mentre dalla lanterna potrai ammirare un panorama unico sui tetti di Roma e, in lontananza, le cupole minori disseminate lungo il Tevere.</p>
+                <p>Completa il percorso sacro con <strong>Santa Maria Maggiore</strong>, mosaici dorati del V secolo e soffitto ricoperto dal primo oro proveniente dalle Americhe, e con la <strong>Basilica di San Giovanni in Laterano</strong>, cattedra del Papa riccamente decorata da Borromini.</p>
+                <p>Nel cuore dei Fori, fra archi di trionfo e rovine, sorge la <strong>Basilica di Massenzio</strong>: gigantesche volte superstiti che svelano tutta la potenza dell’ingegneria romana. Passeggiare tra questi edifici sacri significa seguire un filo che unisce paganità, cristianesimo e arte barocca in un unico, straordinario racconto.</p>
+                <div class="clear-float"></div>
+
+                <h3 id="ville-romane" class="info-subtitle"><i class="fas fa-tree icon-left"></i> Le Ville Romane</h3>
+                <img src="../../media/foto/esculapio.jpg" alt="Villa Borghese" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 550px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Tra pini secolari e giardini all’italiana, <strong>Villa Borghese</strong> è il polmone verde della capitale: laghetti romantici, cinema all’aperto e la <strong>Galleria Borghese</strong> che ospita capolavori del Bernini e di Caravaggio in un percorso intimo e raffinato.</p>
+                <p>Pedala fino al <strong>Pincio</strong> per goderti uno dei tramonti più celebri di Roma, poi esplora le serre ottocentesche e il Bioparco fra statue neoclassiche avvolte da glicini.</p>
+                <p>Fuori dal centro, scopri le eleganti prospettive di <strong>Villa Doria Pamphilj</strong>, il ninfeo di <strong>Villa Torlonia</strong> – un tempo dimora di Mussolini – e i resti archeologici di <strong>Villa dei Quintili</strong> sull’Appia Antica. Le ville romane offrono un’oasi di pace in cui arte, storia e natura dialogano nel silenzio dei cipressi.</p>
+                <p>Porta con te una coperta e assaggia un <strong>supplì al telefono</strong> seduto sull’erba: la qualità della vita romana si gusta anche fra i cinguettii e i profumi degli agrumi in fiore.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg"> 
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Roma: Consigli e <strong>Segreti</strong> per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-utensils icon-left"></i> Sapori <strong>Romani</strong> e Dolce Vita</h3>
+                <img src="../../media/foto/coda.webp" alt="[Specialità romane]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 400px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Roma è un <strong>teatro di profumi</strong>: inizia con un caldo <strong>cornetto</strong> alla crema, poi ordina <strong>carbonara</strong> con guanciale croccante, <strong>cacio e pepe</strong> mantecata al momento e <strong>supplì al telefono</strong> filanti. Nei mercati di <strong>Campo de’ Fiori</strong> e del <strong>Testaccio</strong> assaggia carciofi alla giudia e porchetta dei Castelli.</p>
+                <p>Siediti a un <em>bar</em> di Trastevere per sorseggiare un <strong>espresso</strong> denso, poi passa a un <strong>aperitivo</strong> con spritz e focaccia sulla terrazza del Pincio al tramonto. Dolce finale con <strong>tiramisù</strong> artigianale o crostata di ricotta e visciole del Ghetto.</p>
+                <p>Amanti dei formaggi? Fermati in Via del Governo Vecchio per pecorino romano DOP, oppure porta a casa una scatola di <strong>cioccolatini Venchi</strong> avvolti in carta dorata: souvenir dal gusto inconfondibile.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-city icon-left"></i> Meraviglie di Roma: Oltre il Colosseo</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline>
+                    <source src="../../media/video/TREVI.webm" type="video/webm"> Il tuo browser non supporta il tag video.
+                </video>
+                <p><strong>Roma</strong> è un <strong>museo a cielo aperto</strong>: naviga il Tevere in battello, ammira gli affreschi di <strong>Villa Farnesina</strong> e i capolavori della <strong>Galleria Borghese</strong>. Attraversa il fotogenico <strong>Ponte Sant’Angelo</strong>, quindi riposati tra i roseti dell’<strong>Aventino</strong> o nei giardini segreti di <strong>Villa Celimontana</strong>.</p>
+                <p><strong>Per respirare la creatività contemporanea</strong> visita il <strong>MAXXI</strong> firmato Zaha Hadid, esplora i murales di <strong>Torpignattara</strong> e i loft rigenerati del <strong>Pastificio Cerere</strong> a San Lorenzo.
+                <p>Fuori dal centro, raggiungi in metro il <strong>Quartiere Coppedè</strong> per scenografie fiabesche o pedala lungo l’<strong>Appia Antica</strong> tra catacombe e pini secolari. Con i bambini? Tappa d’obbligo al <strong>Bioparco</strong> o agli esperimenti interattivi dell’<strong>Explora</strong>.</p>
+                <p>Per rivivere la <strong>Belle Époque romana</strong> entra al <strong>Caffè Greco</strong>, percorri Via Veneto tra palazzi liberty e rivivi la Dolce Vita con un gelato davanti alla <strong>Fontana di Trevi</strong>.</p>
+                <p>Quando cala la sera, attraversa il Tevere verso <strong>Trastevere</strong>: vicoli pavimentati in sampietrini, trattorie illuminate da lanterne e musica dal vivo che si mescola all’aroma di focaccia appena sfornata. Fermati per un <em>amaro</em> alla liquirizia in Piazza Trilussa e, se le gambe lo permettono, sali al <strong>Faro del Gianicolo</strong> per un ultimo sguardo sulle mille luci che punteggiano la Città Eterna – un finale perfetto per una giornata romana.</p>
+                <div class="clear-float"></div>
+
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica <strong>Vincente</strong>: Pass, Trasporti e Orari</h3>
+                <img src="../../media/foto/romapass.jpg" alt="[Roma Pass e mappa Metro]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Acquista i biglietti <strong>fast-track</strong> per Colosseo e Musei Vaticani con largo anticipo. Il <strong>Roma Pass 48/72h</strong> include trasporti e ingressi scontati: conviene se visiti almeno due attrazioni major.</p>
+                <p>Ricarica la <strong>Metrebus card</strong> o usa biglietti tap-in contactless su bus, tram e metro; una corsa <strong>BIT</strong> vale 100 minuti (2,00&nbsp;€). Scarica l’app <strong>Moovit</strong> per percorsi in tempo reale e prenota monopattini <strong>Lime</strong> o <strong>Dott</strong> per spostamenti veloci nel centro storico.</p>
+                <p>Dall’aeroporto di Fiumicino prendi il <strong>Leonardo Express</strong> (32&nbsp;min) o i bus Terravision; da Ciampino utilizza i bus diretti a Termini. Taxi ufficiali a tariffa fissa (48&nbsp;€/FCO, 30&nbsp;€/CIA) – controlla che siano bianchi con licenza visibile.</p>
+                <div class="clear-float"></div>
+
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Viaggiare Informati: Sicurezza e Consigli Utili</h3>
+                        <p>Roma è generalmente sicura, ma fai attenzione a <strong>pick-pocket</strong> su tram  Tram&nbsp;8 e bus 64. Usa borse a tracolla chiuse e diffida di giochi con tre carte vicino ai monumenti.</p>
+                        <p>Copri spalle e ginocchia nelle basiliche, non sederti sui gradini di Piazza di Spagna e non fare il bagno nelle fontane (multe salate). Per info aggiornate consulta <strong>“Viaggiare Sicuri”</strong> del MAEC o chiama il <strong>112</strong> per emergenze.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.eda.admin.ch/eda/it/dfae/rappresentanze-e-consigli-di-viaggio/italia/consigli-viaggio-italia.html#edaad174b" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1350.7128252650168!2d12.482443!3d41.896344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f150!3m3!1m2!1s0x132f61b8e7117a15%3A0x52a8d1b6b8017fc8!2sPiazza%20Venezia%2C%20Roma%20RM!5e0!3m2!1sit!2sit!4v1714408600000!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto per l'Avventura?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio indimenticabile a Roma. Trova le migliori offerte e pianifica ogni dettaglio.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Trova il Volo Perfetto</h3>
+                    <p class="booking-card-text">Confronta le tariffe e prenota il tuo volo per l’Italia alle migliori condizioni.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/rom/250525/250526/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3 class="booking-card-title">Scegli il Tuo Alloggio</h3>
+                    <p class="booking-card-text">Dai boutique hotel del Centro Storico ai rooftop vista Colosseo, trova la sistemazione ideale nel cuore di Roma.</p>
+                    <a href="https://www.trivago.it/it/srl/hotel-roma-italia?search=200-25084;dr-20250525-20250526-s;rc-1-1" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica l'Itinerario<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida dettagliata gratuita per non perderti nulla di Roma.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-roma.pdf">Scarica Guida</button>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="destination-summary" class="destination-section section-alternate-bg">
+    <div class="container">
+        <h2 class="section-title text-center reveal-on-scroll">Icone di Roma: Da Non Perdere</h2>
+        <div class="summary-grid reveal-on-scroll">
+
+            <a href="#colosseo-fori" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/colosseocard.jpg" alt="Colosseo e Fori Imperiali" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fa-solid fa-monument"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>Colosseo &amp; Fori</h3>
+                    <p>L’arena dei gladiatori e il cuore politico dell’<strong>Impero Romano</strong>.</p>
+                </div>
+            </a>
+
+            <a href="#sanpietro-basiliche" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/pietrocard.jpg" alt="Basilica di San Pietro" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fas fa-church icon-left"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>San Pietro &amp; Basiliche</h3>
+                    <p>La cupola di Michelangelo e i capolavori sacri della <strong>Città Eterna</strong>.</p>
+                </div>
+            </a>
+
+            <a href="#ville-romane" class="summary-card">
+                <div class="summary-card-image">
+                    <img src="../../media/foto/villacard.jpg" alt="Villa Borghese" loading="lazy" decoding="async">
+                    <div class="summary-card-overlay">
+                        <span class="summary-card-icon"><i class="fas fa-tree icon-left"></i></span>
+                    </div>
+                </div>
+                <div class="summary-card-content">
+                    <h3>Ville Romane</h3>
+                    <p>Giardini, laghetti e arte tra pini secolari e <strong>Dolce Vita</strong>.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+    
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> <div class="container"> <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+        <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Roma? Salvala per dopo!</span>
+        </h3>
+        <button class="save-favorite" data-name="Roma" data-link="Roma.html">
+            <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+        </button>
+    </div> </div> </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Roma? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>    
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_roma.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

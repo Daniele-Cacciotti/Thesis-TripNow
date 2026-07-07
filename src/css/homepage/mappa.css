@@ -1,0 +1,392 @@
+/* ── Mappa Page - ULTRA PREMIUM COMMAND CENTER 🌍🚀 ───────────────────── */
+
+/* --- 1. Base Map --- */
+#leaflet-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: #050508 !important; /* Fondo abissale se la mappa non carica subito */
+}
+
+/* --- 2. Toolbar HUD Fluttuante --- */
+.mappa-toolbar {
+    position: fixed;
+    top: 90px; /* Spostata più giù per farla respirare sotto l'header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
+    z-index: 1000;
+    background: rgba(15, 15, 20, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,111,97,0.05);
+    animation: slideDown 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes slideDown {
+    from { top: 50px; opacity: 0; }
+    to { top: 90px; opacity: 1; }
+}
+
+.mappa-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.mappa-title i { color: #FF6F61; font-size: 1.2rem; filter: drop-shadow(0 0 8px rgba(255,111,97,0.6));}
+
+.mappa-controls {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.map-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    color: #8b8b9d;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: inherit;
+}
+.map-ctrl-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    transform: translateY(-2px);
+}
+.map-ctrl-btn.active {
+    background: rgba(255,111,97,0.15);
+    border-color: #FF6F61;
+    color: #FF6F61;
+    box-shadow: 0 8px 20px rgba(255,111,97,0.25);
+}
+
+/* --- 3. Marker Radar Pulsanti (ADDIO GOCCE) --- */
+.custom-marker {
+    background: rgba(255, 111, 97, 0.15) !important;
+    border: 2px solid #FF6F61 !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    transform: none !important; /* Sovrascrive la vecchia rotazione */
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    animation: radarPulse 2s infinite;
+}
+.custom-marker:hover {
+    background: #FF6F61 !important;
+    transform: scale(1.1) !important;
+    z-index: 1000 !important;
+}
+.custom-marker.active {
+    background: rgba(52, 211, 153, 0.2) !important;
+    border-color: #34d399 !important;
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+    animation: radarPulseActive 2s infinite;
+}
+.custom-marker-inner {
+    transform: none !important; /* Sovrascrive la vecchia rotazione */
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    letter-spacing: 0.05em;
+}
+
+@keyframes radarPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 111, 97, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0); }
+}
+@keyframes radarPulseActive {
+    0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(52, 211, 153, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/* --- 4. Pannello Laterale Olografico --- */
+.dest-panel {
+    position: fixed;
+    top: 170px; /* Sotto la toolbar */
+    right: -450px;
+    width: 400px;
+    margin-right: 20px; /* Lo fa fluttuare staccato dal bordo destro */
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    background: rgba(12, 12, 18, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,111,97,0.2); /* Luce d'accento in alto */
+    border-radius: 24px;
+    z-index: 1001;
+    padding: 2.5rem 2rem;
+    box-shadow: -10px 20px 50px rgba(0,0,0,0.6);
+    transition: right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.dest-panel.open { right: 0; }
+
+.dest-panel-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #8b8b9d;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.dest-panel-close:hover { 
+    background: #FF6F61; 
+    color: #fff; 
+    border-color: #FF6F61;
+    transform: rotate(90deg);
+}
+
+.dest-panel-flag { font-size: 3rem; margin-bottom: 0.5rem; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));}
+.dest-panel-name { 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    background: linear-gradient(135deg, #fff, #a0a0b0); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.2rem; 
+    line-height: 1.1;
+}
+.dest-panel-country { font-size: 1rem; color: #FF6F61; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+
+.dest-panel-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.dest-tag {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #dcdde8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dest-panel-coords {
+    font-size: 0.85rem;
+    color: #6a6a7c;
+    font-family: monospace;
+    margin-bottom: 2rem;
+    background: #050508;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.dest-panel-btns { display: flex; flex-direction: column; gap: 0.8rem; }
+.dest-panel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    font-family: inherit;
+}
+.dest-panel-btn.primary {
+    background: linear-gradient(90deg, #FF6F61 0%, #ff4b3a 100%);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(255,111,97,0.3);
+}
+.dest-panel-btn.primary:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255,111,97,0.5); }
+
+.dest-panel-btn.secondary {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+}
+.dest-panel-btn.secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-3px);}
+
+/* --- 5. Route Info Bar --- */
+.route-info-bar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background: rgba(15, 15, 22, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(52, 211, 153, 0.3); /* Verde tech per il percorso */
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(52, 211, 153, 0.15);
+}
+.route-info-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+}
+.route-clear-btn {
+    background: rgba(255,111,97,0.15);
+    border: 1px solid rgba(255,111,97,0.3);
+    border-radius: 50px;
+    color: #FF6F61;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+.route-clear-btn:hover { background: #FF6F61; color: #fff; box-shadow: 0 4px 15px rgba(255,111,97,0.4);}
+
+/* --- 6. Leaflet Map Overrides (Stile HUD) --- */
+.leaflet-container { background: #050508 !important; font-family: 'Poppins', sans-serif !important;}
+
+/* Stile bottoni Zoom */
+.leaflet-bar { border: none !important; border-radius: 12px !important; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; }
+.leaflet-bar a {
+    background: rgba(20,20,28,0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    color: #fff !important;
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    transition: all 0.2s;
+}
+.leaflet-bar a:hover { background: #FF6F61 !important; color: #fff !important; }
+.leaflet-control-zoom-in { border-radius: 12px 12px 0 0 !important; }
+.leaflet-control-zoom-out { border-radius: 0 0 12px 12px !important; border-bottom: none !important;}
+
+/* Attribuzione in basso a destra */
+.leaflet-control-attribution {
+    background: transparent !important;
+    color: rgba(255,255,255,0.2) !important;
+    font-size: 0.7rem !important;
+    text-shadow: none !important;
+}
+.leaflet-control-attribution a { color: rgba(255,255,255,0.4) !important; }
+
+/* Popup della Mappa */
+.leaflet-popup-content-wrapper {
+    background: rgba(15, 15, 22, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255,111,97,0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(255,111,97,0.1) !important;
+}
+.leaflet-popup-tip-container { display: none !important; } /* Rimuoviamo il fastidioso triangolino bianco sotto il popup */
+.leaflet-popup-content { color: #fff !important; font-family: 'Poppins', sans-serif; margin: 15px 20px !important; text-align: center;}
+.popup-flag { font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));}
+.popup-name { font-weight: 800; font-size: 1.2rem; color: #fff; margin: 0.5rem 0; letter-spacing: 0.02em;}
+.popup-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: rgba(255,111,97,0.15);
+    color: #FF6F61;
+    border: 1px solid rgba(255,111,97,0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: all 0.2s;
+}
+.popup-link:hover { background: #FF6F61; color: #fff; box-shadow: 0 4px 15px rgba(255,111,97,0.4); }
+
+/* Chiudi popup */
+.leaflet-popup-close-button {
+    color: #8b8b9d !important;
+    top: 8px !important;
+    right: 8px !important;
+    font-size: 1.2rem !important;
+}
+.leaflet-popup-close-button:hover { color: #FF6F61 !important; }
+
+/* --- 7. Responsive Mobile --- */
+@media (max-width: 800px) {
+    .mappa-toolbar { 
+        top: 75px; 
+        width: 92%; 
+        padding: 0.8rem 1rem; 
+        flex-direction: column;
+        border-radius: 16px;
+    }
+    .mappa-title { margin-bottom: 0.5rem; }
+    .mappa-controls { justify-content: center; }
+    
+    .dest-panel { 
+        width: 100%; 
+        margin-right: 0;
+        border-radius: 24px 24px 0 0; 
+        top: auto; 
+        bottom: -100%; 
+        right: 0; 
+        border: none;
+        border-top: 1px solid rgba(255,111,97,0.3);
+        transition: bottom 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    }
+    .dest-panel.open { bottom: 0; right: 0; }
+    
+    .route-info-bar { 
+        width: 92%; 
+        white-space: normal; 
+        bottom: 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    .route-info-inner { flex-direction: column; gap: 0.8rem; align-items: stretch; text-align: center;}
+}

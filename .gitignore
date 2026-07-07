@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contengono chiavi/segreti reali)
+.env
+.env.local
+.env.*.local
+
+# Database locale (contiene dati utenti di test)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Log
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.~lock.*#
+.vscode/
+.idea/

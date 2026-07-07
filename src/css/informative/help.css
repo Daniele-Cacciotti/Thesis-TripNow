@@ -1,0 +1,54 @@
+.support-policy {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #eceaea;
+}
+
+.support-policy h2 {
+    margin-top: 40px;
+    font-size: 1.6rem;
+    color: #f8f8f8;
+}
+
+.support-section {
+    margin-bottom: 40px;
+}
+
+.hero.mini-hero {
+    background-color: transparent;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero.mini-hero h1 {
+    font-size: 2rem;
+    color: #d5d4d4;
+}
+
+.hero.mini-hero p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.support-policy a {
+    color: #FF6F61;
+    text-decoration: none;
+}
+
+.support-policy a:hover {
+    text-decoration: underline;
+}
+
+.support-policy ul {
+    margin-left: 40px;
+    padding-left: 30px;
+}
+
+.support-policy ul li {
+    margin-bottom: 10px;
+}

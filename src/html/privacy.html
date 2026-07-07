@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="stylesheet" href="../css/informative/privacy.css">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Informativa Privacy | TripNow.com</title>
+
+</head>
+
+<body>
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                     <h4>Asia</h4>
+                                     <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                     </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>  
+
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="login-modal" class="modal" style="display:none;">
+        <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+        <div id="modal-form-container">
+            <h2 id="modal-title">Accedi</h2>
+            <form id="modal-form">
+                <input type="email" id="modal-email" placeholder="Email" required>
+                <input type="password" id="modal-password" placeholder="Password" required>
+                <button type="submit" id="modal-submit-btn">Accedi</button>
+            </form>
+            <p id="modal-switch-text">Non hai un account? <a href="#" id="modal-switch-link">Registrati</a></p>
+            <p id="modal-message"></p>
+        </div>
+        <div id="totp-step" style="display:none;">
+            <h2>Verifica 2FA</h2>
+            <input type="text" id="totp-input" maxlength="6" pattern="[0-9]{6}" placeholder="000 000" autocomplete="one-time-code">
+            <button id="totp-submit-btn">Verifica</button>
+            <div style="margin-top:.75rem;">
+                <input type="text" id="backup-input" placeholder="Oppure inserisci un backup code" style="font-size:.82rem;">
+            </div>
+        </div>
+    </div>
+
+    <main class="privacy-policy" style="padding-top: 100px;">
+        <section class="hero mini-hero">
+            <div class="hero-content reveal-on-load">
+                <h1>Informativa sulla Privacy</h1>
+                <p>Ultimo aggiornamento: 23 Maggio 2025</p>
+            </div>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>1. Titolare del trattamento</h2>
+            <p>
+                Il titolare del trattamento dei dati è <strong>TripNow.com S.r.l.</strong>,
+                con sede legale in Via Roma 1, 00100 Roma, Italia
+                (di seguito “TripNow”, “noi” o “nostro”).
+                Per qualunque informazione puoi contattarci a
+                <a href="mailto:NowTripNow@gmail.com?subject=Richiesta%20di%20informazioni">NowTripNow@gmail.com</a>.
+            </p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>2. Dati personali raccolti</h2>
+            <ul class="bullet-list">
+                <li><strong>Dati di registrazione</strong> (nome, cognome, e-mail, password).</li>
+                <li><strong>Dati di prenotazione</strong> (destinazione, date di viaggio, numero di ospiti, preferenze).</li>
+                <li><strong>Dati di pagamento</strong> – gestiti tramite provider di pagamento sicuri (noi non memorizziamo mai i dati completi della carta).</li>
+                <li><strong>Dati di navigazione</strong> e cookie secondo quanto descritto nella Cookie Policy.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>3. Finalità e basi giuridiche</h2>
+            <p>Trattiamo i tuoi dati solo quando abbiamo una base giuridica valida:</p>
+            <table class="privacy-table">
+                <thead><tr><th>Finalità</th><th>Base giuridica</th></tr></thead>
+                <tbody>
+                    <tr><td>Creazione e gestione dell’account</td><td>Esecuzione di un contratto (Art. 6 b GDPR)</td></tr>
+                    <tr><td>Gestione richieste di prenotazione</td><td>Esecuzione di un contratto</td></tr>
+                    <tr><td>Marketing diretto (newsletter, offerte)</td><td>Consenso esplicito (Art. 6 a GDPR)</td></tr>
+                    <tr><td>Miglioramento dei servizi (analisi aggregata)</td><td>Legittimo interesse (Art. 6 f GDPR)</td></tr>
+                    <tr><td>Adempimento obblighi di legge (contabili, fiscali)</td><td>Obbligo legale (Art. 6 c GDPR)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>4. Conservazione dei dati</h2>
+            <p>
+                Conserveremo i tuoi dati per il tempo strettamente necessario al
+                raggiungimento delle finalità sopra indicate o per periodi superiori
+                solo se imposto da obblighi di legge.
+                Ad esempio, i dati di fatturazione possono essere
+                conservati fino a <strong>10 anni</strong> in virtù della normativa fiscale italiana.
+            </p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>5. Destinatari dei dati</h2>
+            <p>
+                I dati possono essere condivisi con:
+            </p>
+            <ul class="bullet-list">
+                <li>Provider di pagamento e banche;</li>
+                <li>Piattaforme di prenotazione partner (ad es. Booking, Skyscanner...)
+                    quando scegli di finalizzare lì la prenotazione;</li>
+                <li>Fornitori di servizi IT e hosting;</li>
+                <li>Autorità competenti quando previsto dalla legge.</li>
+            </ul>
+            <p>I nostri fornitori sono selezionati tramite accordi che garantiscono un livello di protezione adeguato secondo il GDPR.</p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>6. Trasferimenti extra-UE</h2>
+            <p>
+                Se necessario, trasferiamo dati verso Paesi al di fuori dello
+                Spazio Economico Europeo solo in presenza di
+                <em>clausole contrattuali standard</em> o altre garanzie adeguate.
+            </p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>7. Diritti dell’interessato</h2>
+            <p>Puoi esercitare in qualsiasi momento:</p>
+            <ul class="bullet-list">
+                <li>Diritto di accesso, rettifica o cancellazione;</li>
+                <li>Diritto di limitazione o opposizione al trattamento;</li>
+                <li>Diritto alla portabilità dei dati;</li>
+                <li>Diritto di revocare il consenso (senza pregiudicare la liceità del trattamento già effettuato);</li>
+                <li>Diritto di proporre reclamo all’Autorità Garante per la Protezione dei Dati Personali.</li>
+            </ul>
+            <p>Per esercitare i diritti scrivi a <a href="mailto:NowTripNow@gmail.com?subject=Diritti%20sulla%20privacy">NowTripNow@gmail.com</a>.</p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>8. Sicurezza</h2>
+            <p>
+                Mettiamo in atto misure tecniche e organizzative – cifratura TLS,
+                firewall, autenticazione forte per il personale – volte a proteggere i
+                dati da accessi non autorizzati, perdita o divulgazione.
+            </p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>9. Modifiche all’informativa</h2>
+            <p>
+                Potremmo aggiornare periodicamente questa informativa.
+                In caso di modifiche sostanziali ti avviseremo tramite e-mail
+                o notifica sul sito con ragionevole preavviso.
+            </p>
+        </section>
+
+        <section class="privacy-section reveal-on-scroll">
+            <h2>10. Contatti</h2>
+            <p>
+                TripNow S.r.l. – Via Roma 1, 00100 Roma, Italia  
+                Tel. <a href="tel:+390123456789">+39 012 345 6789</a>  
+                E-mail: <a href="mailto:NowTripNow@gmail.com?subject=Richiesta%20di%20informazioni">NowTripNow@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li> 
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li> 
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

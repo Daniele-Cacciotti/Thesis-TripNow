@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Esplora le Nostre Destinazioni - TripNow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css"> 
+    <link rel="stylesheet" href="../css/homepage/header.css"> 
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript> 
+    <link rel="stylesheet" href="../css/destinazioni/destinazioni.css">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+
+</head>
+<body class="theme-dark">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="#">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>
+
+
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="login-modal" class="modal" style="display:none;">
+        <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+        <div id="modal-form-container">
+            <h2 id="modal-title">Accedi</h2>
+            <form id="modal-form">
+                <input type="email" id="modal-email" placeholder="Email" required>
+                <input type="password" id="modal-password" placeholder="Password" required>
+                <button type="submit" id="modal-submit-btn">Accedi</button>
+            </form>
+            <p id="modal-switch-text">Non hai un account? <a href="#" id="modal-switch-link">Registrati</a></p>
+            <p id="modal-message"></p>
+        </div>
+        <div id="totp-step" style="display:none;">
+            <h2>Verifica 2FA</h2>
+            <input type="text" id="totp-input" maxlength="6" pattern="[0-9]{6}" placeholder="000 000" autocomplete="one-time-code">
+            <button id="totp-submit-btn">Verifica</button>
+            <div style="margin-top:.75rem;">
+                <input type="text" id="backup-input" placeholder="Oppure inserisci un backup code" style="font-size:.82rem;">
+            </div>
+        </div>
+    </div>
+
+    <section class="destinations-hero">
+        <div class="destinations-hero-bg"></div> <div class="destinations-hero-overlay"></div> <div class="destinations-hero-content">
+            <h1 class="animate-hero-title" style="font-family: 'Poppins', sans-serif;">Il Mondo Ti Aspetta</h1>
+            <p class="animate-hero-subtitle">Trova la tua prossima meta tra le nostre destinazioni selezionate.</p>
+            <a href="#destinations"><i class="fas fa-chevron-down scroll-indicator animate-bounce"></i></a>
+        </div>
+    </section>
+
+    <section id="destinations" class="destinations-main-content">
+        <div class="container">
+            <div class="continent-filters reveal-on-scroll">
+                <button class="filter-tab active" data-continent="all">
+                    <i class="fas fa-globe"></i> Tutti
+                </button>
+                <button class="filter-tab" data-continent="europa">
+                    <i class="fas fa-globe-europe"></i> Europa
+                </button>
+                <button class="filter-tab" data-continent="asia">
+                    <i class="fas fa-globe-asia"></i> Asia
+                </button>
+                <button class="filter-tab" data-continent="africa">
+                    <i class="fas fa-globe-africa"></i> Africa
+                </button>
+                <button class="filter-tab" data-continent="nord-america">
+                    <i class="fas fa-globe-americas"></i> Nord America
+                </button>
+                <button class="filter-tab" data-continent="sud-america">
+                    <i class="fas fa-globe-americas"></i> Sud America </button>
+            </div>
+
+            <div class="destinations-grid">
+                <div class="destination-card" data-continent="europa">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/colosseo.jpg" alt="Antica Roma, Italia" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Roma.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Roma, Italia</h3>
+                        <p class="card-description">La città eterna, un museo a cielo aperto tra storia e modernità.</p>
+                    </div>
+                </div>
+                 <div class="destination-card" data-continent="europa">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/eiffel.jpg" alt="Torre Eiffel, Parigi, Francia" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Parigi.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Parigi, Francia</h3>
+                        <p class="card-description">La capitale dell'amore, dell'arte e della moda.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-continent="asia">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/istanbul.jpg" alt="Veduta di Istanbul, Turchia" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Istanbul.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Istanbul, Turchia</h3>
+                        <p class="card-description">Dove Oriente e Occidente si incontrano tra storia millenaria e vibrante modernità.</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-continent="asia">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/petra.jpg" alt="Il Tesoro, Petra, Giordania" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Petra.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Petra, Giordania</h3>
+                        <p class="card-description">L'incredibile città rosa scolpita nella roccia.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-continent="africa">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/cairo.jpg" alt="Piramidi di Giza, Il Cairo, Egitto" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Il_Cairo.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Il Cairo, Egitto</h3>
+                        <p class="card-description">Porta d'accesso ai misteri dell'antico Egitto.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-continent="nord-america">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/newyork.jpg" alt="Skyline di Manhattan, New York, USA" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="New_York.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">New York, USA</h3>
+                        <p class="card-description">La città che non dorme mai, icona globale di energia.</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-continent="nord-america">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/goldengate2.jpg" alt="Golden Gate Bridge, San Francisco, USA" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="San_Francisco.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">San Francisco, USA</h3>
+                        <p class="card-description">Innovazione, cultura e paesaggi iconici sulla baia.</p>
+                    </div>
+                </div>
+
+                 <div class="destination-card" data-continent="sud-america">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/cristoredentor.jpg" alt="Cristo Redentore, Rio de Janeiro, Brasile" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="rio_de_janeiro.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Rio de Janeiro, Brasile</h3>
+                        <p class="card-description">Ritmo, spiagge leggendarie e panorami mozzafiato.</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-continent="sud-america">
+                    <div class="card-image-container">
+                        <img src="../../media/foto/cuzco.jpg" alt="Cuzco, Perù" loading="lazy" decoding="async">
+                        <div class="card-overlay">
+                            <a href="Cuzco.html" class="card-discover-btn">Scopri <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cuzco, Perù</h3>
+                        <p class="card-description">Capitale gastronomica e storica del Sud America.</p>
+                    </div>
+                </div>
+
+            </div> </div> </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li> 
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li> 
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script defer src="../js/config.js"></script>
+    <script src="../js/common.js" defer></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+    <script src="../js/destinazioni.js" defer></script> </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Scopri Petra, la città rosa scolpita nella roccia. Informazioni, attrazioni, consigli e prenotazioni per il tuo viaggio in Giordania.">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/destinazioni/common_destinations.css">
+    <link rel="stylesheet" href="../css/destinazioni/Il_Cairo.css">
+    <link rel="stylesheet" href="../css/destinazioni/scene-3d.css">
+    <link rel="stylesheet" href="../css/destinazioni/predictive-panel.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Il Cairo: Guida Completa all'Avventura | TripNow.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script type="importmap">{"imports":{"three":"../js/vendor/three.module.min.js","three/addons/":"../js/vendor/"}}</script>
+</head>
+<body class="theme">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span><span lang="ar" dir="rtl" class="logodest" style="font-family: 'Cairo', 'Amiri', sans-serif;">القاهرة</span></div></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="#">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div class="auth-links">
+            <div class="login-icon">
+                <i class="fa-regular fa-circle-user fa-lg"></i>                        
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type = "register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>      
+
+    <!-- POP-UP overlay della registrazione/login -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Continua<i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="switch-link" id="modal-switch-link">
+                <span>Non hai un account? </span>
+                <a href="#" id="switch-mode-link">Creane uno qui!</a>
+            </p>
+            <p id="modal-message" style="margin-top: 10px; font-weight: bold;"></p>
+            
+        </div>
+    </div>
+
+    <section class="hero-destination">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal-on-load">
+            <h1 class="hero-title">Il Cairo, Egitto</h1>
+            <p class="hero-subtitle"><b>Tra piramidi millenarie e il fascino del Nilo</b></p>
+        </div>
+        <a href="#destination-history" class="scroll-down-arrow" aria-label="Scorri verso il basso">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="destination-3d-scene" data-destination="Il Cairo" data-lat="30.0444" data-lon="31.2357" data-model-path="/media/3d/il-cairo/scene.glb" aria-label="Esplorazione 3D immersiva del Cairo">
+        <div class="scene-viewport">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+        <div class="narrative-progress-bar-track"><div class="narrative-progress-bar"></div></div>
+        <nav class="phase-indicator" aria-label="Fasi narrative">
+            <div class="phase-dot active" data-phase="0"></div><div class="phase-dot" data-phase="1"></div><div class="phase-dot" data-phase="2"></div><div class="phase-dot" data-phase="3"></div><div class="phase-dot" data-phase="4"></div><div class="phase-dot" data-phase="5"></div><div class="phase-dot" data-phase="6"></div>
+        </nav>
+        <div class="phase-overlay" id="phase-hero"><h2 class="phase-title">Il Cairo dall'alto</h2><p class="phase-subtitle">Scorri per esplorare la città delle piramidi</p></div>
+        <div class="phase-overlay" id="phase-zoom"><h2 class="phase-title">La megalopoli del Nilo</h2><p class="phase-subtitle">Scopri i quartieri tra antico e moderno</p></div>
+        <div class="phase-overlay" id="phase-poi"><h2 class="phase-title">Punti di interesse</h2><p class="phase-subtitle">Piramidi di Giza, Sfinge, Museo Egizio — tesori millenari</p></div>
+        <div class="phase-overlay" id="phase-route"><h2 class="phase-title">Itinerario ottimizzato</h2><p class="phase-subtitle">Percorso calcolato con algoritmo TSP (2-opt)</p></div>
+        <div class="phase-overlay" id="phase-heatmap"><h2 class="phase-title">Analisi urbana</h2><p class="phase-subtitle">Affollamento previsto per il mese selezionato</p></div>
+        <div class="heatmap-controls" role="group"><button data-metric="crowd" class="active">Folla</button><button data-metric="cost">Costo</button><button data-metric="season">Stagione</button></div>
+        <div class="phase-overlay" id="phase-recs"><h2 class="phase-title">Pensato per te</h2><p class="phase-subtitle">Destinazioni consigliate dal motore AI ibrido</p></div>
+        <div class="phase-overlay" id="phase-booking"><h2 class="phase-title">Pianifica il tuo viaggio</h2><p class="phase-subtitle">Stima costi, folla e CO₂ mese per mese</p></div>
+        <div id="predictive-panel"></div>
+        <div class="model-loading-ui" id="model-loading-ui"><div class="model-load-bar-track"><div class="model-load-bar"></div></div><span class="model-load-label">Caricamento modello 3D…</span></div>
+        <div class="scroll-hint" aria-hidden="true"><div class="scroll-hint-arrow"></div><span class="scroll-hint-text">Scorri</span></div>
+        </div><!-- /.scene-viewport -->
+        <noscript><img src="../../media/foto/veduta.jpeg" alt="Vista aerea del Cairo" class="fallback-3d"></noscript>
+        <!-- CTA City Explorer -->
+        <a href="esplora.html?dest=Il%20Cairo" class="btn-explore-cta" aria-label="Esplora Il Cairo interattivamente">
+            <i class="fas fa-map-marked-alt"></i> Esplora Il Cairo interattivamente
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+    <script type="module" src="../js/3d/destination-init.js"></script>
+
+    <section id="destination-history" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Un Viaggio nella Meraviglia: La Storia del Cairo</h2>
+            <div class="history-content reveal-on-scroll">
+                <img src="../../media/foto/cairostorica.jpg" alt="Veduta storica del Cairo" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p><strong>Il Cairo</strong>, la vibrante capitale dell'Egitto, si erge da secoli come crocevia di culture, religioni e commerci. Fondata nel <strong>969 d.C.</strong> dalla dinastia fatimide, la città si sviluppò attorno alla famosa <strong>Al-Qahira</strong>, "la Vittoriosa", espandendosi rapidamente grazie alla sua posizione strategica lungo le rive fertili del <strong>Nilo</strong>. Le sue vie, intrise del profumo di spezie e del suono dei mercanti, raccontano una storia lunga millenni, tra palazzi storici, antiche madrase e suq affollati dove il tempo sembra essersi fermato.</p>
+                <p>Nel corso dei secoli, <strong>Il Cairo</strong> divenne il centro culturale e spirituale del mondo islamico. Sotto il dominio mamelucco e ottomano, la città fiorì con opere d’arte e architetture straordinarie: tra queste, la possente <strong>Cittadella di Saladino</strong>, costruita per proteggere la città dagli assedi, e la storica <strong>Moschea di Al-Azhar</strong>, ancora oggi uno dei principali centri di studi religiosi dell'Islam. Oggi, il Cairo si presenta come una metropoli sconfinata, dove la modernità sfida e si mescola al fascino immutabile della tradizione.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-masks-theater icon-left"></i> La Modernità tra Storia e Cultura Millenaria</h3>
+                <img src="../../media/foto/ilcairo.jpg" alt="Veduta moderna del Cairo" class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 620px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Nel corso dei secoli, <strong>Il Cairo</strong> si è evoluto fino a diventare una delle città più affascinanti e complesse del mondo arabo. Accanto ai quartieri storici sono sorti distretti moderni come <strong>Heliopolis</strong> e <strong>Nasr City</strong>, che raccontano il volto contemporaneo della capitale. Oggi, opere come il <strong>Grand Egyptian Museum</strong> testimoniano il desiderio del Cairo di onorare il suo passato millenario guardando al futuro.</p>
+                <p>Camminando per le sue strade si percepisce un’energia unica: il traffico incessante, i mercati affollati, i profumi di spezie e pane appena sfornato si mescolano con la solennità di antichi minareti e moschee secolari. Qui, la modernità non cancella la memoria: ogni angolo racconta storie di sultani, mercanti e viaggiatori.</p>
+                <p>A pochi chilometri dal centro urbano, il panorama cambia: il profilo maestoso delle <strong>Piramidi di Giza</strong> si staglia contro l’orizzonte, richiamando secoli di storia e leggenda. Così, <strong>Il Cairo</strong> continua a vivere sospeso tra passato e presente, offrendo un’esperienza intensa, vibrante e profondamente autentica.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-sites" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Il Cairo: Le sue Meraviglie più Iconiche</h2>
+            <div class="history-content reveal-on-scroll">
+    
+                <h3 id="giza-pyramids" class="info-subtitle"><i class="fa-solid fa-chart-pyramid icon-left"></i> Le Piramidi di Giza</h3>
+                <img src="../../media/foto/sfinge2.jpeg" alt="Le Piramidi di Giza" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Costruite oltre <strong>4500 anni fa</strong> durante l'epoca della Quarta Dinastia, le <strong>Piramidi di Giza</strong> rappresentano uno dei massimi trionfi dell’ingegno umano e uno dei simboli più potenti dell’antico Egitto. La <strong>Grande Piramide di Cheope</strong>, originariamente alta quasi 150 metri, domina il paesaggio arido con la sua geometria perfetta, affiancata dalle piramidi di <strong>Chefren</strong> e <strong>Micerino</strong>, custodi silenziose di misteri ancora oggi irrisolti.</p>
+                <p>Accanto a questi monumenti senza tempo si erge la monumentale <strong>Grande Sfinge</strong>, scolpita da un unico gigantesco blocco di pietra calcarea, che con il suo enigmatico sorriso veglia sulle sabbie del deserto. Passeggiare tra queste vestigia significa vivere un viaggio emozionante nelle profondità di una civiltà che ha scolpito il proprio mito nella pietra e nel vento del Sahara, lasciando un'eredità che continua ad affascinare il mondo intero.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="citadel" class="info-subtitle"><i class="fa-solid fa-mosque icon-left"></i> La Cittadella di Saladino</h3>
+                <img src="../../media/foto/muhammad.jpeg" alt="La Cittadella di Saladino" class="content-image image-float-left reveal-image-left visible" style="max-width: 56%; height: 610px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Costruita a partire dal <strong>1176</strong> su ordine del leggendario Saladino, la <strong>Cittadella del Cairo</strong> è una straordinaria fortezza che domina con imponenza la città antica dalla collina di Mokattam. Inizialmente concepita per respingere gli attacchi crociati, divenne presto il centro politico e militare d'Egitto, ospitando governanti e dinastie che hanno segnato profondamente la storia e l'arte del paese. Oggi l'interno racchiude un vero museo a cielo aperto, tra palazzi storici, moschee e antiche mura.</p>
+                <p>Tra queste spicca la splendida <strong>Moschea di Muhammad Ali</strong>, capolavoro ottomano ispirato all'architettura turca. I suoi minareti slanciati e le candide cupole si stagliano contro il cielo, offrendo uno dei profili più riconoscibili del Cairo. Dalle terrazze panoramiche, il panorama si apre su un mare infinito di cupole, minareti e strade che sfumano dolcemente nel deserto.</p>
+                <div class="clear-float"></div>
+    
+                <h3 id="khan-el-khalili" class="info-subtitle"><i class="fas fa-store icon-left"></i> Il Bazar di Khan el-Khalili</h3>
+                <img src="../../media/foto/b.jpg" alt="Bazar di Khan el-Khalili" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 500px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Nel cuore vibrante del Cairo storico si estende il <strong>Bazar di Khan el-Khalili</strong>, uno dei mercati più antichi e iconici di tutto il mondo islamico. Fondato nel XIV secolo, il suq si presenta come un intricato labirinto di vicoli animati, dove ogni angolo è pervaso da profumi inebrianti di spezie e incenso, da colori vivaci di tessuti pregiati, da luccichii di gioielli e lampade artigianali. Camminare in questo bazar significa immergersi in un’esperienza sensoriale che unisce passato e presente in un continuo susseguirsi di emozioni.</p>
+                <p>Una pausa al celebre <strong>Café El Fishawy</strong>, aperto da oltre due secoli, offre l'occasione perfetta per assaporare il ritmo senza tempo del mercato: tra tè alla menta, fumo di shisha e melodie orientali, si entra in sintonia con l’anima più autentica del Cairo. Ogni sguardo, ogni voce e ogni odore raccontano una storia, rendendo Khan el-Khalili non solo un mercato, ma un vero e proprio universo da esplorare.</p>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-info-combined" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Il Cairo: Consigli e Segreti per un Viaggio Indimenticabile</h2>
+            <div class="info-content reveal-on-scroll">
+    
+                <h3 class="info-subtitle"><i class="fas fa-utensils icon-left"></i> Sapori Egiziani e Ritmi di Relax</h3>
+                <img src="../../media/foto/koshari.jpg" alt="[Immagine di un piatto di koshari egiziano]" class="content-image image-float-right reveal-image-right visible" style="max-width: 50%; height: 400px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>Dopo una mattinata fra piramidi e musei, fermati a gustare il <strong>koshari</strong>: riso, pasta, lenticchie e ceci uniti da salsa di pomodoro piccante e cipolle fritte. È il comfort-food per eccellenza, economico e sostanzioso.</p>
+                <p>Per un boccone veloce prova i <strong>falafel</strong> di fave (ta'ameya) o un morbido <strong>shawarma</strong> arrotolato nel pane arabo. Se vuoi qualcosa di caldo, ordina una saporita <strong>molokhia</strong>, la zuppa verde amata in tutto il Paese.</p>
+                <p>Rilassati poi nei <strong>cafè storici</strong> come <strong>El Fishawy</strong> a Khan el-Khalili: tè alla menta fumante, karkadé ghiacciato e il profumo di shisha che riempie i vicoli dorati dal tramonto.</p>
+                <div class="clear-float"></div>
+    
+                <h3 class="info-subtitle"><i class="fas fa-gem icon-left"></i> Oltre i Classici: Tesori Nascosti e Meraviglie Urbane</h3>
+                <video class="content-image image-float-left reveal-image-left visible" style="max-width: 50%; height: 800px; margin-right: 30px; border-radius: 10px;" autoplay loop muted playsinline> 
+                    <source src="../../media/video/giza.mp4" type="video/mp4"> 
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p>Il Cairo non è solo le Piramidi di Giza o il Museo Egizio: è una città viva e sorprendente, capace di svelare meraviglie inaspettate a chi si addentra nei suoi angoli più autentici.</p>
+                <p>Scopri il fascino antico del <strong>quartiere copto</strong>, un intricato dedalo di stradine tranquille, dove si respira un’atmosfera senza tempo. Qui sorgono chiese millenarie come quella di San Sergio, costruita sopra la grotta in cui, secondo la tradizione, si rifugiò la Sacra Famiglia durante la fuga in Egitto.</p>
+                <p>Non lontano da questo quartiere silenzioso, il <strong>Khan el-Khalili</strong> ti catapulta in un mondo sospeso tra storia e leggenda: il suq più famoso del Cairo è un labirinto di spezie profumate, gioielli scintillanti, tessuti variopinti e artigianato tradizionale. Per una vera immersione nella vita quotidiana, visita anche il <strong>Mercato di Al-Azhar</strong> o lasciati trasportare dai colori e dai profumi delle bancarelle di frutta e spezie nel vivace quartiere di <strong>Sayeda Zeinab</strong>.</p>
+                <p>Se cerchi un angolo di pace, il <strong>Parco Al-Azhar</strong> ti regalerà una pausa di verde e serenità, con spettacolari viste panoramiche sulla Cittadella di Saladino e sui tetti della città vecchia.</p> 
+                <p>Infine, per un tocco di modernità che guarda al futuro, non perdere il <strong>Grand Egyptian Museum</strong> vicino alle Piramidi: un'opera grandiosa che racchiude la più grande collezione di tesori faraonici al mondo in un contesto architettonico d’avanguardia.</p>
+                <div class="clear-float"></div>
+                
+
+    
+                <h3 class="info-subtitle"><i class="fas fa-ticket-alt icon-left"></i> Logistica Intelligente: Come Muoversi e Vivere Il Cairo al Meglio</h3>
+                <img src="../../media/foto/careem.png" alt="[Immagine mappa metro Il Cairo]" class="content-image image-float-right reveal-image-right visible" style="max-width: 45%; height: 350px; margin-left: 30px; border-radius: 10px;" loading="lazy" decoding="async">
+                <p>La <strong>metro</strong> è rapida, climatizzata ed evita il traffico caotico; biglietti da pochi centesimi collegano centro, Giza e Helwan. Evita le ore di punta per viaggiare più comodo.</p>
+                <p>Per tragitti brevi usa <strong>Uber</strong> o <strong>Careem</strong>, mentre i taxi bianchi con tassametro restano economici se contratti la partenza. Tour privati sono utili per zone islamiche e distanze lunghe.</p>
+                <p>Clima desertico? Porta <strong>acqua, cappello, occhiali da sole</strong> e crema SPF alta. Vestiti leggeri ma rispettosi dei luoghi di culto: così vivrai Il Cairo in pieno comfort, dal mattino alla magia delle notti sul Nilo.</p>
+                <div class="clear-float"></div>
+    
+                <div class="info-layout-block image-left">
+                    <div class="info-text-block" style="flex-basis: 100%;">
+                        <h3 class="info-subtitle"><i class="fas fa-user-shield icon-left"></i> Sicurezza e Consigli Pratici per Il Cairo</h3>
+                        <p>Il Cairo è una città ospitale e vibrante, ma come in tutte le grandi metropoli è importante adottare alcune precauzioni. Le zone turistiche principali, come Giza, Zamalek e Downtown, sono generalmente sicure, soprattutto di giorno. È comunque consigliabile non ostentare oggetti di valore, usare borse chiuse e preferire pagamenti elettronici quando possibile. Di sera, meglio limitare gli spostamenti a quartieri ben frequentati e affidarsi a mezzi sicuri per muoversi.</p>
+                        <p>Prima della partenza, consulta i consigli aggiornati sul sito <strong>Viaggiare Sicuri</strong> (www.viaggiaresicuri.it) e considera di registrare il tuo viaggio tramite il servizio "Dove Siamo nel Mondo". Con attenzione e buon senso, potrai vivere appieno l’energia unica del Cairo: una città in cui storia, cultura e modernità convivono in una danza affascinante tra passato e futuro.</p>
+    
+                        <div class="info-buttons-container" style="margin-top: 30px; text-align: center;">
+                            <a href="https://www.viaggiaresicuri.it/find-country/country/EGY" target="_blank" rel="noopener noreferrer" class="booking-button secondary" style="margin-right: 15px;">
+                                <i class="fas fa-shield-alt"></i> Info Sicurezza Ministero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-map" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Orienta la Tua Esplorazione</h2>
+            <div class="map-wrapper reveal-on-scroll">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.149683060704!2d31.23397981507972!3d30.044420881881447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f500!3m3!1m2!1s0x14583f758e76351f%3A0xf0df672fff6510!2sTahrir%20Square%2C%20Cairo%2C%20Egitto!5e0!3m2!1sit!2sit!4v1714401234567!5m2!1sit!2sit" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </section>
+
+    <section id="destination-booking" class="destination-section booking-section-revamped">
+        <div class="container text-center">
+            <h2 class="section-title text-center reveal-on-scroll">Pronto a Esplorare Il Cairo?</h2>
+            <p class="reveal-on-scroll sub-title booking-subtitle">Organizza il tuo viaggio da sogno nella capitale egiziana. Scopri le migliori offerte e preparati a vivere la storia da protagonista.</p>
+            <div class="booking-cards-container reveal-on-scroll">
+                
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="booking-card-title">Vola verso l'Avventura</h3>
+                    <p class="booking-card-text">Confronta le migliori tariffe e prenota il tuo volo per Il Cairo in modo semplice e veloce.</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/it/it-cai/250524/250525/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false" target="_blank" class="booking-button secondary">Cerca Voli</a>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-hotel"></i></div>
+                    <h3 class="booking-card-title">Trova il Tuo Rifugio Ideale</h3>
+                    <p class="booking-card-text">Dagli hotel panoramici vicino alle Piramidi agli eleganti boutique hotel a Zamalek, scegli l'alloggio perfetto per il tuo soggiorno al Cairo.</p>
+                    <a href="https://www.trivago.it/it/lm/hotel-il-cairo-egitto?search=200-15716;dr-20250525-20250526-s" target="_blank" class="booking-button secondary">Trova Alloggi</a>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="booking-card-icon"><i class="fas fa-map-signs"></i></div>
+                    <h3 class="booking-card-title">Scarica la Guida de Il Cairo<br> (by Travel365)</h3>
+                    <p class="booking-card-text">Ottieni la nostra guida gratuita per esplorare Il Cairo al meglio: itinerari, consigli di viaggio, e luoghi imperdibili.</p>
+                    <button class="booking-button secondary download-btn" data-file="guida-il-cairo.pdf">Scarica Guida</button>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="destination-summary" class="destination-section section-alternate-bg">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">Icone del Cairo: Da Non Perdere</h2>
+            <div class="summary-grid reveal-on-scroll">
+    
+                <a href="#giza-pyramids" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/giza.jpg" alt="Piramidi di Giza" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-chart-pyramid"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Le Piramidi di Giza</h3>
+                        <p>Le antiche meraviglie del mondo che dominano il deserto egiziano.</p>
+                    </div>
+                </a>
+    
+                <a href="#citadel" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/cittadella1.jpg" alt="Cittadella di Saladino" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fa-solid fa-mosque"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>La Cittadella di Saladino</h3>
+                        <p>La storica fortezza che domina il Cairo antico, ricca di fascino e storia.</p>
+                    </div>
+                </a>
+    
+                <a href="#khan-el-khalili" class="summary-card">
+                    <div class="summary-card-image">
+                        <img src="../../media/foto/bazar.png" alt="Khan el-Khalili Bazar" loading="lazy" decoding="async">
+                        <div class="summary-card-overlay">
+                            <span class="summary-card-icon"><i class="fas fa-store"></i></span>
+                        </div>
+                    </div>
+                    <div class="summary-card-content">
+                        <h3>Khan el-Khalili</h3>
+                        <p>Il bazar più famoso del Cairo, un intrico di colori, profumi e tradizione.</p>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="favorite-prompt-section reveal-on-scroll" style="padding: 40px 0;"> 
+        <div class="container"> 
+            <div class="favorite-box text-center"> <h3 class="info-subtitle" style="margin-bottom: 20px;">
+                <span class="PREFERITI"><i class="far fa-heart icon-left"></i>Ti è piaciuta Il Cairo? Salvala per dopo!</span>
+                </h3>
+                <button class="save-favorite" data-name="Il Cairo" data-link="Il_Cairo.html">
+                    <i class="far fa-heart"></i>SALVALA TRA I PREFERITI
+                </button>
+            </div> 
+        </div> 
+    </section>
+    
+    
+    <section id="destination-weather" class="destination-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-on-scroll">In partenza per Il Cairo? Ecco le previsioni di questa settimana</h2>
+            <div class="weather-widget-wrapper reveal-on-scroll">
+                <div class="weather-widget-placeholder">
+                    <div class="weather-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento previsioni...
+                    </div>
+                    <div class="weather-forecast-area" id="weather-forecast"></div>
+                    <p class="weather-attribution" id="weather-attribution">Dati meteo forniti da OpenWeatherMap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                 <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/download.js"></script>
+    <script defer src="../js/weather/weather_cairo.js"></script>
+        <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+</body>
+</html>

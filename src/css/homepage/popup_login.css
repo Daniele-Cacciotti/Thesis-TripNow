@@ -1,0 +1,196 @@
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: rgba(10, 10, 10, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: background-color 0.4s ease-out,
+                backdrop-filter 0.4s ease-out,
+                opacity 0.4s ease-out,
+                visibility 0s linear 0.4s;
+}
+  
+#modal-overlay:not(.hidden) {
+    background-color: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: background-color 0.4s ease-out,
+                backdrop-filter 0.4s ease-out,
+                opacity 0.4s ease-out,
+                visibility 0s linear 0s;
+}
+  
+.modal-content {
+    background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    padding: 40px;
+    border-radius: var(--radius-lg, 20px);
+    border-top: 3px solid var(--color-accent, #FF6F61);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid var(--color-accent, #FF6F61);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+    width: 90%;
+    max-width: 420px;
+    color: var(--color-text-primary, #e8e8f0);
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: opacity 0.3s ease-out 0.1s,
+                transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+  
+#modal-overlay:not(.hidden) .modal-content {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+  
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background:#444;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: transparent;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+}
+  
+.close-btn::before {
+    content: "\f00d";
+    font-weight: 900;
+    font-size: 1rem;
+    color:#ccc;
+    transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
+    position: relative;
+    transform: rotate(0deg);
+}
+  
+.close-btn:hover {
+    background-color:#FF6F61;
+}
+  
+.close-btn:hover::before {
+    color:#fff;
+    transform: rotate(180deg);
+}
+
+.modal-content h2#modal-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color:#ffffff;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 10px;
+}
+  
+.modal-content h2#modal-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color:#FF6F61;
+    border-radius: 2px;
+}
+  
+#modal-form input[type="email"],
+#modal-form input[type="password"] {
+    background-color:#333;
+    border: 1px solid#555;
+    color:#fff;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+#modal-form input[type="email"]:focus,
+#modal-form input[type="password"]:focus {
+    border-color:#FF6F61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.4);
+    outline: none;
+}
+  
+#modal-form input::placeholder {
+  color:#888;
+}
+  
+#modal-form button[type="submit"] {
+    background: linear-gradient(to right,#FF6F61,#FF6F61);
+    color:#fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+  
+#modal-form button[type="submit"]::after {
+    font-weight: 900;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+  
+#modal-form button[type="submit"]:hover {
+    background: linear-gradient(to right,#FF6F61,#FF6F61);
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
+    transform: translateY(-3px);
+}
+  
+#modal-form button[type="submit"]:hover::after {
+    transform: translateX(3px);
+}
+
+.switch-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+  
+.switch-link a {
+    color: #FF6F61;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+.switch-link a:hover {
+    color: #fff;
+}

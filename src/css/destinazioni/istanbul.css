@@ -1,0 +1,338 @@
+/* Variabili Colore */
+:root {
+    --istanbul-deep-periwinkle: #6A6E99;      
+    --istanbul-medium-periwinkle: #9FA6CC;    
+    --istanbul-light-periwinkle: #F1F1F7;     
+    --istanbul-highlight-periwinkle: #CFD2E8; 
+    --istanbul-text-dark: #3A3C52;            
+    --istanbul-text-light: #F8F8FC;           
+    --global-white: #ffffff;
+    --istanbul-stone-periwinkle: #CFD2E8;     
+    --istanbul-scroll-hover-periwinkle: #8B91B8;
+    --istanbul-line-periwinkle: #CFD2E8;      
+    --istanbul-dark-shadow: #2B2D3E;          
+
+    --booking-button-primary-border: var(--istanbul-medium-periwinkle, #9FA6CC);
+    --booking-button-primary-text: var(--istanbul-medium-periwinkle, #9FA6CC);
+    --booking-button-primary-hover-bg: var(--istanbul-medium-periwinkle, #9FA6CC);
+    --booking-button-primary-hover-text: var(--istanbul-text-light, #F8F8FC);
+    --booking-button-secondary-border: var(--istanbul-highlight-periwinkle, #CFD2E8);
+    --booking-button-secondary-text: var(--istanbul-highlight-periwinkle, #CFD2E8);
+    --booking-button-secondary-hover-bg: var(--istanbul-highlight-periwinkle, #CFD2E8);
+    --booking-button-secondary-hover-text: var(--istanbul-text-dark, #3A3C52);
+
+    --istanbul-medium-mint-rgba-15: rgba(159, 166, 204, 0.15);  
+    --istanbul-deep-mint-rgba-30: rgba(106, 110, 153, 0.3);     
+    --istanbul-deep-mint-rgba-50: rgba(106, 110, 153, 0.5);     
+    --istanbul-highlight-mint-rgba-32: rgba(207, 210, 232, 0.318);
+}
+
+header .logo .NOWcolor{
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+body.theme {
+    background-color: var(--istanbul-deep-periwinkle, #6A6E99);
+}
+
+.loading-screen{
+    background: var(--istanbul-deep-periwinkle, #9FA6CC) !important;
+}
+
+header .logo .logodest{
+    color: var(--istanbul-medium-periwinkle, #9FA6CC) !important;
+}
+
+header .auth-links .login-icon:hover {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+header .dropdown a:hover {
+    background-color: var(--istanbul-medium-periwinkle, #9FA6CC);
+    color: var(--global-white, #fff);
+}
+
+header nav ul li a:hover {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.continent-item:hover {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.continent-item:hover .icon-before {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.destination-item a:hover {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.hero-destination {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh / 0.9);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-background video {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 130%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: rgba(0, 0, 0, 0.1); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    transform: translateY(10%);
+    padding: 20px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+}
+
+.theme .hero-destination .hero-title {
+    color: var(--global-white);
+}
+
+.theme .hero-destination .hero-subtitle {
+    color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+}
+
+.section-alternate-bg {
+    background-color: var(--istanbul-medium-mint-rgba-15); 
+}
+
+.theme .section-title {
+    color: var(--global-white);
+}
+
+.theme .section-title::after {
+    background-color: var(--istanbul-line-periwinkle, #CFD2E8); 
+}
+
+.info-subtitle {
+    color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+}
+
+.info-subtitle .icon-left {
+    color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+}
+
+strong {
+    color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+}
+
+#destination-sites{
+    background-color: var(--istanbul-highlight-mint-rgba-32); 
+}
+
+#destination-info-combined em {
+    color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+}
+
+.booking-section-revamped {
+    background: linear-gradient(135deg, var(--istanbul-line-periwinkle, #CFD2E8) 0%, var(--istanbul-deep-periwinkle, #6A6E99) 100%);
+}
+
+.booking-section-revamped .booking-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.booking-card {
+    background-color: var(--istanbul-deep-mint-rgba-30); 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.booking-card:hover {
+    background-color: var(--istanbul-deep-mint-rgba-50); 
+}
+
+.booking-card-icon {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-title {
+    color: var(--global-white, #fff);
+}
+
+.booking-card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.booking-button {
+    color: var(--booking-button-primary-text);
+    border: 2px solid var(--booking-button-primary-border);
+}
+
+.booking-button:hover {
+    background-color: var(--booking-button-primary-hover-bg);
+    color: var(--booking-button-primary-hover-text);
+    border-color: var(--booking-button-primary-hover-bg);
+}
+
+.booking-button.secondary {
+    border-color: var(--booking-button-secondary-border);
+    color: var(--booking-button-secondary-text);
+}
+
+.booking-button.secondary:hover {
+    background-color: var(--booking-button-secondary-hover-bg);
+    border-color: var(--booking-button-secondary-hover-bg);
+    color: var(--booking-button-secondary-hover-text);
+}
+
+#destination-summary {
+    background-color: var(--istanbul-medium-mint-rgba-15); 
+}
+
+#destination-summary .section-title {
+    color: var(--global-white);
+}
+
+.summary-card {
+    background-color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.summary-card-content h3 {
+    color: var(--global-white, #ffffff);
+}
+
+.summary-card-content p {
+    color: var(--istanbul-text-light, #F8F8FC);
+}
+
+#destination-weather .section-title {
+    color: var(--global-white);
+}
+
+.weather-widget-wrapper {
+    background-color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.weather-loading {
+    color: var(--istanbul-stone-periwinkle, #CFD2E8); 
+}
+
+.weather-day {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather-day:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.day-name {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-max {
+    color: var(--global-white, #ffffff);
+}
+
+.temp-min {
+    color: var(--global-white, #ffffff);
+}
+
+.weather-attribution {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.theme::-webkit-scrollbar-thumb {
+    background: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.theme::-webkit-scrollbar-thumb:hover {
+    background: var(--istanbul-scroll-hover-periwinkle, #8B91B8);
+}
+
+.save-favorite {
+    background-color: transparent;
+    border: 2px solid var(--istanbul-highlight-periwinkle, #CFD2E8);
+    color: var(--istanbul-text-light, #F8F8FC);
+}
+
+.save-favorite:hover {
+    background-color: var(--istanbul-highlight-periwinkle, #CFD2E8);
+    color: var(--istanbul-text-dark, #3A3C52);
+}
+
+.favorite-box {
+    background-color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.favorite-box .info-subtitle {
+    color: var(--global-white, #ffffff);
+}
+
+.favorite-box .info-subtitle .icon-left {
+    color: var(--global-white, #ffffff);
+}
+
+.favorite-box .info-subtitle::after {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.favorite-box .save-favorite {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.favorite-box .save-favorite::before {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.favorite-box .save-favorite:hover {
+    border-color: var(--global-white);
+    background-color: var(--global-white);
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+.favorite-box .save-favorite:hover::before {
+    color: var(--istanbul-medium-periwinkle, #9FA6CC);
+}
+
+@media (max-width: 768px) {
+    .hero-destination .hero-content {
+        position: center;
+        margin-top: -200px;
+    }
+
+    .hero-destination .hero-background video {
+        height: 110% !important;
+    }
+}

@@ -1,0 +1,308 @@
+/* ── Sistema di Design Globale ──────────────────────────────────────────────── */
+:root {
+    /* Colori principali */
+    --color-accent:        #FF6F61;
+    --color-accent-dark:   #E0554A;
+    --color-accent-light:  #FF9A8B;
+    --color-accent-glow:   rgba(255, 111, 97, 0.35);
+
+    /* Colore secondario (teal-blu) per accenti duali */
+    --color-secondary:     #38bdf8;
+    --color-secondary-glow: rgba(56, 189, 248, 0.2);
+
+    /* Sfondi — leggermente più profondi */
+    --color-bg-base:       #0a0a0f;
+    --color-bg-surface:    #131320;
+    --color-bg-elevated:   #1c1c2e;
+    --color-bg-glass:      rgba(255, 255, 255, 0.05);
+    --color-border-glass:  rgba(255, 255, 255, 0.1);
+
+    /* Testo */
+    --color-text-primary:  #e8e8f0;
+    --color-text-secondary:#9090a8;
+    --color-text-muted:    #555568;
+    --color-white:         #ffffff;
+
+    /* Ombre */
+    --shadow-sm:  0 2px 8px  rgba(0, 0, 0, 0.4);
+    --shadow-md:  0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-lg:  0 16px 48px rgba(0, 0, 0, 0.6);
+    --shadow-accent: 0 8px 24px var(--color-accent-glow);
+
+    /* Border radius */
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+    --radius-xl:  32px;
+    --radius-pill: 999px;
+
+    /* Transizioni */
+    --transition-fast:   0.15s ease;
+    --transition-base:   0.25s ease;
+    --transition-slow:   0.4s ease;
+    --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height:   70px;
+}
+
+/* ── Reset & Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Transizione globale solo su color e opacity — evita jank su layout */
+a, button, input, select, textarea {
+    font-family: 'Poppins', sans-serif;
+    transition: color var(--transition-base),
+                background-color var(--transition-base),
+                opacity var(--transition-base),
+                border-color var(--transition-base);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    zoom: 0.9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg-base);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 10% 0%, rgba(255, 111, 97, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(56, 189, 248, 0.03) 0%, transparent 60%);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-dark));
+    border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* ── Selezione testo ────────────────────────────────────────────────────────── */
+::selection {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* ── Animazioni scroll reveal ───────────────────────────────────────────────── */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease-out,
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-on-load,
+.reveal-on-load-delayed {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on-load-delayed {
+    transition-delay: 0.18s;
+}
+.reveal-on-load.visible,
+.reveal-on-load-delayed.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Content Visibility — skip rendering of off-screen sections ─────────────── */
+/* Risparmia fino al 60% del tempo di rendering iniziale */
+.special-offers,
+.featured-trips,
+.portfolio-grid,
+.info-usp,
+.testimonials,
+.contact,
+.newsletter-signup,
+footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
+}
+
+/* ── Responsive base ────────────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 20px;
+    }
+    header nav ul li {
+        margin-left: 15px;
+    }
+    .search-form-integrated {
+        max-width: 700px;
+        width: 90%;
+    }
+    .search-button-integrated span {
+        display: none;
+    }
+    .search-button-integrated {
+        padding: 15px;
+    }
+    .search-form-integrated.search-two-rows .search-top-row,
+    .search-form-integrated.search-two-rows .search-bottom-row {
+        flex-direction: column;
+    }
+}
+
+/* ── Modal Overlay (new structure: #modal-overlay + #login-modal) ─────── */
+#modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    animation: modalOverlayIn 0.25s ease;
+}
+@keyframes modalOverlayIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Old modal uses class="hidden" toggle */
+#modal-overlay.hidden {
+    display: none !important;
+}
+
+#login-modal.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 1001;
+    background: linear-gradient(145deg, rgba(28,28,46,0.98), rgba(18,18,30,0.98));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid #FF6F61;
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 420px;
+    color: #e8e8f0;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+    animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes modalIn {
+    from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+    to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+}
+
+#login-modal h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#login-modal #modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#login-modal input[type="email"],
+#login-modal input[type="password"],
+#login-modal input[type="text"] {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+#login-modal input:focus {
+    outline: none;
+    border-color: #FF6F61;
+    box-shadow: 0 0 0 3px rgba(255,111,97,0.15);
+}
+#login-modal input::placeholder { color: rgba(255,255,255,0.35); }
+
+#login-modal button[type="submit"],
+#login-modal #totp-submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, #FF6F61, #ff9a8b);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s;
+    box-shadow: 0 4px 15px rgba(255,111,97,0.3);
+}
+#login-modal button[type="submit"]:hover,
+#login-modal #totp-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,111,97,0.45);
+}
+
+#modal-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: background 0.2s, color 0.2s;
+}
+#modal-close-btn:hover { background: #FF6F61; color: #fff; }
+
+#modal-switch-text, #modal-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: rgba(220,221,232,0.6);
+}
+#modal-switch-text a, #modal-switch-link {
+    color: #FF6F61;
+    text-decoration: none;
+    font-weight: 600;
+}
+#modal-switch-text a:hover, #modal-switch-link:hover { text-decoration: underline; }

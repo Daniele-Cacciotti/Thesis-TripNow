@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta name="description" content="Mappa interattiva delle destinazioni TripNow con percorso ottimale Trip Planner.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/mappa.css">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Mappa Destinazioni | TripNow.com</title>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div></a>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa">
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="continent-list">
+                                <li class="continent-item" data-continent="europa"><i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                <li class="continent-item" data-continent="asia"><i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                <li class="continent-item" data-continent="africa"><i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="#">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <div class="login-icon"><i class="fa-regular fa-circle-user fa-lg"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type="register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <button class="menu-toggle"></button>
+    </header>
+
+    <!-- Toolbar mappa -->
+    <div class="mappa-toolbar">
+        <div class="mappa-title">
+            <i class="fas fa-globe-europe" style="color:#FF6F61;"></i>
+            <span>Mappa Destinazioni</span>
+        </div>
+        <div class="mappa-controls">
+            <button id="map-show-all" class="map-ctrl-btn active">
+                <i class="fas fa-map-marker-alt"></i> Tutte le destinazioni
+            </button>
+            <button id="map-show-route" class="map-ctrl-btn">
+                <i class="fas fa-route"></i> Mostra percorso ottimale
+            </button>
+            <button id="map-reset-view" class="map-ctrl-btn">
+                <i class="fas fa-compress-alt"></i> Reimposta vista
+            </button>
+        </div>
+    </div>
+
+    <!-- Mappa Leaflet full-height -->
+    <div id="leaflet-map"></div>
+
+    <!-- Pannello laterale destinazione -->
+    <div id="dest-panel" class="dest-panel">
+        <button id="dest-panel-close" class="dest-panel-close"><i class="fas fa-times"></i></button>
+        <div id="dest-panel-content"></div>
+    </div>
+
+    <!-- Route info bar (visibile solo con percorso) -->
+    <div id="route-info-bar" class="route-info-bar" style="display:none;">
+        <div class="route-info-inner">
+            <span id="route-info-text"></span>
+            <button id="route-clear-btn" class="route-clear-btn"><i class="fas fa-times"></i> Rimuovi percorso</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="login-modal" class="modal" style="display:none;">
+        <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+        <div id="modal-form-container">
+            <h2 id="modal-title">Accedi</h2>
+            <form id="modal-form">
+                <input type="email" id="modal-email" placeholder="Email" required>
+                <input type="password" id="modal-password" placeholder="Password" required>
+                <button type="submit" id="modal-submit-btn">Accedi</button>
+            </form>
+            <p id="modal-switch-text">Non hai un account? <a href="#" id="modal-switch-link">Registrati</a></p>
+            <p id="modal-message"></p>
+        </div>
+        <div id="totp-step" style="display:none;">
+            <h2>Verifica 2FA</h2>
+            <input type="text" id="totp-input" maxlength="6" pattern="[0-9]{6}" placeholder="000 000" autocomplete="one-time-code">
+            <button id="totp-submit-btn">Verifica</button>
+            <div style="margin-top:.75rem;">
+                <input type="text" id="backup-input" placeholder="Oppure inserisci un backup code" style="font-size:.82rem;">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+    <script defer src="../js/mappa.js"></script>
+</body>
+</html>

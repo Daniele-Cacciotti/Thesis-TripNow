@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/homepage/user.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/popup_login.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/popup_login.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Il tuo Profilo | TripNow.com</title>
+</head>
+<body class="theme-dark">
+    <!-- Barra progresso scroll -->
+    <div id="scroll-progress"></div>
+    <!-- Bottone torna su -->
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+
+    <!--Loading Screen-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+    <!-- Header -->
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div> </a>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <!-- Menu destinazioni -->
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa"> 
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>                                      
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                     <h4>Asia</h4>
+                                     <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                     </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <ul class="continent-list">
+                                    <li class="continent-item" data-continent="europa"> <i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                    <li class="continent-item" data-continent="asia">   <i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                    <li class="continent-item" data-continent="africa"> <i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                    <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                    <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                                </ul>
+                        </div> 
+                    </div> 
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="voli.html">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <!-- Icona e link di login e registrazione con menu -->
+        <div>
+        </div>
+        <!-- Bottone del menu a tendina per la visualizzazione mobile -->
+        <button class="menu-toggle"></button>
+    </header>  
+    
+    <main class="account-main">
+        <div class="container">
+
+            <section class="profile-header reveal-on-scroll">
+                <div class="profile-avatar-placeholder">
+                    <i class="fas fa-user-astronaut"></i> </div>
+                <div class="profile-welcome">
+                    <h1 style="font-family: 'Poppins', sans-serif;">Il Tuo Spazio Personale</h1>
+                    <p>Benvenuto nel tuo profilo, <strong><span id="user-email"></span>!</h1><strong></strong></div>
+            </section>
+            
+            <section class="saved-trips reveal-on-scroll">
+                <h2 class="section-title-account"><i class="fas fa-heart icon-left"></i> I Tuoi Viaggi Preferiti</h2>
+                <div id="saved-trips-grid" class="saved-trips-grid">
+                    <div class="no-trips-placeholder">
+                        <i class="fas fa-suitcase-rolling"></i>
+                        <h2>I tuoi viaggi salvati</h2>
+                        <p id="no-favorites-message">(Non hai ancora salvato viaggi... Inizia ora!)
+                            <br><br> <a href="destinazioni.html" class="cta-button-account">Esplora Destinazioni</a>
+                        </p>
+                        <ul id="favorites-list">
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="account-settings reveal-on-scroll">
+                <h2 class="section-title-account">
+                    <i class="fas fa-cog icon-left"></i> Impostazioni Account
+                </h2>
+                <div>
+                    <a href="#" id="edit-email-link" class="setting-link">
+                        <h2>
+                            <i class="fas fa-envelope"></i>
+                            <span class="mod">Modifica Email</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </h2>
+                        <div id="email-modal" class="modal" style="display:none;">
+                            <h3>Inserisci la nuova mail</h3>
+                            <input type="email" id="new-email" placeholder="Nuova email" required>
+                            <button id="save-email-btn">Salva</button>
+                        </div>
+                    </a>
+            
+                    <a href="#" id="edit-password-link" class="setting-link">
+                        <h2>
+                            <i class="fas fa-key"></i>
+                            <span class="mod">Modifica Password</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </h2>
+                        <div id="password-modal" class="modal" style="display:none;">
+                            <h3>Inserisci la nuova password</h3>
+                            <input type="password" id="new-password" placeholder="Nuova password" required>
+                            <button id="save-password-btn">Salva</button>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <!-- Sezione 2FA -->
+            <section class="account-settings reveal-on-scroll" id="totp-section">
+                <h2 class="section-title-account">
+                    <i class="fas fa-shield-alt icon-left" style="color:#FF6F61;"></i> Autenticazione a Due Fattori
+                </h2>
+                <!-- Stato attuale 2FA -->
+                <div id="totp-status-block">
+                    <a href="#" id="totp-toggle-link" class="setting-link">
+                        <h2>
+                            <i class="fas fa-mobile-alt"></i>
+                            <span class="mod" id="totp-status-text">Caricamento...</span>
+                            <span id="totp-status-badge" class="totp-badge"></span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </h2>
+                    </a>
+                </div>
+
+                <!-- Setup 2FA (nascosto inizialmente) -->
+                <div id="totp-setup-block" class="modal" style="display:none;">
+                    <h3><i class="fas fa-qrcode"></i> Scansiona il QR Code</h3>
+                    <p style="font-size:0.85rem; color:rgba(220,221,232,0.6); margin-bottom:1rem;">
+                        Usa Google Authenticator, Authy o un'app TOTP compatibile per scansionare il codice.
+                    </p>
+                    <div id="qr-container" style="text-align:center; margin-bottom:1rem;">
+                        <img id="qr-img" src="" alt="QR Code 2FA" style="border-radius:8px; max-width:220px;">
+                    </div>
+                    <p style="font-size:0.8rem; color:rgba(220,221,232,0.4); margin-bottom:1rem;">
+                        Oppure inserisci manualmente: <code id="totp-manual-secret"
+                            style="background:rgba(255,255,255,0.05); padding:0.2rem 0.5rem; border-radius:4px;"></code>
+                    </p>
+                    <input type="text" id="totp-verify-input" inputmode="numeric" maxlength="6"
+                        pattern="[0-9]{6}" placeholder="Codice a 6 cifre"
+                        style="letter-spacing:0.2em; text-align:center; font-size:1.3rem; font-weight:700; margin-bottom:0.75rem;">
+                    <button id="totp-enable-btn" class="cta-button-account" style="background:#FF6F61; color:#fff; border:none;">
+                        <i class="fas fa-check-circle"></i> Attiva 2FA
+                    </button>
+                    <button id="totp-setup-cancel" class="cta-button-account" style="background:transparent; border:1px solid rgba(255,255,255,0.15);">
+                        Annulla
+                    </button>
+                </div>
+
+                <!-- Backup codes (mostrati dopo attivazione) -->
+                <div id="backup-codes-block" class="modal" style="display:none;">
+                    <h3><i class="fas fa-key"></i> Codici di Backup</h3>
+                    <p style="font-size:0.85rem; color:rgba(220,221,232,0.6); margin-bottom:1rem;">
+                        Salva questi codici in un posto sicuro. Ognuno può essere usato una sola volta se perdi accesso all'app.
+                    </p>
+                    <div id="backup-codes-list"
+                        style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; margin-bottom:1rem;"></div>
+                    <button id="backup-codes-done" class="cta-button-account" style="background:#FF6F61; color:#fff; border:none;">
+                        <i class="fas fa-check"></i> Ho salvato i codici
+                    </button>
+                </div>
+
+                <!-- Disattiva 2FA (nascosto inizialmente) -->
+                <div id="totp-disable-block" class="modal" style="display:none;">
+                    <h3><i class="fas fa-unlock-alt"></i> Disattiva 2FA</h3>
+                    <p style="font-size:0.85rem; color:rgba(220,221,232,0.6); margin-bottom:0.75rem;">
+                        Per sicurezza, conferma con la tua password e il codice OTP.
+                    </p>
+                    <input type="password" id="disable-password" placeholder="Password attuale" style="margin-bottom:0.5rem;">
+                    <input type="text" id="disable-totp-code" inputmode="numeric" maxlength="6"
+                        placeholder="Codice OTP attuale"
+                        style="letter-spacing:0.15em; text-align:center; margin-bottom:0.75rem;">
+                    <button id="totp-disable-btn" class="cta-button-account delete">
+                        <i class="fas fa-times-circle"></i> Disattiva 2FA
+                    </button>
+                    <button id="totp-disable-cancel" class="cta-button-account" style="background:transparent; border:1px solid rgba(255,255,255,0.15);">
+                        Annulla
+                    </button>
+                </div>
+            </section>
+
+            <div class="logout-section reveal-on-scroll">
+                <button id="logout-btn" class="cta-button-account logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <button id="delete-account-btn" class="cta-button-account delete">
+                    <i class="fas fa-trash-alt"></i> Elimina Account
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy" decoding="async">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili in tutto il mondo.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li> 
+                    <li><a href="faq.html">Domande Frequenti (FAQ)</a></li> 
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                <h4>Legale & Supporto</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini_di_servizio.html">Termini di Servizio</a></li>
+                    <li><a href="assistenza.html">Assistenza Clienti</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/user.js"></script>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+
+</body>
+</html>

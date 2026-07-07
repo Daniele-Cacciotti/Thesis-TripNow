@@ -1,0 +1,128 @@
+.featured-trips {
+    position: relative; 
+    padding: 180px 20px 120px 20px;
+    min-height: 120vh;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    color: #fff; 
+    overflow: hidden; 
+}
+
+.featured-trips-bg {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-image: url("../../../media/foto/route.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    z-index: 0;
+    filter: brightness(0.7) saturate(1.1);
+}
+
+.featured-trips-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, 
+                                    rgba(0,0,0,0.15) 0%,  
+                                    rgba(0,0,0,0.6) 50%, 
+                                    rgba(0,0,0,0.9) 100%); 
+    z-index: 1; 
+}
+
+.featured-trips-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px; 
+}
+
+.featured-trips-header {
+    margin-bottom: 300px;
+}
+
+.featured-trips-header h2 {
+    font-size: clamp(2.2rem, 5.5vw, 3rem); 
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.featured-trips-header p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #f0f0f0;
+    max-width: 650px;
+    margin: 0 auto;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+
+.featured-trips .offers {
+    margin-top: 30px;
+    justify-content: center; 
+}
+
+.featured-trips .offer-card {
+    width: clamp(230px, 24%, 290px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35); 
+}
+
+.featured-trips .offer-card-image-container {
+    height: 150px;
+}
+
+.featured-trips .offer-card-content {
+    padding: 18px; 
+}
+
+.featured-trips .offer-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+.featured-trips .offer-card h3 i {
+    font-size: 1rem; 
+}
+
+.featured-trips .offer-card p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.featured-trips .cta-button {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .featured-trips {
+        padding: 100px 15px 80px 15px;
+        min-height: 70vh; 
+        justify-content: center;
+    }
+    
+    .featured-trips .offers { 
+        gap: 20px;
+    } 
+
+    .featured-trips-header { 
+        margin-bottom: 40px; 
+    }
+
+    .featured-trips-header h2 { 
+        font-size: clamp(1.8rem, 6vw, 2.4rem); 
+    }
+    
+    .featured-trips-header p { 
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem); 
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "TripNow - Viaggi & Destinazioni",
+  "short_name": "TripNow",
+  "description": "Scopri le migliori destinazioni di viaggio nel mondo con TripNow",
+  "start_url": "/src/html/homepage.html",
+  "scope": "/src/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#FF6F61",
+  "background_color": "#0a0a0f",
+  "lang": "it",
+  "categories": ["travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "/media/foto/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Esplora Destinazioni",
+      "url": "/src/html/destinazioni.html",
+      "description": "Sfoglia tutte le destinazioni disponibili"
+    },
+    {
+      "name": "Trip Planner",
+      "url": "/src/html/trip-planner.html",
+      "description": "Pianifica il tuo itinerario ottimale"
+    }
+  ]
+}

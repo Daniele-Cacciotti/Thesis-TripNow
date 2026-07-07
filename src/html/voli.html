@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FF6F61">
+    <meta name="description" content="Cerca voli in tempo reale con l'API Amadeus. Trova le migliori tariffe aeree.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/general_styles.css">
+    <link rel="stylesheet" href="../css/homepage/loading_screen.css">
+    <link rel="stylesheet" href="../css/homepage/header.css">
+    <link rel="stylesheet" href="../css/homepage/footer.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/footer.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/extras.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/homepage/extras.css"></noscript>
+    <link rel="stylesheet" href="../css/homepage/voli.css">
+    <link rel="shortcut icon" href="../../media/foto/ultimo.ico" type="image/x-icon">
+    <title>Cerca Voli | TripNow.com</title>
+    
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <button id="back-to-top" aria-label="Torna in cima"><i class="fas fa-chevron-up"></i></button>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Trip<span class="accent">NOW</span></div>
+        <div class="loading-spinner"></div>
+        <p class="loading-tagline">Caricamento in corso…</p>
+    </div>
+
+    <header>
+        <a href="homepage.html" class="logo"><div class="logo">Trip<span class="NOWcolor">NOW</span></div></a>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="nav-destinations has-megamenu">
+                    <a href="destinazioni.html">Destinazioni <i class="fas fa-chevron-down fa-xs nav-arrow"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="destinations-panel-container">
+                                <div class="destinations-panel" id="panel-europa">
+                                    <h4>Europa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇮🇹</span><a href="Roma.html">Roma, Italia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇫🇷</span><a href="Parigi.html">Parigi, Francia</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-asia">
+                                    <h4>Asia</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇹🇷</span><a href="Istanbul.html">Istanbul, Turchia</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇯🇴</span><a href="Petra.html">Petra, Giordania</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-africa">
+                                    <h4>Africa</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇪🇬</span><a href="Il_Cairo.html">Il Cairo, Egitto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-nord-america">
+                                    <h4 class="america">Nord America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="New_York.html">New York, USA</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇺🇸</span><a href="San_Francisco.html">San Francisco, USA</a></li>
+                                    </ul>
+                                </div>
+                                <div class="destinations-panel" id="panel-sud-america">
+                                    <h4 class="america">Sud America</h4>
+                                    <ul>
+                                        <li class="destination-item"><span class="flag-icon">🇧🇷</span><a href="rio_de_janeiro.html">Rio de Janeiro, Brasile</a></li>
+                                        <li class="destination-item"><span class="flag-icon">🇵🇪</span><a href="Cuzco.html">Cuzco, Perù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="continent-list">
+                                <li class="continent-item" data-continent="europa"><i class="fas fa-globe-europe icon-before"></i> Europa</li>
+                                <li class="continent-item" data-continent="asia"><i class="fas fa-globe-asia icon-before"></i> Asia</li>
+                                <li class="continent-item" data-continent="africa"><i class="fas fa-globe-africa icon-before"></i> Africa</li>
+                                <li class="continent-item" data-continent="nord-america"><i class="fas fa-globe-americas icon-before"></i> Nord America</li>
+                                <li class="continent-item" data-continent="sud-america"><i class="fas fa-globe-americas icon-before"></i> Sud America</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="trip-planner.html">Trip Planner</a></li>
+                <li><a href="mappa.html">Mappa</a></li>
+                <li><a href="#">Cerca Voli</a></li>
+                <li><a href="itinerario.html">Itinerario AI</a></li>
+                <li><a href="homepage.html#specoff">Offerte</a></li>
+                <li><a href="homepage.html#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <div class="login-icon"><i class="fa-regular fa-circle-user fa-lg"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <a href="#" class="open-modal" data-type="login">Accedi</a>
+                    <a href="#" class="open-modal register" data-type="register">Registrati</a>
+                </div>
+            </div>
+        </div>
+        <button class="menu-toggle"></button>
+    </header>
+
+    <!-- Hero -->
+    <section class="voli-hero">
+        <div class="voli-badge"><i class="fas fa-satellite-dish"></i> Live Data by Skyscanner</div>
+        <h1>Esplora il Mondo.<br><span style="color: #FF6F61;">Senza Limiti.</span></h1>
+        <p>Connessione diretta ai database globali. Trova la rotta perfetta in millisecondi con la nostra console di ricerca avanzata.</p>
+    </section>
+
+    <main class="voli-main">
+        <div class="voli-container">
+
+            <div class="voli-card search-console">
+                <div class="voli-form-grid">
+                    <div class="voli-field">
+                        <label for="voli-origin">Partenza</label>
+                        <select id="voli-origin">
+                            <option value="FCO">🇮🇹 Roma (FCO)</option>
+                            <option value="MXP">🇮🇹 Milano (MXP)</option>
+                            <option value="NAP">🇮🇹 Napoli (NAP)</option>
+                            <option value="VCE">🇮🇹 Venezia (VCE)</option>
+                            <option value="CDG">🇫🇷 Parigi (CDG)</option>
+                            <option value="LHR">🇬🇧 Londra (LHR)</option>
+                            <option value="MAD">🇪🇸 Madrid (MAD)</option>
+                            <option value="AMS">🇳🇱 Amsterdam (AMS)</option>
+                            <option value="BER">🇩🇪 Berlino (BER)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="voli-field">
+                        <label for="voli-dest">Destinazione</label>
+                        <select id="voli-dest">
+                            <option value="CDG">🇫🇷 Parigi (CDG)</option>
+                            <option value="IST">🇹🇷 Istanbul (IST)</option>
+                            <option value="CAI">🇪🇬 Il Cairo (CAI)</option>
+                            <option value="JFK">🇺🇸 New York (JFK)</option>
+                            <option value="SFO">🇺🇸 San Francisco (SFO)</option>
+                            <option value="GIG">🇧🇷 Rio de Janeiro (GIG)</option>
+                            <option value="AMM">🇯🇴 Amman / Petra (AMM)</option>
+                            <option value="CUZ">🇵🇪 Cuzco (CUZ)</option>
+                            <option value="DXB">🇦🇪 Dubai (DXB)</option>
+                            <option value="NRT">🇯🇵 Tokyo (NRT)</option>
+                            <option value="BKK">🇹🇭 Bangkok (BKK)</option>
+                            <option value="SIN">🇸🇬 Singapore (SIN)</option>
+                            <option value="LHR">🇬🇧 Londra (LHR)</option>
+                            <option value="BCN">🇪🇸 Barcellona (BCN)</option>
+                        </select>
+                    </div>
+
+                    <div class="voli-field">
+                        <label for="voli-date">Data Partenza</label>
+                        <input type="date" id="voli-date">
+                    </div>
+
+                    <div class="voli-field">
+                        <label for="voli-adults">Passeggeri</label>
+                        <select id="voli-adults">
+                            <option value="1">1 Adulto</option>
+                            <option value="2">2 Adulti</option>
+                            <option value="3">3 Adulti</option>
+                            <option value="4">4+ Adulti</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="voli-search-btn" class="btn-search-voli">
+                    <i class="fas fa-paper-plane"></i>
+                    <span id="voli-btn-label">Avvia Ricerca</span>
+                </button>
+            </div>
+
+            <div class="voli-filters">
+                <label class="voli-filter-tag">
+                    <input type="radio" name="sort" value="price" checked> Miglior Prezzo
+                </label>
+                <label class="voli-filter-tag">
+                    <input type="radio" name="sort" value="duration"> Più Rapidi
+                </label>
+                <label class="voli-filter-tag">
+                    <input type="radio" name="sort" value="stops"> Diretti Prima
+                </label>
+            </div>
+
+            <div id="voli-results-section" style="display:none;">
+                <div class="voli-results-header">
+                    <span id="voli-results-count"></span>
+                    <span id="voli-results-route"></span>
+                </div>
+                <div id="voli-results-list"></div>
+            </div>
+
+            <div class="voli-explainer-card">
+                <h2>> init_system_protocol()</h2>
+                <div class="voli-explainer-steps">
+                    <div class="voli-exp-step">
+                        <div><strong>Risoluzione Nodi</strong> — Il server chiama <code>searchAirport()</code> per convertire ogni IATA nel rispettivo EntityId. Dati cachati in memoria volatile.</div>
+                    </div>
+                    <div class="voli-exp-step">
+                        <div><strong>Scansione Rotte</strong> — Esecuzione <code>searchFlights()</code>. L'algoritmo intercetta le offerte ordinate per rilevanza in tempo reale.</div>
+                    </div>
+                    <div class="voli-exp-step">
+                        <div><strong>Normalizzazione</strong> — Mapping dei payload JSON in un formato unificato (prezzo, IATA, segmenti orari) per il rendering lato client.</div>
+                    </div>
+                    <div class="voli-exp-step">
+                        <div><strong>Sicurezza Core</strong> — API key isolate lato server (<code>.env</code>). Il client riceve solo il payload olografico decriptato.</div>
+                    </div>
+                </div>
+                <div style="margin-top:1.5rem;font-size:.8rem;color:rgba(255,111,97,.5);font-family:monospace;">
+                    [Provider: sky-scrapper.p.rapidapi.com] | [Status: ONLINE] | [Latency: ~850ms]
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column about">
+                <img src="../../media/foto/logo.png" alt="TripNow Logo" class="footer-logo" loading="lazy">
+                <p class="footer-description">Esplora, sogna, viaggia. TripNow è il tuo partner ideale per avventure indimenticabili.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Link Utili</h4>
+                <ul>
+                    <li><a href="homepage.html#contatti">Contattaci</a></li>
+                    <li><a href="about_us.html">Chi siamo</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+                <h4>Legale</h4>
+                <ul class="support-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="assistenza.html">Assistenza</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 TripNow.com. Tutti i diritti riservati.</p>
+    </footer>
+
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="login-modal" class="modal" style="display:none;">
+        <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+        <div id="modal-form-container">
+            <h2 id="modal-title">Accedi</h2>
+            <form id="modal-form">
+                <input type="email" id="modal-email" placeholder="Email" required>
+                <input type="password" id="modal-password" placeholder="Password" required>
+                <button type="submit" id="modal-submit-btn">Accedi</button>
+            </form>
+            <p id="modal-switch-text">Non hai un account? <a href="#" id="modal-switch-link">Registrati</a></p>
+            <p id="modal-message"></p>
+        </div>
+        <div id="totp-step" style="display:none;">
+            <h2>Verifica 2FA</h2>
+            <input type="text" id="totp-input" maxlength="6" pattern="[0-9]{6}" placeholder="000 000" autocomplete="one-time-code">
+            <button id="totp-submit-btn">Verifica</button>
+            <div style="margin-top:.75rem;">
+                <input type="text" id="backup-input" placeholder="Oppure inserisci un backup code" style="font-size:.82rem;">
+            </div>
+        </div>
+    </div>
+
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/extras.js"></script>
+    <script defer src="../js/chatbot.js"></script>
+    <script defer src="../js/voli.js"></script>
+</body>
+</html>
