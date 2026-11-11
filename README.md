@@ -1,28 +1,29 @@
 # TripNow — Full-Stack Travel-Planning Platform
 
-**A bachelor's thesis project combining backend APIs, relational persistence, real-time LLM streaming, personalized recommendations and immersive destination exploration.**
-
-TripNow helps users explore destinations, generate itineraries and compare multi-city routes. It was developed at **Sapienza University of Rome** as part of my BSc in **Computer and Control Engineering**, following the Computer Engineering curriculum.
-
-The initial web-course platform was built jointly by **Michael Ciotti** and **Daniele Cacciotti**(me). I subsequently developed the thesis extensions independently, expanding that baseline with immersive visualization, intelligent planning tools, behavioral personalization and additional backend integrations.
+TripNow is a full-stack web app for exploring destinations, generating itineraries and comparing multi-city routes. The thesis work was completed as part of my BSc in Computer and Control Engineering at **Sapienza University of Rome**.
 
 **Core stack:** JavaScript · Node.js · Express · SQLite · REST APIs · Server-Sent Events
 
-**Status:** academic portfolio project, runnable locally. The application interface is in Italian; this documentation is in English.
+**Status:** academic portfolio project that runs locally. The interface is in Italian.
+
+[Run locally](#run-locally) · [Explore the code](#code-guide)
 
 ## My contribution
 
-I am **Daniele Cacciotti**. The original platform was a shared course project; the subsequent extensions for my bachelor's thesis were my individual work. These additions span frontend interaction, backend logic, persistence and external-service integration:
+**Michael Ciotti and I** co-developed the original course project, where I focused on the JavaScript frontend. I independently designed and implemented these extensions for my thesis:
 
-- **Route optimization:** a geographic distance matrix, randomized initial routes and a **2-opt** local-search implementation, with a visual comparison of the initial and resulting routes.
-- **Immersive destination exploration:** the **Google Maps** satellite/tilted-view integration, the **Three.js** rendering and fallback scene, scroll-driven camera transitions, interactive points of interest and heatmap overlays.
-- **Interactive maps and local planning:** **Google Maps** and **Leaflet** interfaces for destination exploration, POI filtering, route building and geographic visualization.
-- **LLM integration:** **TripBot** and the itinerary generator, including **Node.js/Express endpoints** connecting to the **Groq API**, processing upstream streams and forwarding text through **Server-Sent Events (SSE)**, together with browser-side interfaces and stream consumption.
-- **Hybrid personalization:** destination-tag cosine similarity, behavioral-event collection and persistence, and the backend scoring logic combining explicit favorites with implicit interaction signals.
-- **Seasonal decision support:** historical-climate aggregation, a monthly climate/crowd/cost score, SQLite caching and the corresponding interactive panel.
-- **Further thesis extensions:** TOTP two-factor authentication, service integrations and fallback handling, responsive interface refinements, service-worker caching and the manual validation documented in the thesis.
+- **Itinerary generation and TripBot** — integrated the Groq API into Express and streamed LLM output to the browser using Server-Sent Events (SSE).
+- **Multi-city route optimization** — used a geographic distance matrix and 2-opt local search to shorten an initial randomized route and show the result on a map.
+- **Personalized recommendations** — recorded interactions in SQLite and combined them with explicit favorites and destination similarity to rank suggestions.
 
-Within the original collaboration, I focused on JavaScript frontend development. For the thesis, I developed and integrated the additional modules into the existing application.
+I also added Google Maps and Leaflet planning features, Three.js destination scenes, seasonal analysis, optional TOTP authentication, service fallbacks and offline caching. The [technical highlights](#technical-highlights) describe the implementation.
+
+<p>
+  <a href="docs/screenshots/route-optimization.png"><img src="docs/screenshots/route-optimization.png" alt="TripNow route planner with an optimized multi-city route and a 2-opt comparison" width="48%"></a>
+  <a href="docs/screenshots/itinerary-generation.png"><img src="docs/screenshots/itinerary-generation.png" alt="Example of a generated three-day Istanbul itinerary in TripNow" width="48%"></a>
+</p>
+
+*Screenshots from the thesis showing the route planner and an example itinerary.*
 
 ## Technical highlights
 
@@ -125,7 +126,9 @@ In a second terminal, from the **repository root**:
 python3 -m http.server 5500 --bind 127.0.0.1
 ```
 
-Open **`http://127.0.0.1:5500/src/html/homepage.html`**. Serving from the repository root preserves the paths to both `src/` and `media/`; opening HTML files directly through `file://` is not the intended setup.
+Open [the homepage](http://127.0.0.1:5500/src/html/homepage.html). Serving from the repository root preserves the paths to both `src/` and `media/`.
+
+**Quick check without API keys.** Open the homepage and follow **Destinazioni** to the [destination index](http://127.0.0.1:5500/src/html/destinazioni.html). Both pages can be served without API credentials. Some assets load from public CDNs, and generating a live itinerary requires `GROQ_API_KEY`.
 
 Use `127.0.0.1` consistently for both frontend and backend, particularly for account features that use cookies. If you change the backend port, update `API_BASE` in `src/js/config.js`. If you change the frontend origin, check the backend CORS configuration and `ALLOWED_ORIGIN`.
 
