@@ -18,6 +18,15 @@ TripNow is a full-stack web app for exploring destinations, generating itinerari
 
 I also added Google Maps and Leaflet planning features, Three.js destination scenes, seasonal analysis, optional TOTP authentication, service fallbacks and offline caching. The [technical highlights](#technical-highlights) describe the implementation.
 
+## Screenshots
+
+<p>
+  <a href="docs/screenshots/homepage.jpg"><img src="docs/screenshots/homepage.jpg" alt="TripNow homepage with a hotel search form" width="48%"></a>
+  <a href="docs/screenshots/destinations.jpg"><img src="docs/screenshots/destinations.jpg" alt="TripNow destination catalog with region filters and destination cards" width="48%"></a>
+</p>
+
+*Homepage and destination catalog.*
+
 <p>
   <a href="docs/screenshots/route-optimization.png"><img src="docs/screenshots/route-optimization.png" alt="TripNow route planner with an optimized multi-city route and a 2-opt comparison" width="48%"></a>
   <a href="docs/screenshots/itinerary-generation.png"><img src="docs/screenshots/itinerary-generation.png" alt="Example of a generated three-day Istanbul itinerary in TripNow" width="48%"></a>
