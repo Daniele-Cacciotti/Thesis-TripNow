@@ -1,22 +1,26 @@
 # TripNow — Full-Stack Travel-Planning Platform
 
-TripNow is a full-stack web app for exploring destinations, generating itineraries and comparing multi-city routes. The thesis work was completed as part of my BSc in Computer and Control Engineering at **Sapienza University of Rome**.
+**A bachelor's thesis project combining backend APIs, relational persistence, real-time LLM streaming, personalized recommendations and immersive destination exploration.**
+
+TripNow helps users explore destinations, generate itineraries and compare multi-city routes. I developed the thesis extensions at **Sapienza University of Rome** as part of my BSc in **Computer and Control Engineering**, following the **Computer Engineering** curriculum.
 
 **Core stack:** JavaScript · Node.js · Express · SQLite · REST APIs · Server-Sent Events
 
 **Status:** academic portfolio project that runs locally. The interface is in Italian.
 
-[Run locally](#run-locally) · [Explore the code](#code-guide)
+[Screenshots](#screenshots) · [Run locally](#run-locally) · [Explore the code](#code-guide)
 
 ## My contribution
 
-**Michael Ciotti and I** co-developed the original course project, where I focused on the JavaScript frontend. I independently designed and implemented these extensions for my thesis:
+**Michael Ciotti** and I co-developed the original web-course project. My role focused on the JavaScript frontend. I independently designed and implemented the following extensions for my thesis.
 
 - **Itinerary generation and TripBot** — integrated the Groq API into Express and streamed LLM output to the browser using Server-Sent Events (SSE).
-- **Multi-city route optimization** — used a geographic distance matrix and 2-opt local search to shorten an initial randomized route and show the result on a map.
-- **Personalized recommendations** — recorded interactions in SQLite and combined them with explicit favorites and destination similarity to rank suggestions.
+- **Multi-city route optimization** — used a geographic distance matrix and 2-opt local search to shorten an initial randomized route. The interface maps the optimized route and compares its distance with the starting route.
+- **Personalized recommendations** — recorded interactions in SQLite and combined those signals with explicit favorites and cosine similarity between the user profile and destination tags to rank suggestions.
+- **Immersive destination exploration and maps** — integrated Google Maps satellite views, a Three.js fallback and scroll-driven camera transitions. Added interactive points of interest, heatmaps and route-planning tools with Google Maps and Leaflet.
+- **Seasonal travel guidance** — built an interactive month-by-month comparison using historical climate data, crowd estimates and cost assumptions, with results cached in SQLite.
 
-I also added Google Maps and Leaflet planning features, Three.js destination scenes, seasonal analysis, optional TOTP authentication, service fallbacks and offline caching. The [technical highlights](#technical-highlights) describe the implementation.
+My thesis work also included optional TOTP two-factor authentication, responsive interface refinements, service fallbacks, offline caching and [manual validation](#validation-documented-in-the-thesis).
 
 ## Screenshots
 
@@ -40,7 +44,7 @@ I also added Google Maps and Leaflet planning features, Three.js destination sce
 | --- | --- |
 | Backend and persistence | Express JSON endpoints; SQLite tables for users, favorites, behavioral events, seasonal-analysis cache and newsletter subscriptions. |
 | Real-time AI features | Itinerary generation and the TripBot travel chatbot use Groq-hosted LLMs. The server forwards text over SSE; browser clients consume the streamed response through `fetch` and readable streams. |
-| Route optimization | Haversine distances, a Fisher–Yates randomized starting order and 2-opt local search. Results and routes are visualized on a map. |
+| Route optimization | Haversine distances, a Fisher–Yates randomized starting order and 2-opt local search. The interface maps the optimized route and reports the change in distance. |
 | Hybrid recommendations | Destination-tag cosine similarity combined with implicit behavioral signals, using a weighted score of 60% content similarity and 40% behavioral feedback. |
 | Seasonal analysis | Historical Open-Meteo climate data combined with predefined crowd and cost assumptions. A heuristic score ranks months; results are cached in SQLite for 24 hours. |
 | Immersive exploration | Google Maps satellite views with camera tilt and heading, a Three.js rendering fallback, scroll-driven transitions, interactive POIs and heatmap overlays. |
@@ -135,7 +139,7 @@ In a second terminal, from the **repository root**:
 python3 -m http.server 5500 --bind 127.0.0.1
 ```
 
-Open [the homepage](http://127.0.0.1:5500/src/html/homepage.html). Serving from the repository root preserves the paths to both `src/` and `media/`.
+Open [the homepage](http://127.0.0.1:5500/src/html/homepage.html) through the local web server. Serving from the repository root preserves the paths to both `src/` and `media/`.
 
 **Quick check without API keys.** Open the homepage and follow **Destinazioni** to the [destination index](http://127.0.0.1:5500/src/html/destinazioni.html). Both pages can be served without API credentials. Some assets load from public CDNs, and generating a live itinerary requires `GROQ_API_KEY`.
 
